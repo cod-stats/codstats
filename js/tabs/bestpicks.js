@@ -1,25 +1,15 @@
 // ============================================================
-<<<<<<< HEAD
 // BEST PICKS TAB — HP ENGINE V5A + SND ENGINE
-=======
-// BEST PICKS TAB — HP & SND (Dual-Mode) with Full HP-Style Logic
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
 // ============================================================
 
 let BP_MODE = "hp";
 
-<<<<<<< HEAD
 // ------------------------------------------------------------
 // Switch HP/SND mode + repopulate maps
 // ------------------------------------------------------------
 function setBPMODE(mode, modeMaps) {
     BP_MODE = mode;
 
-=======
-// Switch HP/SND mode + repopulate maps
-function setBPMODE(mode, modeMaps) {
-    BP_MODE = mode;
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
     const mapSelect = document.getElementById("bp-map");
     mapSelect.innerHTML = modeMaps[mode]
         .map(m => `<option value="${m}">${m}</option>`)
@@ -65,11 +55,7 @@ function buildBestPicksTabs(matches, teams, modeMaps) {
         </select>
 
         <label class="bp-label">Kill Line</label>
-<<<<<<< HEAD
         <input id="bp-line" type="number" placeholder="Ex: 24">
-=======
-        <input id="bp-line" type="number" placeholder="Ex: 7">
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
 
         <button id="bp-run" class="bp-run-btn">RUN</button>
 
@@ -77,30 +63,19 @@ function buildBestPicksTabs(matches, teams, modeMaps) {
 
     </div>`;
 
-<<<<<<< HEAD
     // Mode toggles
-=======
-    // Mode toggle
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
     document.getElementById("bp-hp").onclick = () => {
         document.getElementById("bp-hp").classList.add("active");
         document.getElementById("bp-snd").classList.remove("active");
         setBPMODE("hp", modeMaps);
     };
-<<<<<<< HEAD
-
-=======
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
     document.getElementById("bp-snd").onclick = () => {
         document.getElementById("bp-snd").classList.add("active");
         document.getElementById("bp-hp").classList.remove("active");
         setBPMODE("snd", modeMaps);
     };
 
-<<<<<<< HEAD
     // Run Best Picks
-=======
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
     document.getElementById("bp-run").onclick = () => {
         const team = document.getElementById("bp-team").value.trim();
         const opp  = document.getElementById("bp-opp").value.trim();
@@ -113,11 +88,7 @@ function buildBestPicksTabs(matches, teams, modeMaps) {
 }
 
 // ============================================================
-<<<<<<< HEAD
 // MAIN BEST PICKS ENGINE (HP V5A + SND)
-=======
-// BEST PICKS ENGINE (HP + NEW SND ENGINE)
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
 // ============================================================
 function runBestPicks(matches, teams, q) {
 
@@ -130,12 +101,9 @@ function runBestPicks(matches, teams, q) {
 
         teams[t].forEach(player => {
 
-<<<<<<< HEAD
             // ---------------------------------------
             // Filter matches belonging to this player
             // ---------------------------------------
-=======
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
             const pm = matches.filter(m =>
                 m.team === t &&
                 m.player === player &&
@@ -146,7 +114,6 @@ function runBestPicks(matches, teams, q) {
 
             if (pm.length === 0) return;
 
-<<<<<<< HEAD
             // Auto-detect opponent if "Any"
             const opponent =
                 opp ||
@@ -182,37 +149,13 @@ function runBestPicks(matches, teams, q) {
 
             const expected = exp.raw;
             const probPct = prob * 100;
-=======
-            const opponent = opp || pm[pm.length - 1].opponent || "";
-            if (!opponent) return;
-
-            let exp;
-            if (BP_MODE === "hp") {
-                exp = expectedHPKills(matches, t, player, map, opponent);
-            } else {
-                exp = expectedSNDKills(matches, t, player, map, opponent);
-            }
-
-            const expected = exp.raw;
-
-            let prob;
-            if (BP_MODE === "hp") {
-                prob = poissonOver(expected, line, exp.varBoost);
-            } else {
-                prob = poissonOverSND(expected, line, exp.varBoost);
-            }
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
 
             rows.push({
                 player,
                 team: t,
                 expected,
                 diff: expected - line,
-<<<<<<< HEAD
                 prob: probPct
-=======
-                prob: prob * 100
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
             });
         });
     });
@@ -220,17 +163,12 @@ function runBestPicks(matches, teams, q) {
     if (rows.length === 0)
         return `<p>No matching matches found for these filters.</p>`;
 
-<<<<<<< HEAD
     // Sort by probability descending
     rows.sort((a, b) => b.prob - a.prob);
 
     // ------------------------------------------------------------
     // Build results table
     // ------------------------------------------------------------
-=======
-    rows.sort((a, b) => b.prob - a.prob);
-
->>>>>>> 454292ec1ab8fa17ef12087c6e862c03f9af0b31
     let html = `
     <table class="bp-table">
         <tr>
