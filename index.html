@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>CDL Interactive Scoreboard</title>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="initPage()">
+
+<h1 class="page-title">Call Of Duty</h1>
+<h1 class="page-title">Black Ops 7</h1>
+
+<!-- ============================================================
+     TAB BAR
+============================================================ -->
+<div class="tab-bar">
+    <div class="tab active" data-tab="modes">AVG STATS</div>
+    <div class="tab" data-tab="last5">LAST 5 MATCHES</div>
+    <div class="tab" data-tab="matches">HEAD-TO-HEAD</div>
+    <div id="tab-underline"></div>
+</div>
+
+<!-- ============================================================
+     TAB CONTENT AREAS
+============================================================ -->
+<div id="tab-modes" class="tab-content activeTab"></div>
+<div id="tab-last5" class="tab-content"></div>
+<div id="tab-matches" class="tab-content"></div>
+<div id="tab-bestpicks" class="tab-content"></div>
+
+<!-- ============================================================
+     CORE UTILITIES
+============================================================ -->
+<script src="js/utils.js"></script>
+
+<!-- ============================================================
+     TAB MODULES
+============================================================ -->
+<script src="js/tabs/modes.js"></script>
+<script src="js/tabs/last5.js"></script>
+<script src="js/tabs/matches.js"></script>
+<script src="js/tabs/bestpicks.js"></script>
+
+<!-- ============================================================
+     ANALYTICS ENGINE
+============================================================ -->
+<script src="js/analytics/analytics.js"></script>
+<script src="js/analytics/hp.js"></script>
+<script src="js/analytics/snd.js"></script>
+<script src="js/analytics/overload.js"></script>
+
+<!-- ============================================================
+     MAIN INITIALIZER — init.js ONLY
+============================================================ -->
+<script src="js/init.js?v=1006"></script>
+
+<!-- ============================================================
+     DISCLAIMER (FAN-MADE)
+============================================================ -->
+<div class="site-disclaimer">
+    This is a fan-made stats project not affiliated with Activision or the Call of Duty League (CDL). 
+    All team and player names belong to their respective owners. 
+    Data shown is for informational and entertainment use only.
+</div>
+
+</body>
+</html>
