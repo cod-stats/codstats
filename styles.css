@@ -525,6 +525,57 @@ body {
         font-size: 0.80em;
     }
 }
+/* ============================================================
+   MAP GRID — IMAGE + LABEL BUTTONS
+============================================================ */
+
+.gm-map-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 15px 0 25px 0;
+    justify-content: center;
+}
+
+.gm-map-card {
+    width: 140px;
+    padding: 10px;
+    background: #0f1114;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.20s ease;
+}
+
+.gm-map-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 12px rgba(255,255,255,0.15);
+}
+
+.gm-map-card.active {
+    border: 2px solid #ff0055;
+    box-shadow: 0 0 12px rgba(255,0,80,0.6);
+}
+
+.gm-map-thumb {
+    width: 100%;
+    border-radius: 6px;
+    height: 90px;
+    object-fit: cover;
+    background: black;
+    margin-bottom: 8px;
+}
+
+.gm-map-name {
+    font-size: 0.9em;
+    text-align: center;
+    opacity: 0.85;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
 
 /* ============================================================
    GAME MODES RUN BUTTON — EXACT MATCH TO LAST 5 RUN BUTTON
@@ -1043,5 +1094,101 @@ MATCHES
         white-space: nowrap !important;
         font-size: 0.92rem !important;  /* slightly smaller so MERCULES fits */
         letter-spacing: 0.5px;
+    }
+}
+
+/* ============================================================
+   MAP VETOS — CARD DISPLAY
+============================================================ */
+
+.vetoCard {
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 10px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vetoMap {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.vetoInfo {
+    text-align: right;
+}
+
+.veto-ban {
+    border: 2px solid #d44;
+    color: #d44;
+}
+
+.veto-pick {
+    border: 2px solid #4d4;
+    color: #4d4;
+}
+
+.vetoInfo small {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+#veto-results .vetoCard {
+    margin-top: 12px;
+    padding: 14px;
+}
+
+/* ============================================================
+   PREDICTION BOX
+============================================================ */
+
+.predictBox {
+    padding: 15px;
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* spacing for prediction lines */
+.predictBox div {
+    margin-bottom: 6px;
+}
+
+/* ============================================================
+   TEAM DROPDOWN ROW
+============================================================ */
+
+.veto-team-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.veto-col {
+    flex: 1;
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+    .vetoCard {
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .vetoInfo {
+        text-align: left;
+    }
+
+    .veto-team-row {
+        flex-direction: column;
+        gap: 10px;
     }
 }
