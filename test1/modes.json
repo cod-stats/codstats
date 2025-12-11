@@ -1,5 +1,5 @@
 {
-    "hp": ["Den", "Colossus", "Exposure", "Scar", "Blackheart"],
+    "hp": ["Den", "Colossus", "Exposure", "Scar"],
     "snd": ["Den", "Raid", "Colossus", "Scar", "Exposure"],
     "overload": ["Exposure", "Den", "Scar"]
 }
