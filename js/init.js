@@ -43,8 +43,6 @@ async function initPage() {
         buildModeTabs(scores, teams, modes);
         buildLast5Tabs(scores, matches, teams, modes);
         buildMatchesTabs(matches, teams, modes);
-        buildBestPicksTabs(matches, teams, modes);
-        buildVetosTab(modes);
 
         // ========================================
         // Activate tab underline + tab switching
