@@ -7,10 +7,10 @@ async function initPage() {
         // ========================================
         // Load all JSON (cache-busted)
         // ========================================
-        const scores  = await loadJSON("test1/scores.json");
-        const matches = await loadJSON("test1/matches.json");
-        const teams   = await loadJSON("test1/teams.json");
-        const modes   = await loadJSON("test1/modes.json");
+        const scores   = await loadJSON("test1/scores.json");
+        const matches  = await loadJSON("test1/matches.json");
+        const teams    = await loadJSON("test1/teams.json");
+        const modes    = await loadJSON("test1/modes.json");
 
         // Attach to globals for debugging
         window.DYNAMIC_SCORES   = scores;
@@ -30,9 +30,7 @@ async function initPage() {
                 if (!m.durationSec) m.durationSec = 300;
             }
 
-            // ========================================
             // Enrich matches with full team data
-            // ========================================
             m.teamA_full = teams[m.teamA] || { name: m.teamA, players: [] };
             m.teamB_full = teams[m.teamB] || { name: m.teamB, players: [] };
         });
@@ -43,6 +41,7 @@ async function initPage() {
         buildModeTabs(scores, teams, modes);
         buildLast5Tabs(scores, matches, teams, modes);
         buildMatchesTabs(matches, teams, modes);
+        buildLanTab(teams, window.DYNAMIC_MODEMAPS);
 
         // ========================================
         // Activate tab underline + tab switching
@@ -57,9 +56,6 @@ async function initPage() {
     }
 }
 
-
-
-
 // ============================================================
 // TAB HEADER UI — underline animation + switching
 // ============================================================
@@ -71,12 +67,8 @@ function initTabHeaderUI() {
     const bar = document.querySelector(".tab-bar");
 
     function activate(name) {
-        // Tab active
-        tabs.forEach(t =>
-            t.classList.toggle("active", t.dataset.tab === name)
-        );
+        tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === name));
 
-        // Content show/hide
         contents.forEach(c => {
             if (c.id === "tab-" + name) {
                 c.classList.add("activeTab");
@@ -86,7 +78,6 @@ function initTabHeaderUI() {
             }
         });
 
-        // Underline movement
         const active = document.querySelector(".tab.active");
         if (active) {
             const r = active.getBoundingClientRect();
@@ -95,19 +86,12 @@ function initTabHeaderUI() {
             underline.style.width = r.width + "px";
             underline.style.left = (r.left - pr.left) + "px";
 
-            // Scroll the tab bar if needed
-            const offset =
-                (r.left - pr.left) -
-                (bar.clientWidth / 2 - r.width / 2);
-
+            const offset = (r.left - pr.left) - (bar.clientWidth / 2 - r.width / 2);
             bar.scrollBy({ left: offset, behavior: "smooth" });
         }
     }
 
-    // Click behavior
-    tabs.forEach(t =>
-        t.addEventListener("click", () => activate(t.dataset.tab))
-    );
+    tabs.forEach(t => t.addEventListener("click", () => activate(t.dataset.tab)));
 
     // Initial tab
     activate("modes");

@@ -1097,98 +1097,37 @@ MATCHES
     }
 }
 
-/* ============================================================
-   MAP VETOS — CARD DISPLAY
-============================================================ */
-
-.vetoCard {
+/* LAN tab run button */
+#lan-run-vs {
+    padding: 12px;
     border-radius: 10px;
-    padding: 14px;
-    margin-top: 10px;
-    background: #111;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border: none;
+    background: linear-gradient(90deg, #ff004c, #ff9900);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 18px;
+    box-shadow: 0 0 15px rgba(255,50,50,0.8);
+    text-transform: uppercase;
+    transition: 0.18s;
+}
+#lan-run-vs:hover {
+    opacity: .9 !important;
+    filter: brightness(1.1);
+    transform: scale(0.98);
 }
 
-.vetoMap {
-    font-size: 1.2em;
-    font-weight: 700;
-}
-
-.vetoInfo {
-    text-align: right;
-}
-
-.veto-ban {
-    border: 2px solid #d44;
-    color: #d44;
-}
-
-.veto-pick {
-    border: 2px solid #4d4;
-    color: #4d4;
-}
-
-.vetoInfo small {
-    font-size: 0.8em;
-    opacity: 0.7;
-}
-
-#veto-results .vetoCard {
-    margin-top: 12px;
-    padding: 14px;
-}
-
-/* ============================================================
-   PREDICTION BOX
-============================================================ */
-
-.predictBox {
-    padding: 15px;
-    background: #111;
-    border: 1px solid #444;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-/* spacing for prediction lines */
-.predictBox div {
-    margin-bottom: 6px;
-}
-
-/* ============================================================
-   TEAM DROPDOWN ROW
-============================================================ */
-
-.veto-team-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.veto-col {
-    flex: 1;
-}
-
-/* ============================================================
-   MOBILE
-============================================================ */
-
-@media (max-width: 600px) {
-    .vetoCard {
-        padding: 12px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .vetoInfo {
-        text-align: left;
-    }
-
-    .veto-team-row {
-        flex-direction: column;
-        gap: 10px;
-    }
+/* LAN tab dropdowns */
+#lan-team-select-vs,
+#lan-opponent-select {
+    padding: 10px;
+    background: #0d0f11;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-transform: capitalize;
+    min-width: 140px;
+    cursor: pointer;
 }
