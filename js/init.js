@@ -42,7 +42,6 @@ async function initPage() {
         buildModeTabs(scores, teams, modes);
         buildLast5Tabs(scores, matches, teams, modes);
         buildMatchesTabs(matches, teams, modes);
-        buildLanTab(teams, window.DYNAMIC_MODEMAPS);
 
         // ========================================
         // Normalize mapVetos keys (all lowercase)
