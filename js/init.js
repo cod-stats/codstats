@@ -11,7 +11,6 @@ async function initPage() {
         const matches  = await loadJSON("test1/matches.json");
         const teams    = await loadJSON("test1/teams.json");
         const modes    = await loadJSON("test1/modes.json");
-        const mapVetos = await loadJSON("test1/mapvetos.json");
 
         // Attach to globals for debugging
         window.DYNAMIC_SCORES   = scores;
@@ -42,31 +41,6 @@ async function initPage() {
         buildModeTabs(scores, teams, modes);
         buildLast5Tabs(scores, matches, teams, modes);
         buildMatchesTabs(matches, teams, modes);
-
-        // ========================================
-        // Normalize mapVetos keys (all lowercase)
-        // ========================================
-        const normalizedMapVetos = {};
-        Object.entries(mapVetos).forEach(([key, value]) => {
-            const [a, b] = key.split(":");
-            normalizedMapVetos[`${a.toLowerCase()}:${b.toLowerCase()}`] = value;
-        });
-        window.DYNAMIC_MAPVETOS = normalizedMapVetos;
-
-        // ========================================
-        // Populate team dropdowns for veto tab
-        // ========================================
-        populateTeamDropdowns(window.DYNAMIC_TEAMS);
-
-        // ========================================
-        // Load vetos tab (handles its own button click)
-        // ========================================
-        loadVetos(
-            window.DYNAMIC_MAPVETOS,
-            window.DYNAMIC_TEAMS,
-            window.DYNAMIC_MATCHES,
-            window.DYNAMIC_MODEMAPS
-        );
 
         // ========================================
         // Activate tab underline + tab switching
@@ -120,23 +94,4 @@ function initTabHeaderUI() {
 
     // Initial tab
     activate("modes");
-}
-
-function populateTeamDropdowns(teams) {
-    const teamASelect = document.getElementById("teamA-select");
-    const teamBSelect = document.getElementById("teamB-select");
-
-    if (!teamASelect || !teamBSelect) return;
-
-    Object.entries(teams).forEach(([key, team]) => {
-        const optionA = document.createElement("option");
-        optionA.value = key.toLowerCase();
-        optionA.textContent = team.name;
-        teamASelect.appendChild(optionA);
-
-        const optionB = document.createElement("option");
-        optionB.value = key.toLowerCase();
-        optionB.textContent = team.name;
-        teamBSelect.appendChild(optionB);
-    });
 }
