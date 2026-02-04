@@ -1,7 +1,3 @@
-// ============================================================
-// INIT SYSTEM — MAIN ENTRY POINT
-// ============================================================
-
 async function initPage() {
     try {
         // ========================================
@@ -9,14 +5,14 @@ async function initPage() {
         // ========================================
         const scores   = await loadJSON("test1/scores.json");
         const matches  = await loadJSON("test1/matches.json");
-        const teams    = await loadJSON("test1/teams.json");
-        const modes    = await loadJSON("test1/modes.json");
+        const config   = await loadJSON("test1/TeamModes.json"); // <-- combined teams+modes
+        const mapVetos = await loadJSON("test1/mapvetos.json");
 
         // Attach to globals for debugging
         window.DYNAMIC_SCORES   = scores;
         window.DYNAMIC_MATCHES  = matches;
-        window.DYNAMIC_TEAMS    = teams;
-        window.DYNAMIC_MODEMAPS = modes;
+        window.DYNAMIC_TEAMS    = config.teams;
+        window.DYNAMIC_MODEMAPS = config.modes;
 
         // ========================================
         // Compute durationSec if missing
@@ -25,22 +21,48 @@ async function initPage() {
             if (!m.durationSec || m.durationSec <= 0) {
                 if (m.start && m.end) {
                     const d = computeDuration(m.start, m.end);
-                    if (d) m.durationSec = d;
+                    m.durationSec = d || 300;
+                } else {
+                    m.durationSec = 300;
                 }
-                if (!m.durationSec) m.durationSec = 300;
             }
 
             // Enrich matches with full team data
-            m.teamA_full = teams[m.teamA] || { name: m.teamA, players: [] };
-            m.teamB_full = teams[m.teamB] || { name: m.teamB, players: [] };
+            m.teamA_full = config.teams[m.teamA] || { name: m.teamA, players: [] };
+            m.teamB_full = config.teams[m.teamB] || { name: m.teamB, players: [] };
         });
 
         // ========================================
         // BUILD UI TABS
         // ========================================
-        buildModeTabs(scores, teams, modes);
-        buildLast5Tabs(scores, matches, teams, modes);
-        buildMatchesTabs(matches, teams, modes);
+        buildModeTabs(scores, config.teams, config.modes);
+        buildLast5Tabs(scores, matches, config.teams, config.modes);
+        buildMatchesTabs(matches, config.teams, config.modes);
+
+        // ========================================
+        // Normalize mapVetos keys (all lowercase)
+        // ========================================
+        const normalizedMapVetos = {};
+        Object.entries(mapVetos).forEach(([key, value]) => {
+            const [a, b] = key.split(":");
+            normalizedMapVetos[`${a.toLowerCase()}:${b.toLowerCase()}`] = value;
+        });
+        window.DYNAMIC_MAPVETOS = normalizedMapVetos;
+
+        // ========================================
+        // Populate team dropdowns for veto tab
+        // ========================================
+        populateTeamDropdowns(config.teams);
+
+        // ========================================
+        // Load vetos tab (handles its own button click)
+        // ========================================
+        loadVetos(
+            window.DYNAMIC_MAPVETOS,
+            config.teams,
+            matches,
+            config.modes
+        );
 
         // ========================================
         // Activate tab underline + tab switching
@@ -48,12 +70,12 @@ async function initPage() {
         initTabHeaderUI();
 
         console.log("%c✔ INIT COMPLETE", "color: #33ff33; font-size:16px;");
-    }
-    catch (err) {
+    } catch (err) {
         console.error("INIT ERROR:", err);
         alert("Error loading JSON data. Check console.");
     }
 }
+
 
 // ============================================================
 // TAB HEADER UI — underline animation + switching

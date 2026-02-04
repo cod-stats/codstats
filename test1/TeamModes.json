@@ -1,0 +1,59 @@
+{
+    "teams": {
+      "thieves": {
+        "name": "Los Angeles Thieves",
+        "players": ["hydra", "scrap", "kenny", "abezy"]
+      },
+      "faze": {
+        "name": "Faze Vegas",
+        "players": ["o4", "abuzah", "drazah", "simp"]
+      },
+      "optic": {
+        "name": "Optic Texas",
+        "players": ["dashy", "huke", "mercules", "shotzzy"]
+      },
+      "heretics": {
+        "name": "Miami Heretics",
+        "players": ["mettalz", "traixx", "renkor", "super"]
+      },
+      "ravens": {
+        "name": "Carolina Royale Ravens",
+        "players": ["nero", "exceed", "lurqxx", "craze"]
+      },
+      "cloud9": {
+        "name": "Cloud9 New York",
+        "players": ["afro", "beans", "mack", "vivid"]
+      },
+      "g2": {
+        "name": "G2 Minnesota",
+        "players": ["estreal", "kremp", "mamba", "skyz"]
+      },
+      "m8": {
+        "name": "Paris Gentle Mates",
+        "players": ["envoy", "ghosty", "neptune", "sib"]
+      },
+      "breach": {
+        "name": "Boston Breach",
+        "players": ["cammy", "nastie", "purj", "snoopy"]
+      },
+      "falcons": {
+        "name": "Riyadh Falcons",
+        "players": ["pred", "exnid", "cellium", "kismet"]
+      },
+      "koi": {
+        "name": "Toronto KOI",
+        "players": ["cleanx", "insight", "joedeceives", "reeal"]
+      },
+      "surge": {
+        "name": "Vancouver Surge",
+        "players": ["abe", "gwinn", "tjhaly", "lunarz"]
+      }
+    },
+  
+    "modes": {
+      "hp": ["Den", "Colossus", "Exposure", "Scar", "Blackheart"],
+      "snd": ["Den", "Raid", "Colossus", "Scar", "Exposure"],
+      "overload": ["Exposure", "Den", "Scar"]
+    }
+  }
+  
