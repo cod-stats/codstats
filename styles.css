@@ -1097,214 +1097,6 @@ MATCHES
     }
 }
 
-/* ============================================================
-   VETOS TAB STYLING — BIGGER / CLEAN / CENTERED
-============================================================ */
-
-/* Tab toggles */
-.veto-tab-toggles {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin-bottom: 16px;
-}
-
-.veto-tab-toggles button {
-    flex: 1;
-    max-width: 140px;
-    padding: 12px;
-    background: #0d0f11;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.25s;
-    text-transform: uppercase;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.veto-tab-toggles button.active {
-    background: #ff004c;
-    box-shadow: 0 0 12px #ff004c;
-}
-
-
-/* ============================================================
-   CONTROLS WRAPPER
-============================================================ */
-
-.vetos-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-
-/* ============================================================
-   TEAM SELECTORS
-============================================================ */
-
-.vetos-selectors {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
-}
-
-.vetos-select {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 18px;
-    color: white;
-    border-radius: 12px;
-    min-width: 220px;
-}
-
-.vetos-select label {
-    margin-bottom: 8px;
-    font-weight: 700;
-    font-size: 1.15rem;
-}
-
-.vetos-select select {
-    padding: 14px 20px;
-    background: #0d0f11;
-    color: white;
-    border: 2px solid #555;
-    border-radius: 10px;
-    font-size: 1rem;
-    min-width: 220px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.vetos-select select:hover {
-    border-color: #ff004c;
-}
-
-.vetos-select select:focus {
-    outline: none;
-    border-color: #ff004c;
-    box-shadow: 0 0 10px #ff004c66;
-}
-
-
-/* ============================================================
-   MODE TOGGLES (HP / SND / OVERLOAD)
-============================================================ */
-
-.vetos-mode-toggles {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 14px;
-}
-
-.vetos-mode-toggles button {
-    padding: 14px 26px;
-    border-radius: 12px;
-    border: 1px solid #444;
-    cursor: pointer;
-    background-color: #222;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: 0.5px;
-    transition: all 0.2s ease;
-    min-width: 110px;
-}
-
-.vetos-mode-toggles button:hover {
-    background: #333;
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
-}
-
-.vetos-mode-toggles button.active {
-    background: #ff004c;
-    box-shadow: 0 0 16px #ff004c;
-    transform: scale(1.05);
-}
-
-
-/* ============================================================
-   VETO DISPLAY ROWS
-============================================================ */
-
-.veto-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 36px;
-    padding: 16px 12px;
-    font-size: 1.05rem;
-}
-
-.veto-row.header {
-    font-weight: 700;
-    font-size: 1.15rem;
-    margin-bottom: 6px;
-}
-
-
-/* ============================================================
-   TEAM COLUMN
-============================================================ */
-
-.team-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.team-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 8px;
-}
-
-
-/* ============================================================
-   MAP COLUMN
-============================================================ */
-
-.map-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.map-image {
-    width: 150px;
-    height: 95px;
-    object-fit: cover;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    border: 1px solid #555;
-}
-
-
-/* ============================================================
-   WIN RATE TEXT
-============================================================ */
-
-.wr {
-    font-size: 15px;
-    opacity: 0.9;
-    margin-top: 6px;
-    font-weight: 600;
-}
-
-
-
 /* LAN tab run button */
 #lan-run-vs {
     padding: 12px;
@@ -1338,4 +1130,239 @@ MATCHES
     text-transform: capitalize;
     min-width: 140px;
     cursor: pointer;
+}
+
+/* ============================================================
+   TAB TOGGLES (if used)
+============================================================ */
+
+.veto-tab-toggles {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.veto-tab-toggles button {
+    flex: 1;
+    max-width: 160px;
+    padding: 12px;
+    background: #0d0f11;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.veto-tab-toggles button.active {
+    background: #ff004c;
+    box-shadow: 0 0 12px #ff004c;
+}
+
+/* ============================================================
+   CONTROLS WRAPPER
+============================================================ */
+
+.vetos-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   TEAM SELECTORS
+============================================================ */
+
+.vetos-selectors {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.vetos-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+    border-radius: 12px;
+    min-width: 220px;
+}
+
+.vetos-select label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.vetos-select select {
+    padding: 14px 20px;
+    background: #0d0f11;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 10px;
+    font-size: 1rem;
+    min-width: 220px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.vetos-select select:hover {
+    border-color: #ff004c;
+}
+
+.vetos-select select:focus {
+    outline: none;
+    border-color: #ff004c;
+    box-shadow: 0 0 10px #ff004c66;
+}
+
+/* ============================================================
+   MODE TOGGLES (HP / SND / OVERLOAD)
+============================================================ */
+
+.vetos-mode-toggles {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.vetos-mode-toggles button {
+    padding: 14px 26px;
+    border-radius: 12px;
+    border: 1px solid #444;
+    cursor: pointer;
+    background: #222;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+    min-width: 110px;
+}
+
+.vetos-mode-toggles button:hover {
+    background: #333;
+    box-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+.vetos-mode-toggles button.active {
+    background: #ff004c;
+    box-shadow: 0 0 16px #ff004c;
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   VETO DISPLAY ROWS
+============================================================ */
+
+.veto-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 18px 12px;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.veto-row.header {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #333;
+}
+
+/* ============================================================
+   TEAM COLUMN
+============================================================ */
+
+.team-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.team-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   MAP COLUMN
+============================================================ */
+
+.map-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.map-image {
+    width: 150px;
+    height: 95px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    transition: 0.2s;
+}
+
+.map-image:hover {
+    transform: scale(1.05);
+    border-color: #ff004c;
+}
+
+/* ============================================================
+   WIN RATE TEXT
+============================================================ */
+
+.wr {
+    font-size: 15px;
+    opacity: 0.9;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATION
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .veto-row {
+        gap: 14px;
+        font-size: 0.9rem;
+    }
+
+    .team-column {
+        width: 120px;
+    }
+
+    .team-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .map-image {
+        width: 110px;
+        height: 70px;
+    }
+
+    .vetos-mode-toggles button {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
 }
