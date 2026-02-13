@@ -2,7 +2,7 @@
     "teams": {
       "thieves": {
         "name": "Los Angeles Thieves",
-        "players": ["hydra", "scrap", "kenny", "abezy"]
+        "players": ["hydra", "scrap", "nium", "abezy"]
       },
       "faze": {
         "name": "Faze Vegas",
@@ -22,7 +22,7 @@
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "players": ["afro", "beans", "mack", "vivid"]
+        "players": ["encourage", "hide", "nejra", "okis"]
       },
       "g2": {
         "name": "G2 Minnesota",
