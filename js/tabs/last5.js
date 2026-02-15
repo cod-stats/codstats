@@ -36,6 +36,14 @@ function formatDuration(sec) {
 // ============================================================
 function buildLast5Tabs(scores, matches, teams, modeMaps) {
 
+    const ACTIVE_TEAMS = Object.keys(teams).filter(t=>teams[t].active);
+
+    const teamsHtml = ACTIVE_TEAMS
+        .map(t=>`<option value="${t}">${cap(teams[t].name)}</option>`)
+        .join("");
+
+    const firstTeam = ACTIVE_TEAMS[0];
+
     const root = document.getElementById("tab-last5");
 
     root.innerHTML = `
@@ -181,11 +189,14 @@ function renderLast5Filters(teams, matches, modeMaps) {
 
     const root = document.getElementById("l5-filter-panel");
 
-    const teamsHtml = Object.keys(teams)
-        .map(t => `<option value="${t}">${cap(teams[t].name)}</option>`)
-        .join("");
+    const ACTIVE_TEAMS = Object.keys(teams).filter(t => teams[t].active);
 
-    const firstTeam = Object.keys(teams)[0];
+const teamsHtml = ACTIVE_TEAMS
+    .map(t => `<option value="${t}">${cap(teams[t].name)}</option>`)
+    .join("");
+
+const firstTeam = ACTIVE_TEAMS[0];
+
 
     const playersHtml = (teams[firstTeam]?.players || [])
         .map(p => `<option value="${p}">${cap(p)}</option>`)
@@ -224,15 +235,14 @@ function renderLast5Filters(teams, matches, modeMaps) {
         `;
     }
 
-    document.getElementById("l5-team").onchange = e => {
-        const team = e.target.value;
-        document.getElementById("l5-player").innerHTML =
-            `<option value="all">All Players</option>` +
-            (teams[team]?.players || [])
-                .map(p => `<option value="${p}">${cap(p)}</option>`)
+    document.getElementById("l5-team").onchange = e=>{
+        const team=e.target.value;
+        document.getElementById("l5-player").innerHTML=
+            `<option value="all">All Players</option>`+
+            (teams[team]?.players||[])
+                .map(p=>`<option value="${p}">${cap(p)}</option>`)
                 .join("");
 
-        if (L5_VIEW === "vs") loadL5Opponents(matches, teams);
     };
 
     if (L5_VIEW === "vs") loadL5Opponents(matches, teams);
@@ -249,6 +259,7 @@ function loadL5Opponents(matches, teams) {
 
     const team = teamSel.value;
     oppSelect.innerHTML = "";
+
     const seen = new Set();
 
     matches.forEach(m => {
@@ -257,18 +268,26 @@ function loadL5Opponents(matches, teams) {
             m.mode === L5_MODE &&
             (L5_MAP === "" || m.map === L5_MAP)
         ) {
-            const o = m.opponent?.trim();
-            if (o && !seen.has(o)) {
-                seen.add(o);
-                oppSelect.innerHTML += `<option value="${o}">${cap(o)}</option>`;
+            const oppKey = m.opponent?.trim();
+
+            // ✅ ACTIVE FILTER HERE
+            if (
+                oppKey &&
+                teams[oppKey]?.active &&
+                !seen.has(oppKey)
+            ) {
+                seen.add(oppKey);
+                oppSelect.innerHTML +=
+                    `<option value="${oppKey}">${cap(teams[oppKey].name)}</option>`;
             }
         }
     });
 
     if (seen.size === 0) {
-        oppSelect.innerHTML = `<option value="">No opponents found</option>`;
+        oppSelect.innerHTML = `<option value="">No active opponents</option>`;
     }
 }
+
 
 
 // ============================================================

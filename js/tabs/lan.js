@@ -19,6 +19,7 @@ async function loadLanData() {
 loadLanData();
 function buildLanTab(teams, modeMaps) {
 
+    const ACTIVE_TEAMS = Object.keys(teams).filter(t=>teams[t].active);
     const root = document.getElementById("tab-lan");
 
     root.innerHTML = `
@@ -164,33 +165,27 @@ function buildLanTab(teams, modeMaps) {
     // ===================================================================
     // TEAM BUTTON GRID
     // ===================================================================
-    function loadTeamButtons() {
-        teamWrapper.innerHTML = "";
+    function loadTeamButtons(){
+        teamWrapper.innerHTML="";
 
-        Object.keys(teams).forEach(team => {
-            const glow = glowColors[team] ?? "#fff";
+        ACTIVE_TEAMS.forEach(team=>{
+            const glow=glowColors[team]??"#fff";
 
-            const btn = document.createElement("div");
-            btn.className = "team-toggle-btn";
-            btn.dataset.team = team;
-            btn.style.setProperty("--teamGlow", glow);
+            const btn=document.createElement("div");
+            btn.className="team-toggle-btn";
+            btn.dataset.team=team;
 
-            btn.innerHTML = `
+            btn.innerHTML=`
                 <img src="test1/logos/${team}.webp"
-                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'"
-                     class="team-toggle-logo">
-                <div class="team-toggle-name">${teams[team].name}</div>
+                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'">
+                <div>${teams[team].name}</div>
             `;
 
-            btn.onclick = () => {
-                LAN_TEAM = team;
-
-                document.querySelectorAll(".team-toggle-btn")
-                    .forEach(b => b.classList.remove("active"));
+            btn.onclick=()=>{
+                LAN_TEAM=team;
+                document.querySelectorAll(".team-toggle-btn").forEach(b=>b.classList.remove("active"));
                 btn.classList.add("active");
-
-                if (LAN_MAP) renderModeMap();
-                else results.innerHTML = `<p>Select a map.</p>`;
+                if(LAN_MAP) renderModeMap();
             };
 
             teamWrapper.appendChild(btn);
@@ -204,8 +199,8 @@ function buildLanTab(teams, modeMaps) {
     function loadTeamDropdownVS() {
         teamSelectVS.innerHTML = "";
 
-        Object.keys(teams).forEach(team => {
-            teamSelectVS.innerHTML += `<option value="${team}">${teams[team].name}</option>`;
+        ACTIVE_TEAMS.forEach(team=>{
+            teamSelectVS.innerHTML+=`<option value="${team}">${teams[team].name}</option>`;
         });
 
         teamSelectVS.onchange = () => {

@@ -158,44 +158,67 @@ function buildMatchesTabs(matches, teams, modeMaps) {
     // ============================================================
 
     function loadTeams() {
-        const filtered = matches.filter(m => m.mode === VM_MODE && m.map === VM_MAP);
-        const teamList = [...new Set(filtered.map(m => m.team))];
 
+        const ACTIVE = Object.keys(teams).filter(t => teams[t].active);
+    
+        const filtered = matches.filter(m =>
+            m.mode === VM_MODE &&
+            m.map === VM_MAP &&
+            teams[m.team]?.active   // ✅ active filter
+        );
+    
+        const teamList = [...new Set(filtered.map(m => m.team))]
+            .filter(t => ACTIVE.includes(t)); // safety
+    
         teamDrop.innerHTML =
             `<option value="">Select Team</option>` +
-            teamList.map(t => `<option value="${t}">${cap(t)}</option>`).join("");
-
+            teamList.map(t => `<option value="${t}">${teams[t].name}</option>`).join("");
+    
         oppDrop.innerHTML = `<option value="">Select Opponent</option>`;
     }
+    
 
     // ============================================================
     // LOAD OPPONENTS BASED ON TEAM
     // ============================================================
 
     teamDrop.onchange = () => {
+
+        const ACTIVE = Object.keys(teams).filter(t => teams[t].active);
+    
         const team = teamDrop.value;
         if (!team) return;
-
-        const relevant = matches.filter(
-            m => m.team === team && m.mode === VM_MODE && m.map === VM_MAP
+    
+        const relevant = matches.filter(m =>
+            m.team === team &&
+            m.mode === VM_MODE &&
+            m.map === VM_MAP
         );
-
+    
         const matchIDs = [...new Set(relevant.map(m => m.matchID))];
-
+    
         let opps = [];
+    
         matchIDs.forEach(mid => {
             const allTeams = matches.filter(m => m.matchID === mid);
-            const list = [...new Set(allTeams.map(m => m.team))];
+    
+            const list = [...new Set(allTeams.map(m => m.team))]
+                .filter(t => teams[t]?.active); // ✅ active only
+    
             const opponent = list.find(t => t !== team);
-            if (opponent) opps.push(opponent);
+    
+            if (opponent && ACTIVE.includes(opponent)) {
+                opps.push(opponent);
+            }
         });
-
+    
         opps = [...new Set(opps)];
-
+    
         oppDrop.innerHTML =
             `<option value="">Select Opponent</option>` +
-            opps.map(t => `<option value="${t}">${cap(t)}</option>`).join("");
+            opps.map(t => `<option value="${t}">${teams[t].name}</option>`).join("");
     };
+    
 
     // ============================================================
     // RUN — SHOW MATCH CARDS

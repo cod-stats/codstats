@@ -102,11 +102,19 @@ function loadVetos(mapVetos, teams, matches, modeMaps) {
     const teamBSelect = document.createElement("select");
     teamBSelect.id = "teamB-number";
 
-    Object.entries(teams).forEach(([key, team]) => {
-        const k = key.toLowerCase();
-        teamASelect.innerHTML += `<option value="${k}">${team.name}</option>`;
-        teamBSelect.innerHTML += `<option value="${k}">${team.name}</option>`;
-    });
+    const ACTIVE_TEAMS = Object.entries(teams)
+    .filter(([_, team]) => team.active);
+
+ACTIVE_TEAMS.forEach(([key, team]) => {
+    const k = key.toLowerCase();
+
+    teamASelect.innerHTML +=
+        `<option value="${k}">${team.name}</option>`;
+
+    teamBSelect.innerHTML +=
+        `<option value="${k}">${team.name}</option>`;
+});
+;
 
     numberDiv.innerHTML = `
         <div class="vetos-selectors">

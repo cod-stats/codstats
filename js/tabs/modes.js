@@ -22,7 +22,7 @@ loadMatchData();
 
 
 function buildModeTabs(scores, teams, modeMaps) {
-
+    const ACTIVE_TEAMS = Object.keys(teams).filter(t => teams[t].active);
     const root = document.getElementById("tab-modes");
 
     root.innerHTML = `
@@ -184,38 +184,32 @@ function buildModeTabs(scores, teams, modeMaps) {
     // ===================================================================
 
     function loadTeamButtons() {
-        teamWrapper.innerHTML = "";
+        teamWrapper.innerHTML="";
 
-        Object.keys(teams).forEach(team => {
+        ACTIVE_TEAMS.forEach(team=>{
             const glow = glowColors[team] ?? "#fff";
 
-            const btn = document.createElement("div");
-            btn.className = "team-toggle-btn";
-            btn.dataset.team = team; // IMPORTANT FIX
-            btn.style.setProperty("--teamGlow", glow);
+            const btn=document.createElement("div");
+            btn.className="team-toggle-btn";
+            btn.dataset.team=team;
+            btn.style.setProperty("--teamGlow",glow);
 
-            btn.innerHTML = `
+            btn.innerHTML=`
                 <img src="test1/logos/${team}.webp"
-                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'"
-                     class="team-toggle-logo">
-                <div class="team-toggle-name">${teams[team].name}</div>
+                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'">
+                <div>${teams[team].name}</div>
             `;
 
-            btn.onclick = () => {
-                GM_TEAM = team;
-
-                document.querySelectorAll(".team-toggle-btn")
-                    .forEach(b => b.classList.remove("active"));
+            btn.onclick=()=>{
+                GM_TEAM=team;
+                document.querySelectorAll(".team-toggle-btn").forEach(b=>b.classList.remove("active"));
                 btn.classList.add("active");
-
-                if (GM_MAP) renderModeMap();
-                else results.innerHTML = `<p>Select a map.</p>`;
+                if(GM_MAP) renderModeMap();
             };
 
             teamWrapper.appendChild(btn);
         });
     }
-
     loadTeamButtons();
 
     // ===================================================================
@@ -225,8 +219,8 @@ function buildModeTabs(scores, teams, modeMaps) {
     function loadTeamDropdownVS() {
         teamSelectVS.innerHTML = "";
 
-        Object.keys(teams).forEach(team => {
-            teamSelectVS.innerHTML += `<option value="${team}">${teams[team].name}</option>`;
+        ACTIVE_TEAMS.forEach(team=>{
+            teamSelectVS.innerHTML+=`<option value="${team}">${teams[team].name}</option>`;
         });
 
         teamSelectVS.onchange = () => {
@@ -285,27 +279,33 @@ function buildModeTabs(scores, teams, modeMaps) {
     function loadOpponentDropdown() {
         oppSelect.innerHTML = "";
         if (!GM_TEAM || !GM_MAP) return;
-
+    
         const opps = new Set();
-
+    
         window.matchData.forEach(m => {
             if (
                 norm(m.team) === norm(GM_TEAM) &&
                 norm(m.mode) === norm(GM_MODE) &&
                 norm(m.map) === norm(GM_MAP)
             ) {
-                opps.add(norm(m.opponent));
+                const oppKey = norm(m.opponent);
+    
+                // ✅ only add if opponent exists AND is active
+                if (teams[oppKey]?.active) {
+                    opps.add(oppKey);
+                }
             }
         });
-
+    
         [...opps].sort().forEach(o => {
             oppSelect.innerHTML += `<option value="${o}">${cap(o)}</option>`;
         });
-
+    
         oppSelect.onchange = () => {
             results.innerHTML = `<p>Press RUN to update results.</p>`;
         };
     }
+    
 
     // ===================================================================
     // RUN BUTTON
@@ -523,8 +523,6 @@ function buildModeTabs(scores, teams, modeMaps) {
         return html;
     }
 }
-
-
 
 // Expose globally
 window.buildModeTabs = buildModeTabs;
