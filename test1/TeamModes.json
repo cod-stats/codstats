@@ -7,57 +7,57 @@
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": true,
+        "active": false,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
         "name": "Optic Texas",
-        "active": false,
+        "active": true,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": false,
+        "active": true,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": false,
+        "active": true,
         "players": ["nero", "exceed", "lurqxx", "craze"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "active": true,
+        "active": false,
         "players": ["encourage", "hide", "nejra", "okis"]
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": false,
+        "active": true,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": false,
+        "active": true,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
+        "active": true,
         "players": ["cammy", "nastie", "purj", "snoopy"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": true,
+        "active": false,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
         "active": true,
-        "players": ["cleanx", "insight", "joedeceives", "reeal"]
+        "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": true,
+        "active": false,
         "players": ["abe", "gwinn", "tjhaly", "lunarz"]
       }
     },

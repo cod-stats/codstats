@@ -555,6 +555,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Scar",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Blackheart",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "falcons",
+                    "type": "pick"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "cloud9",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Den",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "cloud9",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Colossus",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "cloud9",
+                    "type": "pick"
+                },
+                {
+                    "map": "Raid",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "falcons",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "falcons:faze": [
@@ -2157,6 +2225,76 @@
             ]
         }
     ],
+    "koi:thieves": [
+        {
+            "hp": [
+                {
+                    "map": "Exposure",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "koi",
+                    "type": "pick"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Scar",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Raid",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "koi",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
     "m8:cloud9": [
         {
             "hp": [
@@ -3266,6 +3404,76 @@
                     "matchMapNumber": 5,
                     "order": 2,
                     "team": "ravens",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
+    "surge:faze": [
+        {
+            "hp": [
+                {
+                    "map": "Blackheart",
+                    "team": "surge",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "surge",
+                    "type": "pick"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "faze",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Exposure",
+                    "team": "surge",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "faze",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Raid",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "team": "surge",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "faze",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "surge",
                     "type": "pick"
                 }
             ]

@@ -416,11 +416,35 @@
                     "totalKills": 156,
                     "updates": 7
                 },
+                "encourage": {
+                    "totalDamage": 3619,
+                    "totalDeaths": 29,
+                    "totalKills": 26,
+                    "updates": 1
+                },
+                "hide": {
+                    "totalDamage": 3775,
+                    "totalDeaths": 29,
+                    "totalKills": 34,
+                    "updates": 1
+                },
                 "mack": {
                     "totalDamage": 22761,
                     "totalDeaths": 204,
                     "totalKills": 173,
                     "updates": 7
+                },
+                "nejra": {
+                    "totalDamage": 3379,
+                    "totalDeaths": 34,
+                    "totalKills": 23,
+                    "updates": 1
+                },
+                "okis": {
+                    "totalDamage": 3118,
+                    "totalDeaths": 32,
+                    "totalKills": 16,
+                    "updates": 1
                 },
                 "vivid": {
                     "totalDamage": 22148,
@@ -469,16 +493,16 @@
                     "updates": 6
                 },
                 "encourage": {
-                    "totalDamage": 3966,
-                    "totalDeaths": 24,
-                    "totalKills": 31,
-                    "updates": 1
+                    "totalDamage": 6499,
+                    "totalDeaths": 44,
+                    "totalKills": 50,
+                    "updates": 2
                 },
                 "hide": {
-                    "totalDamage": 2696,
-                    "totalDeaths": 30,
-                    "totalKills": 22,
-                    "updates": 1
+                    "totalDamage": 4765,
+                    "totalDeaths": 56,
+                    "totalKills": 34,
+                    "updates": 2
                 },
                 "mack": {
                     "totalDamage": 21228,
@@ -487,16 +511,16 @@
                     "updates": 6
                 },
                 "nejra": {
-                    "totalDamage": 4223,
-                    "totalDeaths": 30,
-                    "totalKills": 30,
-                    "updates": 1
+                    "totalDamage": 6304,
+                    "totalDeaths": 53,
+                    "totalKills": 48,
+                    "updates": 2
                 },
                 "okis": {
-                    "totalDamage": 4023,
-                    "totalDeaths": 23,
-                    "totalKills": 25,
-                    "updates": 1
+                    "totalDamage": 6357,
+                    "totalDeaths": 49,
+                    "totalKills": 37,
+                    "updates": 2
                 },
                 "vivid": {
                     "totalDamage": 20335,
@@ -625,16 +649,16 @@
                     "updates": 6
                 },
                 "encourage": {
-                    "totalDamage": 3190,
-                    "totalDeaths": 26,
-                    "totalKills": 22,
-                    "updates": 1
+                    "totalDamage": 5497,
+                    "totalDeaths": 49,
+                    "totalKills": 37,
+                    "updates": 2
                 },
                 "hide": {
-                    "totalDamage": 3565,
-                    "totalDeaths": 27,
-                    "totalKills": 30,
-                    "updates": 1
+                    "totalDamage": 6487,
+                    "totalDeaths": 55,
+                    "totalKills": 55,
+                    "updates": 2
                 },
                 "mack": {
                     "totalDamage": 18562,
@@ -643,16 +667,16 @@
                     "updates": 6
                 },
                 "nejra": {
-                    "totalDamage": 2997,
-                    "totalDeaths": 28,
-                    "totalKills": 32,
-                    "updates": 1
+                    "totalDamage": 5230,
+                    "totalDeaths": 55,
+                    "totalKills": 47,
+                    "updates": 2
                 },
                 "okis": {
-                    "totalDamage": 3085,
-                    "totalDeaths": 31,
-                    "totalKills": 24,
-                    "updates": 1
+                    "totalDamage": 5649,
+                    "totalDeaths": 57,
+                    "totalKills": 44,
+                    "updates": 2
                 },
                 "vivid": {
                     "totalDamage": 18235,
@@ -804,11 +828,35 @@
                     "totalKills": 32789,
                     "updates": 4
                 },
+                "encourage": {
+                    "totalDamage": 1489,
+                    "totalDeaths": 6,
+                    "totalKills": 9,
+                    "updates": 1
+                },
+                "hide": {
+                    "totalDamage": 997,
+                    "totalDeaths": 7,
+                    "totalKills": 7,
+                    "updates": 1
+                },
                 "mack": {
                     "totalDamage": 35873,
                     "totalDeaths": -329956054,
                     "totalKills": 32781,
                     "updates": 4
+                },
+                "nejra": {
+                    "totalDamage": 1006,
+                    "totalDeaths": 6,
+                    "totalKills": 7,
+                    "updates": 1
+                },
+                "okis": {
+                    "totalDamage": 971,
+                    "totalDeaths": 6,
+                    "totalKills": 6,
+                    "updates": 1
                 },
                 "vivid": {
                     "totalDamage": 34835,
@@ -849,28 +897,28 @@
             },
             "Colossus": {
                 "cellium": {
-                    "totalDamage": 27899,
-                    "totalDeaths": 178,
-                    "totalKills": 206,
-                    "updates": 7
+                    "totalDamage": 32667,
+                    "totalDeaths": 200,
+                    "totalKills": 247,
+                    "updates": 8
                 },
                 "exnid": {
-                    "totalDamage": 26040,
-                    "totalDeaths": 193,
-                    "totalKills": 215,
-                    "updates": 7
+                    "totalDamage": 29772,
+                    "totalDeaths": 217,
+                    "totalKills": 245,
+                    "updates": 8
                 },
                 "kismet": {
-                    "totalDamage": 26175,
-                    "totalDeaths": 188,
-                    "totalKills": 207,
-                    "updates": 7
+                    "totalDamage": 30236,
+                    "totalDeaths": 213,
+                    "totalKills": 237,
+                    "updates": 8
                 },
                 "pred": {
-                    "totalDamage": 22989,
-                    "totalDeaths": 190,
-                    "totalKills": 185,
-                    "updates": 7
+                    "totalDamage": 26534,
+                    "totalDeaths": 218,
+                    "totalKills": 208,
+                    "updates": 8
                 }
             },
             "Cortex": {
@@ -901,28 +949,28 @@
             },
             "Den": {
                 "cellium": {
-                    "totalDamage": 14629,
-                    "totalDeaths": 92,
-                    "totalKills": 111,
-                    "updates": 4
+                    "totalDamage": 17073,
+                    "totalDeaths": 106,
+                    "totalKills": 129,
+                    "updates": 5
                 },
                 "exnid": {
-                    "totalDamage": 15435,
-                    "totalDeaths": 125,
-                    "totalKills": 118,
-                    "updates": 4
+                    "totalDamage": 18389,
+                    "totalDeaths": 141,
+                    "totalKills": 141,
+                    "updates": 5
                 },
                 "kismet": {
-                    "totalDamage": 14114,
-                    "totalDeaths": 114,
-                    "totalKills": 103,
-                    "updates": 4
+                    "totalDamage": 16987,
+                    "totalDeaths": 130,
+                    "totalKills": 131,
+                    "updates": 5
                 },
                 "pred": {
-                    "totalDamage": 15232,
-                    "totalDeaths": 112,
-                    "totalKills": 132,
-                    "updates": 4
+                    "totalDamage": 17978,
+                    "totalDeaths": 127,
+                    "totalKills": 157,
+                    "updates": 5
                 }
             },
             "Exposure": {
@@ -1029,6 +1077,32 @@
                     "totalDeaths": 116,
                     "totalKills": 137,
                     "updates": 6
+                }
+            },
+            "Scar": {
+                "cellium": {
+                    "totalDamage": 3126,
+                    "totalDeaths": 18,
+                    "totalKills": 25,
+                    "updates": 1
+                },
+                "exnid": {
+                    "totalDamage": 3286,
+                    "totalDeaths": 14,
+                    "totalKills": 27,
+                    "updates": 1
+                },
+                "kismet": {
+                    "totalDamage": 2954,
+                    "totalDeaths": 25,
+                    "totalKills": 26,
+                    "updates": 1
+                },
+                "pred": {
+                    "totalDamage": 2963,
+                    "totalDeaths": 18,
+                    "totalKills": 26,
+                    "updates": 1
                 }
             }
         },
@@ -1139,28 +1213,28 @@
             },
             "Scar": {
                 "cellium": {
-                    "totalDamage": 2297,
-                    "totalDeaths": 6,
-                    "totalKills": 16,
-                    "updates": 2
+                    "totalDamage": 3890,
+                    "totalDeaths": 14,
+                    "totalKills": 21,
+                    "updates": 3
                 },
                 "exnid": {
-                    "totalDamage": 1775,
-                    "totalDeaths": 7,
-                    "totalKills": 10,
-                    "updates": 2
+                    "totalDamage": 2440,
+                    "totalDeaths": 14,
+                    "totalKills": 14,
+                    "updates": 3
                 },
                 "kismet": {
-                    "totalDamage": 1466,
-                    "totalDeaths": 8,
-                    "totalKills": 13,
-                    "updates": 2
+                    "totalDamage": 2365,
+                    "totalDeaths": 15,
+                    "totalKills": 21,
+                    "updates": 3
                 },
                 "pred": {
-                    "totalDamage": 1996,
-                    "totalDeaths": 8,
-                    "totalKills": 16,
-                    "updates": 2
+                    "totalDamage": 3177,
+                    "totalDeaths": 15,
+                    "totalKills": 24,
+                    "updates": 3
                 }
             }
         }
@@ -1195,28 +1269,28 @@
             },
             "Colossus": {
                 "abuzah": {
-                    "totalDamage": 15418,
-                    "totalDeaths": 110,
-                    "totalKills": 107,
-                    "updates": 4
+                    "totalDamage": 19208,
+                    "totalDeaths": 139,
+                    "totalKills": 136,
+                    "updates": 5
                 },
                 "drazah": {
-                    "totalDamage": 12311,
-                    "totalDeaths": 107,
-                    "totalKills": 101,
-                    "updates": 4
+                    "totalDamage": 15553,
+                    "totalDeaths": 132,
+                    "totalKills": 131,
+                    "updates": 5
                 },
                 "o4": {
-                    "totalDamage": 14105,
-                    "totalDeaths": 115,
-                    "totalKills": 112,
-                    "updates": 4
+                    "totalDamage": 17492,
+                    "totalDeaths": 139,
+                    "totalKills": 140,
+                    "updates": 5
                 },
                 "simp": {
-                    "totalDamage": 14249,
-                    "totalDeaths": 111,
-                    "totalKills": 108,
-                    "updates": 4
+                    "totalDamage": 18768,
+                    "totalDeaths": 136,
+                    "totalKills": 145,
+                    "updates": 5
                 }
             },
             "Den": {
@@ -1301,28 +1375,28 @@
         "overload": {
             "Den": {
                 "abuzah": {
-                    "totalDamage": 27309,
-                    "totalDeaths": 192,
-                    "totalKills": 204,
-                    "updates": 9
+                    "totalDamage": 30740,
+                    "totalDeaths": 213,
+                    "totalKills": 229,
+                    "updates": 10
                 },
                 "drazah": {
-                    "totalDamage": 28644,
-                    "totalDeaths": 199,
-                    "totalKills": 234,
-                    "updates": 9
+                    "totalDamage": 32544,
+                    "totalDeaths": 221,
+                    "totalKills": 263,
+                    "updates": 10
                 },
                 "o4": {
-                    "totalDamage": 24721,
-                    "totalDeaths": 226,
-                    "totalKills": 186,
-                    "updates": 9
+                    "totalDamage": 27467,
+                    "totalDeaths": 249,
+                    "totalKills": 211,
+                    "updates": 10
                 },
                 "simp": {
-                    "totalDamage": 31203,
-                    "totalDeaths": 210,
-                    "totalKills": 249,
-                    "updates": 9
+                    "totalDamage": 33994,
+                    "totalDeaths": 235,
+                    "totalKills": 270,
+                    "updates": 10
                 }
             },
             "Exposure": {
@@ -1407,28 +1481,28 @@
             },
             "Den": {
                 "abuzah": {
-                    "totalDamage": 2916,
-                    "totalDeaths": 14,
-                    "totalKills": 20,
-                    "updates": 3
+                    "totalDamage": 4032,
+                    "totalDeaths": 19,
+                    "totalKills": 30,
+                    "updates": 4
                 },
                 "drazah": {
-                    "totalDamage": 2922,
-                    "totalDeaths": 18,
-                    "totalKills": 18,
-                    "updates": 3
+                    "totalDamage": 3800,
+                    "totalDeaths": 26,
+                    "totalKills": 26,
+                    "updates": 4
                 },
                 "o4": {
-                    "totalDamage": 2664,
-                    "totalDeaths": 18,
-                    "totalKills": 24,
-                    "updates": 3
+                    "totalDamage": 3627,
+                    "totalDeaths": 26,
+                    "totalKills": 31,
+                    "updates": 4
                 },
                 "simp": {
-                    "totalDamage": 2770,
-                    "totalDeaths": 15,
-                    "totalKills": 21,
-                    "updates": 3
+                    "totalDamage": 3522,
+                    "totalDeaths": 23,
+                    "totalKills": 26,
+                    "updates": 4
                 }
             },
             "Exposure": {
@@ -2181,22 +2255,28 @@
             },
             "Colossus": {
                 "cleanx": {
-                    "totalDamage": 22060,
-                    "totalDeaths": 157,
-                    "totalKills": 168,
-                    "updates": 6
+                    "totalDamage": 25181,
+                    "totalDeaths": 188,
+                    "totalKills": 193,
+                    "updates": 7
                 },
                 "insight": {
-                    "totalDamage": 18136,
-                    "totalDeaths": 151,
-                    "totalKills": 132,
-                    "updates": 6
+                    "totalDamage": 20890,
+                    "totalDeaths": 178,
+                    "totalKills": 145,
+                    "updates": 7
                 },
                 "joedeceives": {
-                    "totalDamage": 21473,
-                    "totalDeaths": 146,
-                    "totalKills": 175,
-                    "updates": 6
+                    "totalDamage": 24368,
+                    "totalDeaths": 174,
+                    "totalKills": 196,
+                    "updates": 7
+                },
+                "kips": {
+                    "totalDamage": 3357,
+                    "totalDeaths": 31,
+                    "totalKills": 23,
+                    "updates": 1
                 },
                 "reeal": {
                     "totalDamage": 18030,
@@ -2259,22 +2339,28 @@
             },
             "Scar": {
                 "cleanx": {
-                    "totalDamage": 6878,
-                    "totalDeaths": 50,
-                    "totalKills": 60,
-                    "updates": 2
+                    "totalDamage": 10465,
+                    "totalDeaths": 80,
+                    "totalKills": 89,
+                    "updates": 3
                 },
                 "insight": {
-                    "totalDamage": 5630,
-                    "totalDeaths": 39,
-                    "totalKills": 48,
-                    "updates": 2
+                    "totalDamage": 8874,
+                    "totalDeaths": 68,
+                    "totalKills": 74,
+                    "updates": 3
                 },
                 "joedeceives": {
-                    "totalDamage": 7187,
-                    "totalDeaths": 46,
-                    "totalKills": 53,
-                    "updates": 2
+                    "totalDamage": 10509,
+                    "totalDeaths": 75,
+                    "totalKills": 82,
+                    "updates": 3
+                },
+                "kips": {
+                    "totalDamage": 3763,
+                    "totalDeaths": 30,
+                    "totalKills": 29,
+                    "updates": 1
                 },
                 "reeal": {
                     "totalDamage": 7003,
@@ -2287,22 +2373,28 @@
         "overload": {
             "Den": {
                 "cleanx": {
-                    "totalDamage": 20091,
-                    "totalDeaths": 143,
-                    "totalKills": 147,
-                    "updates": 6
+                    "totalDamage": 23411,
+                    "totalDeaths": 164,
+                    "totalKills": 172,
+                    "updates": 7
                 },
                 "insight": {
-                    "totalDamage": 16123,
-                    "totalDeaths": 115,
-                    "totalKills": 131,
-                    "updates": 6
+                    "totalDamage": 19334,
+                    "totalDeaths": 137,
+                    "totalKills": 162,
+                    "updates": 7
                 },
                 "joedeceives": {
-                    "totalDamage": 18936,
-                    "totalDeaths": 132,
-                    "totalKills": 153,
-                    "updates": 6
+                    "totalDamage": 22348,
+                    "totalDeaths": 152,
+                    "totalKills": 185,
+                    "updates": 7
+                },
+                "kips": {
+                    "totalDamage": 2854,
+                    "totalDeaths": 20,
+                    "totalKills": 19,
+                    "updates": 1
                 },
                 "reeal": {
                     "totalDamage": 16875,
@@ -2367,22 +2459,28 @@
         "snd": {
             "Colossus": {
                 "cleanx": {
-                    "totalDamage": 2886,
-                    "totalDeaths": 20,
-                    "totalKills": 16,
-                    "updates": 3
+                    "totalDamage": 4171,
+                    "totalDeaths": 28,
+                    "totalKills": 27,
+                    "updates": 4
                 },
                 "insight": {
-                    "totalDamage": 2312,
-                    "totalDeaths": 19,
-                    "totalKills": 11,
-                    "updates": 3
+                    "totalDamage": 3651,
+                    "totalDeaths": 26,
+                    "totalKills": 19,
+                    "updates": 4
                 },
                 "joedeceives": {
-                    "totalDamage": 2573,
-                    "totalDeaths": 20,
-                    "totalKills": 19,
-                    "updates": 3
+                    "totalDamage": 3481,
+                    "totalDeaths": 26,
+                    "totalKills": 24,
+                    "updates": 4
+                },
+                "kips": {
+                    "totalDamage": 1299,
+                    "totalDeaths": 6,
+                    "totalKills": 7,
+                    "updates": 1
                 },
                 "reeal": {
                     "totalDamage": 1917,
@@ -3745,16 +3843,16 @@
         "hp": {
             "Colossus": {
                 "abe": {
-                    "totalDamage": 13475,
-                    "totalDeaths": 106,
-                    "totalKills": 105,
-                    "updates": 4
+                    "totalDamage": 16736,
+                    "totalDeaths": 138,
+                    "totalKills": 127,
+                    "updates": 5
                 },
                 "gwinn": {
-                    "totalDamage": 14065,
-                    "totalDeaths": 118,
-                    "totalKills": 115,
-                    "updates": 4
+                    "totalDamage": 17576,
+                    "totalDeaths": 151,
+                    "totalKills": 138,
+                    "updates": 5
                 },
                 "lqgend": {
                     "totalDamage": 7563,
@@ -3763,16 +3861,16 @@
                     "updates": 3
                 },
                 "lunarz": {
-                    "totalDamage": 14363,
-                    "totalDeaths": 99,
-                    "totalKills": 102,
-                    "updates": 4
+                    "totalDamage": 18354,
+                    "totalDeaths": 127,
+                    "totalKills": 136,
+                    "updates": 5
                 },
                 "tjhaly": {
-                    "totalDamage": 3718,
-                    "totalDeaths": 30,
-                    "totalKills": 33,
-                    "updates": 1
+                    "totalDamage": 6981,
+                    "totalDeaths": 61,
+                    "totalKills": 57,
+                    "updates": 2
                 }
             },
             "Den": {
@@ -3863,16 +3961,16 @@
         "overload": {
             "Den": {
                 "abe": {
-                    "totalDamage": 16912,
-                    "totalDeaths": 146,
-                    "totalKills": 132,
-                    "updates": 6
+                    "totalDamage": 19863,
+                    "totalDeaths": 174,
+                    "totalKills": 153,
+                    "updates": 7
                 },
                 "gwinn": {
-                    "totalDamage": 19707,
-                    "totalDeaths": 154,
-                    "totalKills": 149,
-                    "updates": 6
+                    "totalDamage": 22471,
+                    "totalDeaths": 174,
+                    "totalKills": 172,
+                    "updates": 7
                 },
                 "lqgend": {
                     "totalDamage": 7517,
@@ -3881,16 +3979,16 @@
                     "updates": 3
                 },
                 "lunarz": {
-                    "totalDamage": 18493,
-                    "totalDeaths": 127,
-                    "totalKills": 128,
-                    "updates": 6
+                    "totalDamage": 21649,
+                    "totalDeaths": 150,
+                    "totalKills": 148,
+                    "updates": 7
                 },
                 "tjhaly": {
-                    "totalDamage": 9253,
-                    "totalDeaths": 82,
-                    "totalKills": 72,
-                    "updates": 3
+                    "totalDamage": 12752,
+                    "totalDeaths": 111,
+                    "totalKills": 99,
+                    "updates": 4
                 }
             },
             "Exposure": {
@@ -3981,16 +4079,16 @@
             },
             "Den": {
                 "abe": {
-                    "totalDamage": 4227,
-                    "totalDeaths": 35,
-                    "totalKills": 28,
-                    "updates": 5
+                    "totalDamage": 5060,
+                    "totalDeaths": 42,
+                    "totalKills": 35,
+                    "updates": 6
                 },
                 "gwinn": {
-                    "totalDamage": 4358,
-                    "totalDeaths": 33,
-                    "totalKills": 26,
-                    "updates": 5
+                    "totalDamage": 5179,
+                    "totalDeaths": 41,
+                    "totalKills": 31,
+                    "updates": 6
                 },
                 "lqgend": {
                     "totalDamage": 1350,
@@ -3999,16 +4097,16 @@
                     "updates": 2
                 },
                 "lunarz": {
-                    "totalDamage": 4464,
-                    "totalDeaths": 32,
-                    "totalKills": 29,
-                    "updates": 5
+                    "totalDamage": 5726,
+                    "totalDeaths": 40,
+                    "totalKills": 38,
+                    "updates": 6
                 },
                 "tjhaly": {
-                    "totalDamage": 2318,
-                    "totalDeaths": 15,
-                    "totalKills": 18,
-                    "updates": 3
+                    "totalDamage": 3265,
+                    "totalDeaths": 22,
+                    "totalKills": 26,
+                    "updates": 4
                 }
             },
             "Exposure": {
@@ -4189,16 +4287,16 @@
             },
             "Colossus": {
                 "abezy": {
-                    "totalDamage": 9910,
-                    "totalDeaths": 73,
-                    "totalKills": 83,
-                    "updates": 3
+                    "totalDamage": 13075,
+                    "totalDeaths": 92,
+                    "totalKills": 113,
+                    "updates": 4
                 },
                 "hydra": {
-                    "totalDamage": 9814,
-                    "totalDeaths": 87,
-                    "totalKills": 72,
-                    "updates": 3
+                    "totalDamage": 13536,
+                    "totalDeaths": 106,
+                    "totalKills": 107,
+                    "updates": 4
                 },
                 "kenny": {
                     "totalDamage": 6560,
@@ -4207,16 +4305,16 @@
                     "updates": 2
                 },
                 "nium": {
-                    "totalDamage": 3276,
-                    "totalDeaths": 22,
-                    "totalKills": 25,
-                    "updates": 1
+                    "totalDamage": 5732,
+                    "totalDeaths": 42,
+                    "totalKills": 49,
+                    "updates": 2
                 },
                 "scrap": {
-                    "totalDamage": 11159,
-                    "totalDeaths": 83,
-                    "totalKills": 84,
-                    "updates": 3
+                    "totalDamage": 14985,
+                    "totalDeaths": 107,
+                    "totalKills": 111,
+                    "updates": 4
                 }
             },
             "Den": {
@@ -4279,16 +4377,16 @@
             },
             "Scar": {
                 "abezy": {
-                    "totalDamage": 25759,
-                    "totalDeaths": 203,
-                    "totalKills": 195,
-                    "updates": 7
+                    "totalDamage": 29010,
+                    "totalDeaths": 221,
+                    "totalKills": 225,
+                    "updates": 8
                 },
                 "hydra": {
-                    "totalDamage": 27153,
-                    "totalDeaths": 231,
-                    "totalKills": 222,
-                    "updates": 7
+                    "totalDamage": 30571,
+                    "totalDeaths": 262,
+                    "totalKills": 251,
+                    "updates": 8
                 },
                 "kenny": {
                     "totalDamage": 21705,
@@ -4297,32 +4395,32 @@
                     "updates": 6
                 },
                 "nium": {
-                    "totalDamage": 3787,
-                    "totalDeaths": 32,
-                    "totalKills": 27,
-                    "updates": 1
+                    "totalDamage": 7219,
+                    "totalDeaths": 64,
+                    "totalKills": 48,
+                    "updates": 2
                 },
                 "scrap": {
-                    "totalDamage": 31328,
-                    "totalDeaths": 219,
-                    "totalKills": 240,
-                    "updates": 7
+                    "totalDamage": 36281,
+                    "totalDeaths": 251,
+                    "totalKills": 278,
+                    "updates": 8
                 }
             }
         },
         "overload": {
             "Den": {
                 "abezy": {
-                    "totalDamage": 21636,
-                    "totalDeaths": 178,
-                    "totalKills": 175,
-                    "updates": 8
+                    "totalDamage": 24302,
+                    "totalDeaths": 208,
+                    "totalKills": 196,
+                    "updates": 9
                 },
                 "hydra": {
-                    "totalDamage": 23465,
-                    "totalDeaths": 183,
-                    "totalKills": 203,
-                    "updates": 8
+                    "totalDamage": 26245,
+                    "totalDeaths": 208,
+                    "totalKills": 223,
+                    "updates": 9
                 },
                 "kenny": {
                     "totalDamage": 15670,
@@ -4331,16 +4429,16 @@
                     "updates": 6
                 },
                 "nium": {
-                    "totalDamage": 5556,
-                    "totalDeaths": 44,
-                    "totalKills": 44,
-                    "updates": 2
+                    "totalDamage": 8313,
+                    "totalDeaths": 72,
+                    "totalKills": 63,
+                    "updates": 3
                 },
                 "scrap": {
-                    "totalDamage": 26342,
-                    "totalDeaths": 181,
-                    "totalKills": 195,
-                    "updates": 8
+                    "totalDamage": 29678,
+                    "totalDeaths": 205,
+                    "totalKills": 217,
+                    "updates": 9
                 }
             },
             "Exposure": {
@@ -4399,16 +4497,16 @@
         "snd": {
             "Colossus": {
                 "abezy": {
-                    "totalDamage": 6237,
-                    "totalDeaths": 48,
-                    "totalKills": 43,
-                    "updates": 7
+                    "totalDamage": 7575,
+                    "totalDeaths": 55,
+                    "totalKills": 52,
+                    "updates": 8
                 },
                 "hydra": {
-                    "totalDamage": 5747,
-                    "totalDeaths": 45,
-                    "totalKills": 39,
-                    "updates": 7
+                    "totalDamage": 6604,
+                    "totalDeaths": 54,
+                    "totalKills": 45,
+                    "updates": 8
                 },
                 "kenny": {
                     "totalDamage": 5269,
@@ -4417,16 +4515,16 @@
                     "updates": 6
                 },
                 "nium": {
-                    "totalDamage": 1029,
-                    "totalDeaths": 7,
-                    "totalKills": 6,
-                    "updates": 1
+                    "totalDamage": 2080,
+                    "totalDeaths": 15,
+                    "totalKills": 10,
+                    "updates": 2
                 },
                 "scrap": {
-                    "totalDamage": 7473,
-                    "totalDeaths": 43,
-                    "totalKills": 54,
-                    "updates": 7
+                    "totalDamage": 8657,
+                    "totalDeaths": 50,
+                    "totalKills": 62,
+                    "updates": 8
                 }
             },
             "Den": {
