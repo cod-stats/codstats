@@ -417,6 +417,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Den",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Blackheart",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "breach",
+                    "type": "pick"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Scar",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Raid",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "breach",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "falcons:cloud9": [
@@ -1531,6 +1599,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Exposure",
+                    "team": "g2",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "g2",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "koi",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Exposure",
+                    "team": "g2",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "koi",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Scar",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "team": "g2",
+                    "type": "ban"
+                },
+                {
+                    "map": "Raid",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "koi",
+                    "type": "pick"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "g2",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "g2:optic": [
@@ -1937,6 +2073,76 @@
                     "matchMapNumber": 2,
                     "order": 1,
                     "team": "m8",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "heretics",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
+    "heretics:optic": [
+        {
+            "hp": [
+                {
+                    "map": "Colossus",
+                    "team": "heretics",
+                    "type": "ban"
+                },
+                {
+                    "map": "Blackheart",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "heretics",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "optic",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Den",
+                    "team": "heretics",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "optic",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Colossus",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "team": "heretics",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "optic",
                     "type": "pick"
                 },
                 {
@@ -3123,6 +3329,76 @@
                 },
                 {
                     "map": "Den",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "ravens",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
+    "ravens:m8": [
+        {
+            "hp": [
+                {
+                    "map": "Den",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Blackheart",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "ravens",
+                    "type": "pick"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "m8",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Scar",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "m8",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Den",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Raid",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "m8",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
                     "matchMapNumber": 5,
                     "order": 2,
                     "team": "ravens",

@@ -2,12 +2,12 @@
     "teams": {
       "thieves": {
         "name": "Los Angeles Thieves",
-        "active": true,
+        "active": false,
         "players": ["hydra", "scrap", "nium", "abezy"]
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
@@ -17,7 +17,7 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": true,
+        "active": false,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
@@ -27,7 +27,7 @@
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "active": false,
+        "active": true,
         "players": ["encourage", "hide", "nejra", "okis"]
       },
       "g2": {
@@ -37,7 +37,7 @@
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": true,
+        "active": false,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
@@ -47,17 +47,17 @@
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": false,
+        "active": true,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": true,
+        "active": false,
         "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": false,
+        "active": true,
         "players": ["abe", "gwinn", "tjhaly", "lunarz"]
       }
     },
