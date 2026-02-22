@@ -112,6 +112,9 @@ async function initPage() {
         window.DYNAMIC_TEAMS    = config.teams;
         window.DYNAMIC_MODEMAPS = config.modes;
 
+        // ✅ Make matchData global for buildModeTabs
+        window.matchData = matches;
+
         // ========================================
         // Compute durationSec if missing
         // ========================================
@@ -136,6 +139,7 @@ async function initPage() {
         buildModeTabs(scores, config.teams, config.modes);
         buildLast5Tabs(scores, matches, config.teams, config.modes);
         buildMatchesTabs(matches, config.teams, config.modes);
+        //buildLanTab(config.teams, DYNAMIC_MODEMAPS);
 
         // ========================================
         // Normalize mapVetos keys (all lowercase)
