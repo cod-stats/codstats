@@ -1353,3 +1353,123 @@ MATCHES
 .teamBox:hover {
     box-shadow: 0 0 25px var(--glow, #fff);
 }
+
+/* ============================================================
+   TRUE MOBILE FIT — NO HORIZONTAL SCROLL
+   ============================================================ */
+
+   @media (max-width: 768px) {
+
+    /* Reduce overall spacing */
+    .modes-container {
+        padding: 8px;
+    }
+
+    .mapHeader,
+    .bp-title {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .teamBox {
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px var(--glow); /* softer glow */
+    }
+
+    .teamBox img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .teamTitle {
+        font-size: 14px;
+    }
+
+    /* TABLE SHRINK STRATEGY */
+    .playerTable {
+        width: 100%;
+        table-layout: fixed;   /* force equal column sizing */
+        font-size: 11px;       /* shrink text */
+    }
+
+    .playerTable th,
+    .playerTable td {
+        padding: 6px 4px;
+        white-space: normal;   /* allow wrapping */
+        word-break: break-word;
+    }
+
+    /* Make headers tighter */
+    .playerTable th {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Reduce column widths proportionally */
+    .playerTable th:nth-child(1),
+    .playerTable td:nth-child(1) {
+        width: 18%;
+    }
+
+    .playerTable th:nth-child(2),
+    .playerTable td:nth-child(2) {
+        width: 14%;
+    }
+
+    .playerTable th:nth-child(3),
+    .playerTable td:nth-child(3),
+    .playerTable th:nth-child(4),
+    .playerTable td:nth-child(4),
+    .playerTable th:nth-child(5),
+    .playerTable td:nth-child(5),
+    .playerTable th:nth-child(6),
+    .playerTable td:nth-child(6) {
+        width: 17%;
+    }
+
+    /* Summary footer stacks */
+    .mode-summary-footer {
+        font-size: 11px;
+        text-align: center;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    /* Toggle buttons smaller */
+    .gm-view-btn,
+    .bp-toggle-btn {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    /* Map grid */
+    .gm-map-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .gm-map-thumb {
+        height: 65px;
+    }
+
+    .gm-map-name {
+        font-size: 11px;
+    }
+
+    /* VS layout stack */
+    .vs-flex-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .vs-col {
+        width: 100%;
+    }
+
+    .bp-run-btn {
+        width: 100%;
+        font-size: 12px;
+    }
+}
