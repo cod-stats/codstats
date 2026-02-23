@@ -12,7 +12,7 @@
       },
       "optic": {
         "name": "Optic Texas",
-        "active": true,
+        "active": false,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
@@ -32,12 +32,12 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": true,
+        "active": false,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": false,
+        "active": true,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
@@ -57,7 +57,7 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": true,
+        "active": false,
         "players": ["abe", "gwinn", "tjhaly", "lunarz"]
       }
     },
