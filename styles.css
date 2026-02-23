@@ -1473,3 +1473,100 @@ MATCHES
         font-size: 12px;
     }
 }
+/* ============================ */
+/* WHO PLAYS NEXT HEADING */
+/* ============================ */
+.next-matches-title {
+    text-align: center;
+    font-size: 32px;       /* bigger font */
+    font-weight: 800;      /* extra bold */
+    margin: 30px 0 20px 0; /* spacing above & below */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255,70,85,0.7);
+}
+
+/* ============================ */
+/* NEXT MATCHES GRID */
+/* ============================ */
+.next-matches-grid {
+    width: 95%;
+    max-width: 1300px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center; /* centers items if less than full row */
+}
+
+/* ============================ */
+/* NEXT MATCH CARD */
+/* ============================ */
+.next-match-card {
+    background: #1a1a1a;           /* dark card background */
+    border: 1px solid #2a2a2a;     /* subtle border */
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.next-match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 70, 85, 0.4);
+    border-color: #ff4655;
+}
+
+/* ============================ */
+/* TEAM + VS WRAPPER */
+/* ============================ */
+.next-team-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ============================ */
+/* INDIVIDUAL TEAM */
+/* ============================ */
+.next-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.next-team img {
+    width: 80px;        /* large broadcast-style logos */
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    transition: transform 0.2s ease;
+}
+
+.next-team img:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: remove names under logos for a cleaner broadcast look */
+.next-team span {
+    display: none;      /* hide team names */
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ============================ */
+/* VS STYLE */
+/* ============================ */
+.next-vs {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff4655;
+    text-shadow: 0 0 6px rgba(255,70,85,0.8);
+    user-select: none;
+}
+

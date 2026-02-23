@@ -27,6 +27,107 @@ function computeDuration(start, end) {
 }
 
 // ============================================================
+// FIND TEAM KEY BY NAME
+// ============================================================
+function getTeamKeyByName(name, teams) {
+    for (const key in teams) {
+        if (teams[key].name.toLowerCase() === name.toLowerCase()) {
+            return key;
+        }
+    }
+    return null;
+}
+
+// ============================================================
+// INSERT NEXT MATCHES SECTION (UNDER TAB CONTENT)
+// ============================================================
+function insertNextMatchesContainer() {
+
+    if (document.getElementById("next-matches")) return;
+
+    const container = document.createElement("div");
+    container.id = "next-matches";
+    container.className = "next-matches";
+
+    container.innerHTML = `
+    <h2 class="next-matches-title">Next Matches:</h2>
+    <div id="next-matches-grid" class="next-matches-grid"></div>
+        <div id="next-matches-grid" class="next-matches-grid"></div>
+    `;
+
+    // Insert before first tab-content
+    const firstTabContent = document.querySelector(".tab-content");
+    if (firstTabContent) {
+        firstTabContent.parentNode.insertBefore(container, firstTabContent);
+    }
+}
+
+// ============================================================
+// BUILD NEXT MATCHES (LOGOS FROM TEAM KEY)
+// ============================================================
+function buildNextMatches(upcomingMatches, teams) {
+    const grid = document.getElementById("next-matches-grid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    if (!upcomingMatches || !upcomingMatches.length) {
+        grid.innerHTML = `<div style="color:#aaa;">No upcoming matches</div>`;
+        return;
+    }
+
+    // Max 8 matches (2 rows of 4)
+    upcomingMatches.slice(0, 8).forEach(match => {
+
+        const nameA = match.teamA;
+        const nameB = match.teamB;
+
+        // Find team key based on full team name
+        let keyA = null, keyB = null;
+        for (const key in teams) {
+            if (teams[key].name.toLowerCase() === nameA.toLowerCase()) keyA = key;
+            if (teams[key].name.toLowerCase() === nameB.toLowerCase()) keyB = key;
+        }
+
+        // Fallback to sanitized team name if key not found
+        keyA = keyA || nameA.toLowerCase().replace(/\s+/g, "");
+        keyB = keyB || nameB.toLowerCase().replace(/\s+/g, "");
+
+        const logoA_webp = `test1/logos/${keyA}.webp`;
+        const logoA_png  = `test1/logos/${keyA}.png`;
+        const logoB_webp = `test1/logos/${keyB}.webp`;
+        const logoB_png  = `test1/logos/${keyB}.png`;
+
+        const card = document.createElement("div");
+        card.className = "next-match-card";
+
+        card.innerHTML = `
+            <div class="next-team-wrapper">
+
+                <div class="next-team">
+                    <img src="${logoA_webp}" 
+                         onerror="this.onerror=null;this.src='${logoA_png}'" 
+                         alt="${nameA}" />
+                    <span>${nameA}</span>
+                </div>
+
+                <div class="next-vs">VS</div>
+
+                <div class="next-team">
+                    <img src="${logoB_webp}" 
+                         onerror="this.onerror=null;this.src='${logoB_png}'" 
+                         alt="${nameB}" />
+                    <span>${nameB}</span>
+                </div>
+
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+// ============================================================
 // POPULATE TEAM DROPDOWNS
 // ============================================================
 function populateTeamDropdowns(teams) {
@@ -65,7 +166,7 @@ function initTabHeaderUI() {
         contents.forEach(c => {
             if (c.id === "tab-" + name) {
                 c.classList.add("activeTab");
-                void c.offsetWidth; // force reflow
+                void c.offsetWidth;
             } else {
                 c.classList.remove("activeTab");
             }
@@ -85,7 +186,6 @@ function initTabHeaderUI() {
 
     tabs.forEach(t => t.addEventListener("click", () => activate(t.dataset.tab)));
 
-    // Initial tab
     if (tabs.length) activate(tabs[0].dataset.tab);
 }
 
@@ -94,30 +194,23 @@ function initTabHeaderUI() {
 // ============================================================
 async function initPage() {
     try {
-        // ========================================
-        // Load all JSON (cache-busted)
-        // ========================================
+
         const scores   = await loadJSON("test1/scores.json");
         const matches  = await loadJSON("test1/matches.json");
-        const config   = await loadJSON("test1/TeamModes.json"); // combined teams+modes
+        const config   = await loadJSON("test1/TeamModes.json");
         const mapVetos = await loadJSON("test1/mapvetos.json");
 
         if (!scores || !matches || !config || !mapVetos) {
             throw new Error("Failed to load all required JSON files.");
         }
 
-        // Attach to globals for debugging
         window.DYNAMIC_SCORES   = scores;
         window.DYNAMIC_MATCHES  = matches;
         window.DYNAMIC_TEAMS    = config.teams;
         window.DYNAMIC_MODEMAPS = config.modes;
+        window.matchData        = matches;
 
-        // ✅ Make matchData global for buildModeTabs
-        window.matchData = matches;
-
-        // ========================================
-        // Compute durationSec if missing
-        // ========================================
+        // Compute duration if missing
         matches.forEach(m => {
             if (!m.durationSec || m.durationSec <= 0) {
                 if (m.start && m.end) {
@@ -128,37 +221,26 @@ async function initPage() {
                 }
             }
 
-            // Enrich matches with full team data
             m.teamA_full = config.teams[m.teamA] || { name: m.teamA, players: [] };
             m.teamB_full = config.teams[m.teamB] || { name: m.teamB, players: [] };
         });
 
-        // ========================================
-        // BUILD UI TABS
-        // ========================================
+        // BUILD TABS
         buildModeTabs(scores, config.teams, config.modes);
         buildLast5Tabs(scores, matches, config.teams, config.modes);
         buildMatchesTabs(matches, config.teams, config.modes);
-        //buildLanTab(config.teams, DYNAMIC_MODEMAPS);
 
-        // ========================================
-        // Normalize mapVetos keys (all lowercase)
-        // ========================================
+        // Normalize mapVetos
         const normalizedMapVetos = {};
         Object.entries(mapVetos).forEach(([key, value]) => {
             const [a, b] = key.split(":");
             normalizedMapVetos[`${a.toLowerCase()}:${b.toLowerCase()}`] = value;
         });
+
         window.DYNAMIC_MAPVETOS = normalizedMapVetos;
 
-        // ========================================
-        // Populate team dropdowns for veto tab
-        // ========================================
         populateTeamDropdowns(config.teams);
 
-        // ========================================
-        // Load vetos tab (handles its own button click)
-        // ========================================
         loadVetos(
             window.DYNAMIC_MAPVETOS,
             config.teams,
@@ -166,12 +248,14 @@ async function initPage() {
             config.modes
         );
 
-        // ========================================
-        // Activate tab underline + tab switching
-        // ========================================
+        // 🔥 INSERT + BUILD NEXT MATCHES
+        insertNextMatchesContainer();
+        buildNextMatches(config.upcomingMatches || [], config.teams);
+
         initTabHeaderUI();
 
         console.log("%c✔ INIT COMPLETE", "color: #33ff33; font-size:16px;");
+
     } catch (err) {
         console.error("INIT ERROR:", err);
         alert("Error loading JSON data. Check console.");
