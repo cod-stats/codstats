@@ -3,25 +3,7 @@
 // OVERALL AVG + AVG VS OPPONENT (WITH RUN BUTTON IN VS MODE)
 // ============================================================
 
-// Global match list (loaded once)
-window.matchData = [];
-
-async function loadMatchData() {
-    try {
-        const res = await fetch("test1/matches.json");
-        const data = await res.json();
-        window.matchData = data;
-        console.log("Loaded matchData:", window.matchData.length, "matches");
-    } catch (err) {
-        console.error("Failed to load matches.json", err);
-        window.matchData = [];
-    }
-}
-loadMatchData();
-
-
-
-function buildModeTabs(scores, teams, modeMaps) {
+function buildModeTabs(teams, modeMaps) {
     const ACTIVE_TEAMS = Object.keys(teams).filter(t => teams[t].active);
     const root = document.getElementById("tab-modes");
 

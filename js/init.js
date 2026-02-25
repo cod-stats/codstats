@@ -39,7 +39,7 @@ function getTeamKeyByName(name, teams) {
 }
 
 // ============================================================
-// INSERT NEXT MATCHES SECTION (UNDER TAB CONTENT)
+// INSERT NEXT MATCHES SECTION
 // ============================================================
 function insertNextMatchesContainer() {
 
@@ -50,12 +50,10 @@ function insertNextMatchesContainer() {
     container.className = "next-matches";
 
     container.innerHTML = `
-    <h2 class="next-matches-title">Next Matches:</h2>
-    <div id="next-matches-grid" class="next-matches-grid"></div>
+        <h2 class="next-matches-title">Next Matches:</h2>
         <div id="next-matches-grid" class="next-matches-grid"></div>
     `;
 
-    // Insert before first tab-content
     const firstTabContent = document.querySelector(".tab-content");
     if (firstTabContent) {
         firstTabContent.parentNode.insertBefore(container, firstTabContent);
@@ -63,7 +61,7 @@ function insertNextMatchesContainer() {
 }
 
 // ============================================================
-// BUILD NEXT MATCHES (LOGOS FROM TEAM KEY)
+// BUILD NEXT MATCHES
 // ============================================================
 function buildNextMatches(upcomingMatches, teams) {
     const grid = document.getElementById("next-matches-grid");
@@ -76,20 +74,17 @@ function buildNextMatches(upcomingMatches, teams) {
         return;
     }
 
-    // Max 8 matches (2 rows of 4)
     upcomingMatches.slice(0, 8).forEach(match => {
 
         const nameA = match.teamA;
         const nameB = match.teamB;
 
-        // Find team key based on full team name
         let keyA = null, keyB = null;
         for (const key in teams) {
             if (teams[key].name.toLowerCase() === nameA.toLowerCase()) keyA = key;
             if (teams[key].name.toLowerCase() === nameB.toLowerCase()) keyB = key;
         }
 
-        // Fallback to sanitized team name if key not found
         keyA = keyA || nameA.toLowerCase().replace(/\s+/g, "");
         keyB = keyB || nameB.toLowerCase().replace(/\s+/g, "");
 
@@ -103,7 +98,6 @@ function buildNextMatches(upcomingMatches, teams) {
 
         card.innerHTML = `
             <div class="next-team-wrapper">
-
                 <div class="next-team">
                     <img src="${logoA_webp}" 
                          onerror="this.onerror=null;this.src='${logoA_png}'" 
@@ -119,7 +113,6 @@ function buildNextMatches(upcomingMatches, teams) {
                          alt="${nameB}" />
                     <span>${nameB}</span>
                 </div>
-
             </div>
         `;
 
@@ -152,7 +145,7 @@ function populateTeamDropdowns(teams) {
 }
 
 // ============================================================
-// TAB HEADER UI — underline animation + switching
+// TAB HEADER UI
 // ============================================================
 function initTabHeaderUI() {
     const tabs = document.querySelectorAll(".tab");
@@ -190,21 +183,19 @@ function initTabHeaderUI() {
 }
 
 // ============================================================
-// INIT SYSTEM — MAIN ENTRY POINT
+// INIT SYSTEM — UPDATED (NO scores.json)
 // ============================================================
 async function initPage() {
     try {
 
-        const scores   = await loadJSON("test1/scores.json");
         const matches  = await loadJSON("test1/matches.json");
         const config   = await loadJSON("test1/TeamModes.json");
         const mapVetos = await loadJSON("test1/mapvetos.json");
 
-        if (!scores || !matches || !config || !mapVetos) {
-            throw new Error("Failed to load all required JSON files.");
+        if (!matches || !config || !mapVetos) {
+            throw new Error("Failed to load required JSON files.");
         }
 
-        window.DYNAMIC_SCORES   = scores;
         window.DYNAMIC_MATCHES  = matches;
         window.DYNAMIC_TEAMS    = config.teams;
         window.DYNAMIC_MODEMAPS = config.modes;
@@ -225,9 +216,9 @@ async function initPage() {
             m.teamB_full = config.teams[m.teamB] || { name: m.teamB, players: [] };
         });
 
-        // BUILD TABS
-        buildModeTabs(scores, config.teams, config.modes);
-        buildLast5Tabs(scores, matches, config.teams, config.modes);
+        // BUILD TABS (no scores passed anymore)
+        buildModeTabs(config.teams, config.modes, matches);
+        buildLast5Tabs(matches, config.teams, config.modes);
         buildMatchesTabs(matches, config.teams, config.modes);
 
         // Normalize mapVetos
@@ -248,7 +239,6 @@ async function initPage() {
             config.modes
         );
 
-        // 🔥 INSERT + BUILD NEXT MATCHES
         insertNextMatchesContainer();
         buildNextMatches(config.upcomingMatches || [], config.teams);
 

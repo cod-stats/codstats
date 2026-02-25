@@ -1,12 +1,11 @@
 // ============================================================
-// LAST 5 MATCHES — CLEAN FINAL VERSION WITH LABELS WORKING
+// LAST 5 MATCHES — CLEAN FINAL VERSION
 // ============================================================
 
-// GLOBAL STATE (must appear ONLY ONCE)
-let L5_VIEW = "overall";     // overall | vs
-let L5_MODE = "hp";          // hp | snd | overload
-let L5_MAP = "";             // selected map or ""
-
+// GLOBAL STATE
+let L5_VIEW = "overall";
+let L5_MODE = "hp";
+let L5_MAP = "";
 
 // ============================================================
 // DATE FORMATTER
@@ -19,9 +18,8 @@ function formatMatchDate(dateStr) {
         : d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
-
 // ============================================================
-// DURATION FORMATTER (SECONDS → MM:SS)
+// DURATION FORMATTER
 // ============================================================
 function formatDuration(sec) {
     if (sec == null || isNaN(sec)) return "—";
@@ -30,20 +28,18 @@ function formatDuration(sec) {
     return `${m}:${String(s).padStart(2, "0")}`;
 }
 
-
 // ============================================================
-// BUILD TAB
+// BUILD TAB (UPDATED — no scores)
 // ============================================================
-function buildLast5Tabs(scores, matches, teams, modeMaps) {
+function buildLast5Tabs(matches, teams, modeMaps) {
 
-    const ACTIVE_TEAMS = Object.keys(teams).filter(t=>teams[t].active);
+    const ACTIVE_TEAMS = Object.keys(teams).filter(t => teams[t].active);
 
     const teamsHtml = ACTIVE_TEAMS
-        .map(t=>`<option value="${t}">${cap(teams[t].name)}</option>`)
+        .map(t => `<option value="${t}">${cap(teams[t].name)}</option>`)
         .join("");
 
     const firstTeam = ACTIVE_TEAMS[0];
-
     const root = document.getElementById("tab-last5");
 
     root.innerHTML = `

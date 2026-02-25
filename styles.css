@@ -1570,3 +1570,38 @@ MATCHES
     user-select: none;
 }
 
+/* ============================ */
+/* MOBILE — HORIZONTAL SCROLL */
+/* ============================ */
+@media (max-width: 768px) {
+
+    .next-matches-grid {
+        display: flex;                 /* switch from grid to row */
+        overflow-x: auto;              /* enable horizontal scroll */
+        gap: 12px;
+        padding: 10px;
+        scroll-snap-type: x mandatory; /* smooth snap scroll */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .next-matches-grid::-webkit-scrollbar {
+        display: none; /* hide scrollbar on mobile */
+    }
+
+    .next-match-card {
+        min-width: 220px;              /* card width */
+        flex: 0 0 auto;                /* prevent shrinking */
+        scroll-snap-align: center;     /* snap to center */
+        padding: 15px;
+    }
+
+    .next-team img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .next-vs {
+        font-size: 16px;
+    }
+}
+
