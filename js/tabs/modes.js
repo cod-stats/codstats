@@ -151,15 +151,28 @@ root.innerHTML = `
                     .forEach(c => c.classList.remove("active"));
                 card.classList.add("active");
 
-                // AUTO-SELECT FIRST TEAM IF NONE IS PICKED
-                if (!GM_TEAM) {
-                    const firstTeam = Object.keys(teams)[0];
-                    GM_TEAM = firstTeam;
-
-                    document.querySelectorAll(".team-toggle-btn").forEach(b => b.classList.remove("active"));
-                    const btn = document.querySelector(`.team-toggle-btn[data-team="${firstTeam}"]`);
-                    if (btn) btn.classList.add("active");
-                }
+                card.onclick = () => {
+                    GM_MAP = map;
+                
+                    document.querySelectorAll(".gm-map-card")
+                        .forEach(c => c.classList.remove("active"));
+                    card.classList.add("active");
+                
+                    if (GM_VIEW === "vsOpp") {
+                        if (GM_TEAM) {
+                            loadOpponentDropdown();
+                            results.innerHTML = `<p>Select opponent then RUN.</p>`;
+                        }
+                        return;
+                    }
+                
+                    // ✅ Only render if BOTH selected
+                    if (GM_TEAM && GM_MAP) {
+                        renderModeMap();
+                    } else {
+                        results.innerHTML = `<p>Select a team.</p>`;
+                    }
+                };
 
                 if (GM_VIEW === "vsOpp") {
                     loadOpponentDropdown();
@@ -197,11 +210,19 @@ root.innerHTML = `
                 <div>${teams[team].name}</div>
             `;
 
-            btn.onclick=()=>{
-                GM_TEAM=team;
-                document.querySelectorAll(".team-toggle-btn").forEach(b=>b.classList.remove("active"));
+            btn.onclick = () => {
+                GM_TEAM = team;
+            
+                document.querySelectorAll(".team-toggle-btn")
+                    .forEach(b => b.classList.remove("active"));
                 btn.classList.add("active");
-                if(GM_MAP) renderModeMap();
+            
+                // ✅ Only render if BOTH selected
+                if (GM_TEAM && GM_MAP) {
+                    renderModeMap();
+                } else {
+                    results.innerHTML = `<p>Select a map.</p>`;
+                }
             };
 
             teamWrapper.appendChild(btn);
