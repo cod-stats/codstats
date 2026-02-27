@@ -43,7 +43,7 @@
       "breach": {
         "name": "Boston Breach",
         "active": true,
-        "players": ["cammy", "nastie", "purj", "snoopy"]
+        "players": ["spart", "nastie", "purj", "snoopy"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
