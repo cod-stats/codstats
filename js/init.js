@@ -188,9 +188,9 @@ function initTabHeaderUI() {
 async function initPage() {
     try {
 
-        const matches  = await loadJSON("test1/matches.json");
-        const config   = await loadJSON("test1/TeamModes.json");
-        const mapVetos = await loadJSON("test1/mapvetos.json");
+        const matches  = await loadJSON("test1/json/matches.json");
+        const config   = await loadJSON("test1/json/TeamModes.json");
+        const mapVetos = await loadJSON("test1/json/mapvetos.json");
 
         if (!matches || !config || !mapVetos) {
             throw new Error("Failed to load required JSON files.");
