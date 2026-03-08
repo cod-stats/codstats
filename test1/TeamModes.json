@@ -70,20 +70,20 @@
 
     "upcomingMatches": [
       {
-        "teamA": "m8",
-        "teamB": "g2"
-      },
-      {
-        "teamA": "optic",
-        "teamB": "faze"
+        "teamA": "heretics",
+        "teamB": "thieves"
       },
       {
         "teamA": "koi",
-        "teamB": "falcons"
+        "teamB": "breach"
       },
       {
-        "teamA": "cloud9",
-        "teamB": "breach"
+        "teamA": "optic",
+        "teamB": "ravens"
+      },
+      {
+        "teamA": "surge",
+        "teamB": "m8"
       }
     ]
   }
