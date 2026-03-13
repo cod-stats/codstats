@@ -2,7 +2,7 @@
     "teams": {
       "thieves": {
         "name": "Los Angeles Thieves",
-        "active": false,
+        "active": true,
         "players": ["hydra", "scrap", "nium", "abezy"]
       },
       "faze": {
@@ -12,17 +12,17 @@
       },
       "optic": {
         "name": "Optic Texas",
-        "active": true,
+        "active": false,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": true,
+        "active": false,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": false,
+        "active": true,
         "players": ["nero", "exceed", "lurqxx", "craze"]
       },
       "cloud9": {
@@ -32,7 +32,7 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": false,
+        "active": true,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
@@ -42,12 +42,12 @@
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
+        "active": true,
         "players": ["spart", "nastie", "purj", "snoopy"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": true,
+        "active": false,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
@@ -57,7 +57,7 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": false,
+        "active": true,
         "players": ["capsidal", "gwinn", "tjhaly", "lunarz"]
       }
     },
@@ -70,16 +70,20 @@
 
     "upcomingMatches": [
       {
-        "teamA": "koi",
+        "teamA": "g2",
+        "teamB": "ravens"
+      },
+      {
+        "teamA": "surge",
+        "teamB": "koi"
+      },
+      {
+        "teamA": "thieves",
         "teamB": "cloud9"
       },
       {
-        "teamA": "falcons",
-        "teamB": "heretics"
-      },
-      {
         "teamA": "m8",
-        "teamB": "optic"
+        "teamB": "breach"
       }
     ]
   }
