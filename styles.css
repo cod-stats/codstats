@@ -1605,3 +1605,22 @@ MATCHES
     }
 }
 
+/* ============================ */
+/*     LAN TEAM TOGGLES         */
+/* ============================ */
+
+.team-toggle-btn {
+    background: #0d0f11;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+
+    border: 2px solid var(--teamGlow);
+
+    box-shadow:
+        0 0 8px var(--teamGlow),
+        inset 0 0 10px rgba(255,255,255,0.03);
+
+    transition: all 0.2s ease;
+}

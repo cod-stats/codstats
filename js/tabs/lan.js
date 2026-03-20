@@ -7,7 +7,7 @@ window.lanData = [];
 
 async function loadLanData() {
     try {
-        const res = await fetch("test1/lan.json");
+        const res = await fetch("test1/json/lan.json");
         const data = await res.json();
         window.lanData = data;
         console.log("Loaded lanData:", window.lanData.length, "matches");
@@ -134,26 +134,31 @@ function buildLanTab(teams, modeMaps) {
 
             card.onclick = () => {
                 LAN_MAP = map;
-
+            
                 document.querySelectorAll(".gm-map-card")
                     .forEach(c => c.classList.remove("active"));
                 card.classList.add("active");
-
-                if (!LAN_TEAM) {
-                    const firstTeam = Object.keys(teams)[0];
-                    LAN_TEAM = firstTeam;
-
-                    document.querySelectorAll(".team-toggle-btn").forEach(b => b.classList.remove("active"));
-                    const btn = document.querySelector(`.team-toggle-btn[data-team="${firstTeam}"]`);
-                    if (btn) btn.classList.add("active");
-                }
-
+            
+                // ❌ REMOVE AUTO TEAM SELECT
+                // Now requires user to click a team manually
+            
                 if (LAN_VIEW === "vsOpp") {
+                    if (!LAN_TEAM) {
+                        results.innerHTML = `<p>Select a team first.</p>`;
+                        return;
+                    }
+            
                     loadOpponentDropdown();
                     results.innerHTML = `<p>Select opponent then RUN.</p>`;
                     return;
                 }
-
+            
+                // Only render if BOTH selected
+                if (!LAN_TEAM) {
+                    results.innerHTML = `<p>Select a team.</p>`;
+                    return;
+                }
+            
                 renderModeMap();
             };
 
@@ -167,27 +172,40 @@ function buildLanTab(teams, modeMaps) {
     // ===================================================================
     function loadTeamButtons(){
         teamWrapper.innerHTML="";
-
+    
         ACTIVE_TEAMS.forEach(team=>{
-            const glow=glowColors[team]??"#fff";
-
-            const btn=document.createElement("div");
-            btn.className="team-toggle-btn";
-            btn.dataset.team=team;
-
+            const glow = glowColors[team] ?? "#fff";
+    
+            const btn = document.createElement("div");
+            btn.className = "team-toggle-btn";
+            btn.dataset.team = team;
+    
+            // 🔥 THIS FIX MAKES THE GLOW WORK
+            btn.style.setProperty("--teamGlow", glow);
+    
             btn.innerHTML=`
                 <img src="test1/logos/${team}.webp"
                      onerror="this.onerror=null;this.src='test1/logos/${team}.png'">
                 <div>${teams[team].name}</div>
             `;
-
-            btn.onclick=()=>{
-                LAN_TEAM=team;
-                document.querySelectorAll(".team-toggle-btn").forEach(b=>b.classList.remove("active"));
+    
+            btn.onclick = () => {
+                LAN_TEAM = team;
+            
+                document.querySelectorAll(".team-toggle-btn")
+                    .forEach(b => b.classList.remove("active"));
+            
                 btn.classList.add("active");
-                if(LAN_MAP) renderModeMap();
+            
+                // Only render if BOTH selected
+                if (!LAN_MAP) {
+                    results.innerHTML = `<p>Select a map.</p>`;
+                    return;
+                }
+            
+                renderModeMap();
             };
-
+    
             teamWrapper.appendChild(btn);
         });
     }
