@@ -145,8 +145,8 @@ function renderLast5MapToggles(modeMaps, matches, teams) {
         html += `
             <div class="gm-map-card ${active}" data-map="${mapName}">
                 <img class="gm-map-thumb"
-                     src="test1/maps/${clean}.webp"
-                     onerror="this.onerror=null;this.src='test1/maps/${clean}.png'">
+                     src="maps/${clean}.webp"
+                     onerror="this.onerror=null;this.src='maps/${clean}.png'">
                 <div class="gm-map-name">${mapName}</div>
             </div>
         `;
@@ -284,11 +284,6 @@ function loadL5Opponents(matches, teams) {
     }
 }
 
-
-
-// ============================================================
-// RUN
-// ============================================================
 // ============================================================
 // RUN
 // ============================================================
