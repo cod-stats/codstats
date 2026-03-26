@@ -7,7 +7,7 @@ window.lanData = [];
 
 async function loadLanData() {
     try {
-        const res = await fetch("test1/json/lan.json");
+        const res = await fetch("json/lan.json");
         const data = await res.json();
         window.lanData = data;
         console.log("Loaded lanData:", window.lanData.length, "matches");
@@ -127,8 +127,8 @@ function buildLanTab(teams, modeMaps) {
 
             card.innerHTML = `
                 <img class="gm-map-thumb"
-                     src="test1/maps/${cleanMap}.webp"
-                     onerror="this.onerror=null;this.src='test1/maps/${cleanMap}.png'">
+                     src="maps/${cleanMap}.webp"
+                     onerror="this.onerror=null;this.src='maps/${cleanMap}.png'">
                 <div class="gm-map-name">${map}</div>
             `;
 
@@ -184,8 +184,8 @@ function buildLanTab(teams, modeMaps) {
             btn.style.setProperty("--teamGlow", glow);
     
             btn.innerHTML=`
-                <img src="test1/logos/${team}.webp"
-                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'">
+                <img src="logos/${team}.webp"
+                     onerror="this.onerror=null;this.src='logos/${team}.png'">
                 <div>${teams[team].name}</div>
             `;
     
@@ -385,8 +385,8 @@ function buildLanTab(teams, modeMaps) {
             <h3 class="mapHeader">${teams[team].name} — ${map} (${modeNames[mode]})</h3>
 
             <div class="teamBox" style="--glow:${glow}">
-                <img src="./test1/logos/${team}.webp"
-                     onerror="this.onerror=null;this.src='./test1/logos/${team}.png'">
+                <img src="./logos/${team}.webp"
+                     onerror="this.onerror=null;this.src='./logos/${team}.png'">
 
                 <div class="teamTitle">${teams[team].name}</div>
 

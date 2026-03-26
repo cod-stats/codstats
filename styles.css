@@ -5,7 +5,7 @@
 body {
     background:
         linear-gradient(rgba(5,6,8,0.85), rgba(5,6,8,0.85)),
-        url("test1/logos/cod.webp") no-repeat center center fixed;
+        url("logos/cod.webp") no-repeat center center fixed;
     background-size: cover;
     color: white;
     font-family: Arial, sans-serif;
@@ -382,7 +382,7 @@ body {
     body {
         background:
             linear-gradient(rgba(5,6,8,0.82), rgba(5,6,8,0.82)),
-            url("test1/logos/cod.webp") no-repeat center top;
+            url("logos/cod.webp") no-repeat center top;
         background-size: contain;
         background-attachment: scroll;
         background-color: #050608;
@@ -1623,4 +1623,92 @@ MATCHES
         inset 0 0 10px rgba(255,255,255,0.03);
 
     transition: all 0.2s ease;
+}
+
+.l10-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+}
+
+.l10-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    height: 180px;
+    border-bottom: 2px solid #777;
+    padding-bottom: 6px;
+}
+
+.l10-bar-slot {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.l10-bar {
+    width: 26px;
+    border-radius: 0;
+}
+
+.l10-info {
+    display: flex;
+    gap: 18px;
+    margin-top: 6px;
+}
+
+.l10-info-slot {
+    width: 60px;
+    text-align: center;
+}
+
+.l10-kills {
+    font-size: 12px;
+    color: #fff;
+}
+
+.l10-opp {
+    font-size: 11px;
+    color: rgb(203, 0, 0);
+}
+
+.l10-kd {
+    font-size: 11px;
+    color: #4fb9ff;
+}
+
+.l10-damage, .l10-time {
+    font-size: 11px;
+    color: rgb(222, 222, 222);
+}
+
+.l10-score,
+.l10-length {
+    font-size: 11px;
+    color: rgb(222, 222, 222);
+}
+
+.l10-chart-container {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;   /* vertically center image with stats */
+}
+
+.l10-player-big {
+    flex-shrink: 0;        /* prevent image from shrinking */
+    margin-right: 8px;     /* small margin to push it close to stats */
+}
+
+.l10-player-big img {
+    width: 200px;          /* bigger image */
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.l10-chart-content {
+    flex: 1;
 }

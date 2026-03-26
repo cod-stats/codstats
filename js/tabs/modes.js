@@ -139,8 +139,8 @@ root.innerHTML = `
 
             card.innerHTML = `
                 <img class="gm-map-thumb"
-                     src="test1/maps/${cleanMap}.webp"
-                     onerror="this.onerror=null;this.src='test1/maps/${cleanMap}.png'">
+                     src="maps/${cleanMap}.webp"
+                     onerror="this.onerror=null;this.src='maps/${cleanMap}.png'">
                 <div class="gm-map-name">${map}</div>
             `;
 
@@ -205,8 +205,8 @@ root.innerHTML = `
             btn.style.setProperty("--teamGlow",glow);
 
             btn.innerHTML=`
-                <img src="test1/logos/${team}.webp"
-                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'">
+                <img src="logos/${team}.webp"
+                     onerror="this.onerror=null;this.src='logos/${team}.png'">
                 <div>${teams[team].name}</div>
             `;
 
@@ -330,8 +330,8 @@ root.innerHTML = `
                 // add image and name
                 btn.innerHTML = `
                     <img class="gm-map-thumb"
-                         src="test1/maps/${cleanMap}.webp"
-                         onerror="this.onerror=null;this.src='test1/maps/${cleanMap}.png'">
+                         src="maps/${cleanMap}.webp"
+                         onerror="this.onerror=null;this.src='maps/${cleanMap}.png'">
                     <div class="gm-map-name">${map}</div>
                 `;
     
@@ -394,8 +394,8 @@ root.innerHTML = `
     
         let html = `
             <div class="map13-header" style="text-align:center;margin-bottom:10px;">
-                <img src="test1/logos/${team}.webp" 
-                     onerror="this.onerror=null;this.src='test1/logos/${team}.png'" 
+                <img src="logos/${team}.webp" 
+                     onerror="this.onerror=null;this.src='logos/${team}.png'" 
                      style="width:80px;height:80px;display:block;margin:0 auto;">
                 <div style="font-weight:bold;font-size:16px;margin-top:5px;">${teams[team].name}</div>
             </div>
@@ -627,8 +627,8 @@ root.innerHTML = `
             <h3 class="mapHeader">${teams[team].name} — ${map} (${modeNames[mode]})</h3>
 
             <div class="teamBox" style="--glow:${glow}">
-                <img src="./test1/logos/${team}.webp"
-                     onerror="this.onerror=null;this.src='./test1/logos/${team}.png'">
+                <img src="./logos/${team}.webp"
+                     onerror="this.onerror=null;this.src='./logos/${team}.png'">
     
                 <div class="teamTitle">${teams[team].name}</div>
     

@@ -45,11 +45,11 @@ function buildLast5Tabs(matches, teams, modeMaps) {
     root.innerHTML = `
         <div class="last5-container">
 
-            <h2 class="bp-title">LAST 5 MATCHES</h2>
+            <h2 class="bp-title">LAST 10 MATCHES</h2>
 
             <div class="bp-view-toggle">
-                <button id="l5-view-overall" class="bp-toggle-btn active">Overall Last 5</button>
-                <button id="l5-view-vs" class="bp-toggle-btn">Vs Specific Opponent</button>
+                <button id="l5-view-overall" class="bp-toggle-btn active">Overall Last 10</button>
+                <button id="l5-view-vs" class="bp-toggle-btn">Last 10 VS</button>
             </div>
 
             <label class="bp-label" style="margin-top:12px;">Game Modes:</label>
@@ -289,6 +289,9 @@ function loadL5Opponents(matches, teams) {
 // ============================================================
 // RUN
 // ============================================================
+// ============================================================
+// RUN
+// ============================================================
 function runLast5(matches, teams, modeMaps) {
 
     const out = document.getElementById("l5-output");
@@ -298,11 +301,12 @@ function runLast5(matches, teams, modeMaps) {
     const selectedPlayer = document.getElementById("l5-player")?.value;
     if (!team) return;
 
-    const glow = glowColors[team] ?? "#fff";
-
     let playersToShow = selectedPlayer === "all"
         ? (teams[team]?.players || [])
         : [selectedPlayer];
+
+    const MODE_MAX = { hp: 50, snd: 12, overload: 40 };
+    let scaleMax = MODE_MAX[L5_MODE] || 50;
 
     let fullHTML = "";
 
@@ -315,75 +319,85 @@ function runLast5(matches, teams, modeMaps) {
         );
 
         if (L5_MAP !== "") filtered = filtered.filter(m => m.map === L5_MAP);
-
         if (L5_VIEW === "vs") {
             const opp = document.getElementById("l5-opponent")?.value;
             filtered = filtered.filter(m => m.opponent === opp);
         }
 
-        const final5 = filtered
+        const last10 = filtered
             .sort((a, b) => b.matchID - a.matchID)
-            .slice(0, 5)
+            .slice(0, 10)
             .reverse();
 
-        if (final5.length === 0) {
-            fullHTML += `
-                <h3 class="mapHeader" style="margin-top:25px;">
-                    ${teams[team].name} — ${playerName}
-                </h3>
-                <div class="noData">No matches found.</div>
-            `;
+        if (last10.length === 0) {
+            fullHTML += `<div class="noData">No matches found.</div>`;
             return;
         }
 
-        let html = `
-            <h3 class="mapHeader" style="margin-top:25px;">
-                ${teams[team].name} — ${playerName}
-            </h3>
-            <div class="match-strip">
+        // **BIG PLAYER IMAGE**
+        const imgPath = `players/${playerName}.webp`;
+        const playerImageHTML = `
+            <div class="l10-player-big">
+                <img src="${imgPath}" onerror="this.onerror=null;this.src='players/${playerName}.png'">
+            </div>
         `;
 
-        final5.forEach(m => {
+        // BUILD BARS
+        let barsHTML = `
+        <div class="l10-chart-container">
+            ${playerImageHTML} <!-- big image on the left -->
+            <div class="l10-chart-content">
+                <h3 class="mapHeader" style="margin-top:25px;">
+                    ${teams[team].name} — ${playerName} (Last 10)
+                </h3>
+                <div class="l10-chart">
+                    <div class="l10-bars">
+        `;
 
-            const kd = m.deaths > 0
-                ? (m.kills / m.deaths).toFixed(2)
-                : m.kills.toFixed(2);
-
-            const matchDate = formatMatchDate(m.date);
-
-            let extraStat = "";
-            if (L5_MODE === "snd") {
-                const rounds =
-                    m.rounds ??
-                    ((m.teamScore != null && m.oppScore != null)
-                        ? m.teamScore + m.oppScore
-                        : "—");
-                extraStat = `<div>Rounds: ${rounds}</div>`;
-            } else {
-                const time = formatDuration(m.durationSec);
-                extraStat = `<div>Time: ${time}</div>`;
-            }
-
-            html += `
-                <div class="match-card" style="--glow:${glow}">
-                    <div class="card-map">${m.map} — ${cap(L5_MODE)}</div>
-                    <div class="card-opponent">
-                        vs <span class="oppName">${teams[m.opponent]?.name ?? m.opponent}</span>
-                    </div>
-                    <div>K: ${m.kills} &nbsp;&nbsp; D: ${m.deaths}</div>
-                    <div class="${parseFloat(kd) >= 1 ? "kd-good" : "kd-bad"}">${kd} KD</div>
-                    <div>DMG: ${m.damage ?? "-"}</div>
-
-                    ${extraStat}
-
-                    <div class="card-score">${m.teamScore} - ${m.oppScore}</div>
-                    <div class="card-date">${matchDate}</div>
+        last10.forEach(m => {
+            const height = (m.kills / scaleMax) * 160;
+            let barColor = "#888";
+            barsHTML += `
+                <div class="l10-bar-slot">
+                    <div class="l10-bar" style="height:${height}px; background:${barColor}"></div>
                 </div>
             `;
         });
 
-        html += `</div>`;
-        fullHTML += html;
+        barsHTML += `
+                    </div>
+                    <div class="l10-info">
+        `;
+
+        last10.forEach(m => {
+            const kd = m.deaths > 0 ? (m.kills / m.deaths).toFixed(2) : m.kills.toFixed(2);
+            const oppName = teams[m.opponent]?.name ?? m.opponent;
+            const damage = m.damage ?? "—";
+            let timeDisplay, timeLabel;
+            if (L5_MODE === "snd") { timeDisplay = m.duration ?? "—"; timeLabel = "Rounds"; }
+            else { timeDisplay = m.durationSec != null ? formatDuration(m.durationSec) : "—"; timeLabel = "Time"; }
+            let scoreHTML = (m.teamScore != null && m.oppScore != null) ? `Score:<br>${m.teamScore} - ${m.oppScore}` : "Score: —";
+
+            barsHTML += `
+                <div class="l10-info-slot">
+                    <div class="l10-kills">${m.kills} / ${m.deaths}</div>
+                    <div class="l10-kd">${kd} KD</div>
+                    <div class="l10-damage">DMG: ${damage}</div>
+                    <div class="l10-score">${scoreHTML}</div>
+                    <div class="l10-time">${timeLabel}: ${timeDisplay}</div>
+                    <div class="l10-opp">vs ${oppName}</div>
+                </div>
+            `;
+        });
+
+        barsHTML += `
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        fullHTML += barsHTML;
     });
 
     out.innerHTML = fullHTML;

@@ -104,8 +104,8 @@ function buildMatchesTabs(matches, teams, modeMaps) {
             html += `
                 <div class="gm-map-card ${active}" data-map="${mapName}">
                     <img class="gm-map-thumb"
-                         src="test1/maps/${clean}.webp"
-                         onerror="this.onerror=null;this.src='test1/maps/${clean}.png'">
+                         src="maps/${clean}.webp"
+                         onerror="this.onerror=null;this.src='maps/${clean}.png'">
 
                     <div class="gm-map-name">${mapName}</div>
                 </div>
@@ -281,17 +281,17 @@ function buildMatchesTabs(matches, teams, modeMaps) {
                     <div class="mc-score">${myScore} — ${oppScore}</div>
 
                     <div class="mc-header">
-                        <img class="mc-logo" src="test1/logos/${team}.webp"
-                             onerror="this.src='test1/logos/${team}.png'">
+                        <img class="mc-logo" src="logos/${team}.webp"
+                             onerror="this.src='logos/${team}.png'">
 
                         <div class="mc-vs-text">${teams[team].name} VS ${teams[opp].name}</div>
 
-                        <img class="mc-logo" src="test1/logos/${opp}.webp"
-                             onerror="this.src='test1/logos/${opp}.png'">
+                        <img class="mc-logo" src="logos/${opp}.webp"
+                             onerror="this.src='logos/${opp}.png'">
                     </div>
 
-                    <img class="mc-mobile-logo" src="test1/logos/${team}.webp"
-                         onerror="this.src='test1/logos/${team}.png'">
+                    <img class="mc-mobile-logo" src="logos/${team}.webp"
+                         onerror="this.src='logos/${team}.png'">
                     <div class="mc-table-title">${cap(team)}</div>
 
                     <div class="mc-tables">
@@ -309,8 +309,8 @@ function buildMatchesTabs(matches, teams, modeMaps) {
                             `).join("")}
                         </table>
 
-                        <img class="mc-mobile-logo" src="test1/logos/${opp}.webp"
-                             onerror="this.src='test1/logos/${opp}.png'">
+                        <img class="mc-mobile-logo" src="logos/${opp}.webp"
+                             onerror="this.src='logos/${opp}.png'">
                         <div class="mc-table-title">${cap(opp)}</div>
 
                         <table class="mc-table">

@@ -154,14 +154,14 @@ ACTIVE_TEAMS.forEach(([key, team]) => {
         header.className = "veto-row header";
         header.innerHTML = `
             <div class="team-column">
-                <img src="test1/logos/${tA}.png" class="team-logo"
-                    onerror="this.src='test1/logos/${tA}.webp'">
+                <img src="logos/${tA}.png" class="team-logo"
+                    onerror="this.src='logos/${tA}.webp'">
                 <span>${teams[tA]?.name}</span>
             </div>
             <div class="map-column">MAP</div>
             <div class="team-column">
-                <img src="test1/logos/${tB}.png" class="team-logo"
-                    onerror="this.src='test1/logos/${tB}.webp'">
+                <img src="logos/${tB}.png" class="team-logo"
+                    onerror="this.src='logos/${tB}.webp'">
                 <span>${teams[tB]?.name}</span>
             </div>
         `;
@@ -189,7 +189,7 @@ ACTIVE_TEAMS.forEach(([key, team]) => {
                     <div class="wr">WinRate: ${sA.winRate}%</div>
                 </div>
                 <div class="map-column">
-                    <img src="test1/maps/${map.toLowerCase().replace(/ /g,"_")}.webp"
+                    <img src="maps/${map.toLowerCase().replace(/ /g,"_")}.webp"
                         class="map-image">
                     <span>${map}</span>
                 </div>

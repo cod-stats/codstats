@@ -88,10 +88,10 @@ function buildNextMatches(upcomingMatches, teams) {
         keyA = keyA || nameA.toLowerCase().replace(/\s+/g, "");
         keyB = keyB || nameB.toLowerCase().replace(/\s+/g, "");
 
-        const logoA_webp = `test1/logos/${keyA}.webp`;
-        const logoA_png  = `test1/logos/${keyA}.png`;
-        const logoB_webp = `test1/logos/${keyB}.webp`;
-        const logoB_png  = `test1/logos/${keyB}.png`;
+        const logoA_webp = `logos/${keyA}.webp`;
+        const logoA_png  = `logos/${keyA}.png`;
+        const logoB_webp = `logos/${keyB}.webp`;
+        const logoB_png  = `logos/${keyB}.png`;
 
         const card = document.createElement("div");
         card.className = "next-match-card";
@@ -188,9 +188,9 @@ function initTabHeaderUI() {
 async function initPage() {
     try {
 
-        const matches  = await loadJSON("test1/json/matches.json");
-        const config   = await loadJSON("test1/json/TeamModes.json");
-        const mapVetos = await loadJSON("test1/json/mapvetos.json");
+        const matches  = await loadJSON("json/matches.json");
+        const config   = await loadJSON("json/TeamModes.json");
+        const mapVetos = await loadJSON("json/mapvetos.json");
 
         if (!matches || !config || !mapVetos) {
             throw new Error("Failed to load required JSON files.");
