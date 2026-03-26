@@ -369,10 +369,18 @@ function runLast5(matches, teams, modeMaps) {
             const oppName = teams[m.opponent]?.name ?? m.opponent;
             const damage = m.damage ?? "—";
             let timeDisplay, timeLabel;
-            if (L5_MODE === "snd") { timeDisplay = m.duration ?? "—"; timeLabel = "Rounds"; }
-            else { timeDisplay = m.durationSec != null ? formatDuration(m.durationSec) : "—"; timeLabel = "Time"; }
+            if (L5_MODE === "snd") { 
+                timeDisplay = m.duration ?? "—"; 
+                timeLabel = "Rounds"; 
+            } else { 
+                timeDisplay = m.durationSec != null ? formatDuration(m.durationSec) : "—"; 
+                timeLabel = "Time"; 
+            }
             let scoreHTML = (m.teamScore != null && m.oppScore != null) ? `Score:<br>${m.teamScore} - ${m.oppScore}` : "Score: —";
-
+        
+            // Format date
+            const matchDate = formatMatchDate(m.date);
+        
             barsHTML += `
                 <div class="l10-info-slot">
                     <div class="l10-kills">${m.kills} / ${m.deaths}</div>
@@ -381,6 +389,7 @@ function runLast5(matches, teams, modeMaps) {
                     <div class="l10-score">${scoreHTML}</div>
                     <div class="l10-time">${timeLabel}: ${timeDisplay}</div>
                     <div class="l10-opp">vs ${oppName}</div>
+                    <div class="l10-date">${matchDate}</div> <!-- new line for date -->
                 </div>
             `;
         });

@@ -219,7 +219,6 @@ async function initPage() {
         // BUILD TABS (no scores passed anymore)
         buildModeTabs(config.teams, config.modes, matches);
         buildLast5Tabs(matches, config.teams, config.modes);
-        buildMatchesTabs(matches, config.teams, config.modes);
         buildLanTab(config.teams, config.modes, matches);
 
         // Normalize mapVetos
