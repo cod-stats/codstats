@@ -1712,3 +1712,9 @@ MATCHES
 .l10-chart-content {
     flex: 1;
 }
+
+.l10-date {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-top: 2px;
+}
