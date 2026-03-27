@@ -17,12 +17,12 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": true,
+        "active": false,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": true,
+        "active": false,
         "players": ["nero", "exceed", "lurqxx", "craze"]
       },
       "cloud9": {
@@ -47,7 +47,7 @@
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": true,
+        "active": false,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
@@ -57,7 +57,7 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": true,
+        "active": false,
         "players": ["capsidal", "gwinn", "tjhaly", "lunarz"]
       }
     },
@@ -70,22 +70,17 @@
 
     "upcomingMatches": [
       {
-        "teamA": "optic",
-        "teamB": "koi"
+        "teamA": "m8",
+        "teamB": "faze"
       },
       {
-        "teamA": "g2",
-        "teamB": "falcons"
+        "teamA": "optic",
+        "teamB": "g2"
       },
       {
         "teamA": "thieves",
-        "teamB": "heretics"
-      },
-      {
-        "teamA": "falcons",
-        "teamB": "koi"
+        "teamB": ""
       }
-
     ]
   }
   

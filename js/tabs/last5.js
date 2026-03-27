@@ -68,7 +68,33 @@ function buildLast5Tabs(matches, teams, modeMaps) {
 
             <div id="l5-filter-panel"></div>
 
-            <button id="l5-run" class="bp-run-btn">RUN</button>
+            <div class="l5-baseline-row">
+            <label>Baselines:</label>
+        
+            <div class="baseline-inline">
+                <span id="base-name-p1"></span>
+                <input id="base-p1" type="number">
+            </div>
+        
+            <div class="baseline-inline">
+                <span id="base-name-p2"></span>
+                <input id="base-p2" type="number">
+            </div>
+        
+            <div class="baseline-inline">
+                <span id="base-name-p3"></span>
+                <input id="base-p3" type="number">
+            </div>
+        
+            <div class="baseline-inline">
+                <span id="base-name-p4"></span>
+                <input id="base-p4" type="number">
+            </div>
+        </div>
+
+<button id="l5-run" class="bp-run-btn">RUN</button>
+
+            
 
             <div id="l5-output"></div>
 
@@ -78,6 +104,7 @@ function buildLast5Tabs(matches, teams, modeMaps) {
     setupLast5Listeners(teams, matches, modeMaps);
     renderLast5Filters(teams, matches, modeMaps);
     renderLast5MapToggles(modeMaps, matches, teams);
+    updateBaselineNames(teams, firstTeam);
 }
 
 
@@ -123,6 +150,14 @@ function swapLast5ModeButtons() {
     document.getElementById("l5-overload").classList.toggle("active", L5_MODE === "overload");
 }
 
+function updateBaselineNames(teams, team) {
+    const players = teams[team]?.players || [];
+
+    document.getElementById("base-name-p1").textContent = players[0] || "P1";
+    document.getElementById("base-name-p2").textContent = players[1] || "P2";
+    document.getElementById("base-name-p3").textContent = players[2] || "P3";
+    document.getElementById("base-name-p4").textContent = players[3] || "P4";
+}
 
 // ============================================================
 // MAP TOGGLES
@@ -233,12 +268,14 @@ const firstTeam = ACTIVE_TEAMS[0];
 
     document.getElementById("l5-team").onchange = e=>{
         const team=e.target.value;
-        document.getElementById("l5-player").innerHTML=
-            `<option value="all">All Players</option>`+
-            (teams[team]?.players||[])
-                .map(p=>`<option value="${p}">${cap(p)}</option>`)
+    
+        document.getElementById("l5-player").innerHTML =
+            `<option value="all">All Players</option>` +
+            (teams[team]?.players || [])
+                .map(p => `<option value="${p}">${cap(p)}</option>`)
                 .join("");
-
+    
+        updateBaselineNames(teams, team);
     };
 
     if (L5_VIEW === "vs") loadL5Opponents(matches, teams);
@@ -305,7 +342,16 @@ function runLast5(matches, teams, modeMaps) {
 
     let fullHTML = "";
 
-    playersToShow.forEach(playerName => {
+    playersToShow.forEach((playerName, index) => {
+        const baselineMap = {
+            [teams[team].players[0]]: Number(document.getElementById("base-p1")?.value) || 0,
+            [teams[team].players[1]]: Number(document.getElementById("base-p2")?.value) || 0,
+            [teams[team].players[2]]: Number(document.getElementById("base-p3")?.value) || 0,
+            [teams[team].players[3]]: Number(document.getElementById("base-p4")?.value) || 0,
+        };
+        
+        const baseline = baselineMap[playerName] || 0;
+        const baselineHeight = Math.round((baseline / scaleMax) * 160) -1;
 
         let filtered = matches.filter(m =>
             m.team === team &&
@@ -351,13 +397,20 @@ function runLast5(matches, teams, modeMaps) {
 
                 <div class="l10-chart-content">
                     <div class="l10-chart">
-                        <div class="l10-bars">
+                    <div class="l10-bars">
+                    <div class="l10-baseline" style="bottom:${baselineHeight}px;"></div>
         `;
 
         // BARS
         last10.forEach(m => {
             const height = (m.kills / scaleMax) * 160;
             let barColor = "#888";
+
+if (baseline > 0) {
+    if (m.kills > baseline) barColor = "#2ecc71";
+    else if (m.kills < baseline) barColor = "#e74c3c";
+    else barColor = "#888";
+}
 
             barsHTML += `
                 <div class="l10-bar-slot">

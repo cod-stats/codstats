@@ -1738,3 +1738,137 @@ MATCHES
     color: #aaa;
     margin-top: 2px;
 }
+
+.l5-baseline-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.l5-baseline-row input {
+    width: 70px;
+    margin-right: 6px;
+}
+
+/* allow baseline line */
+.l10-bars {
+    position: relative;
+    height: 160px;
+    padding-bottom: 0; /* ensure no padding */
+    display: flex;
+    align-items: flex-end; /* makes bars grow from bottom */
+}
+
+/* baseline line */
+.l10-baseline {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #444; /* baseline color */
+    bottom: 0; /* this will be overridden by inline style */
+}
+
+.l5-baseline-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.baseline-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.baseline-inline input {
+    width: 55px;
+    text-align: center;
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+@media (max-width: 900px) {
+
+    .l10-chart-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .l10-player-big img {
+        width: 180px;
+        height: 180px;
+        transform: translateY(0);
+    }
+
+    .l10-bars {
+        gap: 10px;
+        height: 140px;
+    }
+
+    .l10-bar-slot {
+        width: 34px;
+    }
+
+    .l10-bar {
+        width: 18px;
+    }
+
+    .l10-info {
+        gap: 10px;
+    }
+
+    .l10-info-slot {
+        width: 34px;
+        font-size: 10px;
+    }
+
+    .l10-kills {
+        font-size: 10px;
+    }
+
+    .l10-kd,
+    .l10-opp,
+    .l10-damage,
+    .l10-time,
+    .l10-score {
+        font-size: 9px;
+    }
+
+    .mapHeader {
+        font-size: 16px;
+    }
+}
+
+
+/* ============================= */
+/* VERY SMALL PHONES */
+/* ============================= */
+@media (max-width: 500px) {
+
+    .l10-bars {
+        gap: 6px;
+    }
+
+    .l10-bar-slot {
+        width: 26px;
+    }
+
+    .l10-bar {
+        width: 14px;
+    }
+
+    .l10-info-slot {
+        width: 26px;
+        font-size: 9px;
+    }
+
+    .l10-player-big img {
+        width: 150px;
+        height: 150px;
+    }
+}
