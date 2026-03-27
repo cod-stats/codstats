@@ -70,14 +70,6 @@
 
     "upcomingMatches": [
       {
-        "teamA": "heretics",
-        "teamB": "m8"
-      },
-      {
-        "teamA": "thieves",
-        "teamB": "faze"
-      },
-      {
         "teamA": "optic",
         "teamB": "koi"
       },
@@ -86,8 +78,8 @@
         "teamB": "falcons"
       },
       {
-        "teamA": "TBD",
-        "teamB": "TBD"
+        "teamA": "thieves",
+        "teamB": "miami"
       },
       {
         "teamA": "TBD",
