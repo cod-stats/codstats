@@ -79,7 +79,11 @@
       },
       {
         "teamA": "thieves",
-        "teamB": "koi"
+        "teamB": "TBD"
+      },
+      {
+        "teamA": "koi",
+        "teamB": "TBD"
       }
     ]
   }
