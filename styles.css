@@ -1625,12 +1625,55 @@ MATCHES
     transition: all 0.2s ease;
 }
 
+/* ============================= */
+/* PLAYER BLOCK */
+/* ============================= */
+.l10-player-block {
+    margin-bottom: 50px;
+}
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+.mapHeader {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* ============================= */
+/* MAIN ROW (IMAGE + CHART) */
+/* ============================= */
+.l10-chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+.l10-player-big {
+    flex-shrink: 0;
+    transform: translateY(15px);
+}
+
+.l10-player-big img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ============================= */
+/* CHART */
+/* ============================= */
 .l10-chart {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto 30px auto;
-    width: fit-content;
 }
 
 .l10-bars {
@@ -1654,6 +1697,9 @@ MATCHES
     border-radius: 0;
 }
 
+/* ============================= */
+/* INFO */
+/* ============================= */
 .l10-info {
     display: flex;
     gap: 18px;
@@ -1670,47 +1716,21 @@ MATCHES
     color: #fff;
 }
 
-.l10-opp {
-    font-size: 11px;
-    color: rgb(203, 0, 0);
-}
-
 .l10-kd {
     font-size: 11px;
     color: #4fb9ff;
 }
 
-.l10-damage, .l10-time {
+.l10-opp {
+    font-size: 11px;
+    color: rgb(203, 0, 0);
+}
+
+.l10-damage,
+.l10-time,
+.l10-score {
     font-size: 11px;
     color: rgb(222, 222, 222);
-}
-
-.l10-score,
-.l10-length {
-    font-size: 11px;
-    color: rgb(222, 222, 222);
-}
-
-.l10-chart-container {
-    display: flex;
-    margin-bottom: 40px;
-    align-items: center;   /* vertically center image with stats */
-}
-
-.l10-player-big {
-    flex-shrink: 0;        /* prevent image from shrinking */
-    margin-right: 8px;     /* small margin to push it close to stats */
-}
-
-.l10-player-big img {
-    width: 200px;          /* bigger image */
-    height: 200px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.l10-chart-content {
-    flex: 1;
 }
 
 .l10-date {

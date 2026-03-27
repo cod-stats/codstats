@@ -314,6 +314,7 @@ function runLast5(matches, teams, modeMaps) {
         );
 
         if (L5_MAP !== "") filtered = filtered.filter(m => m.map === L5_MAP);
+
         if (L5_VIEW === "vs") {
             const opp = document.getElementById("l5-opponent")?.value;
             filtered = filtered.filter(m => m.opponent === opp);
@@ -329,7 +330,7 @@ function runLast5(matches, teams, modeMaps) {
             return;
         }
 
-        // **BIG PLAYER IMAGE**
+        // PLAYER IMAGE
         const imgPath = `players/${playerName}.webp`;
         const playerImageHTML = `
             <div class="l10-player-big">
@@ -337,21 +338,27 @@ function runLast5(matches, teams, modeMaps) {
             </div>
         `;
 
-        // BUILD BARS
+        // 🔥 NEW STRUCTURE (TITLE ABOVE EVERYTHING)
         let barsHTML = `
-        <div class="l10-chart-container">
-            ${playerImageHTML} <!-- big image on the left -->
-            <div class="l10-chart-content">
-                <h3 class="mapHeader" style="margin-top:25px;">
-                    ${teams[team].name} — ${playerName} (Last 10)
-                </h3>
-                <div class="l10-chart">
-                    <div class="l10-bars">
+        <div class="l10-player-block">
+
+            <h3 class="mapHeader">
+                ${teams[team].name} — ${playerName} (Last 10)
+            </h3>
+
+            <div class="l10-chart-container">
+                ${playerImageHTML}
+
+                <div class="l10-chart-content">
+                    <div class="l10-chart">
+                        <div class="l10-bars">
         `;
 
+        // BARS
         last10.forEach(m => {
             const height = (m.kills / scaleMax) * 160;
             let barColor = "#888";
+
             barsHTML += `
                 <div class="l10-bar-slot">
                     <div class="l10-bar" style="height:${height}px; background:${barColor}"></div>
@@ -360,44 +367,56 @@ function runLast5(matches, teams, modeMaps) {
         });
 
         barsHTML += `
-                    </div>
-                    <div class="l10-info">
+                        </div>
+                        <div class="l10-info">
         `;
 
+        // INFO
         last10.forEach(m => {
-            const kd = m.deaths > 0 ? (m.kills / m.deaths).toFixed(2) : m.kills.toFixed(2);
+
+            const kd = m.deaths > 0
+                ? (m.kills / m.deaths).toFixed(2)
+                : m.kills.toFixed(2);
+
             const oppName = teams[m.opponent]?.name ?? m.opponent;
             const damage = m.damage ?? "—";
+
             let timeDisplay, timeLabel;
-            if (L5_MODE === "snd") { 
-                timeDisplay = m.duration ?? "—"; 
-                timeLabel = "Rounds"; 
-            } else { 
-                timeDisplay = m.durationSec != null ? formatDuration(m.durationSec) : "—"; 
-                timeLabel = "Time"; 
+            if (L5_MODE === "snd") {
+                timeDisplay = m.duration ?? "—";
+                timeLabel = "Rounds";
+            } else {
+                timeDisplay = m.durationSec != null
+                    ? formatDuration(m.durationSec)
+                    : "—";
+                timeLabel = "Time";
             }
-            let scoreHTML = (m.teamScore != null && m.oppScore != null) ? `Score:<br>${m.teamScore} - ${m.oppScore}` : "Score: —";
-        
-            // Format date
+
+            let scoreHTML = (m.teamScore != null && m.oppScore != null)
+                ? `${m.teamScore} - ${m.oppScore}`
+                : "—";
+
             const matchDate = formatMatchDate(m.date);
-        
+
             barsHTML += `
                 <div class="l10-info-slot">
                     <div class="l10-kills">${m.kills} / ${m.deaths}</div>
                     <div class="l10-kd">${kd} KD</div>
                     <div class="l10-damage">DMG: ${damage}</div>
-                    <div class="l10-score">${scoreHTML}</div>
+                    <div class="l10-score">Score: ${scoreHTML}</div>
                     <div class="l10-time">${timeLabel}: ${timeDisplay}</div>
                     <div class="l10-opp">vs ${oppName}</div>
-                    <div class="l10-date">${matchDate}</div> <!-- new line for date -->
+                    <div class="l10-date">${matchDate}</div>
                 </div>
             `;
         });
 
         barsHTML += `
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
         `;
 
