@@ -661,6 +661,7 @@ root.innerHTML = `
                     <th>Avg Deaths</th>
                     <th>K/D</th>
                     <th>Avg Damage</th>
+                    ${mode === "snd" ? "<th>Avg First Blood</th>" : ""}
                 </tr>
         `;
     
@@ -683,22 +684,26 @@ root.innerHTML = `
     
             if (filtered.length === 0) return;
     
-            // 🔥 UNIQUE MATCH COUNT (dedupe by matchID)
+            // UNIQUE MATCH COUNT
             const uniqueMatches = new Set(filtered.map(m => m.matchID));
             const matchCount = uniqueMatches.size;
     
             const totalKills  = filtered.reduce((a, b) => a + b.kills, 0);
             const totalDeaths = filtered.reduce((a, b) => a + b.deaths, 0);
             const totalDamage = filtered.reduce((a, b) => a + b.damage, 0);
+            const totalFB     = filtered.reduce((a, b) => a + (b.firstBloods || 0), 0);
     
             const avgK = (totalKills / filtered.length).toFixed(1);
             const avgD = (totalDeaths / filtered.length).toFixed(1);
             const kd = totalDeaths > 0
                 ? (totalKills / totalDeaths).toFixed(2)
                 : totalKills.toFixed(2);
+    
             const avgDmg = totalDamage > 0
                 ? (totalDamage / filtered.length).toFixed(1)
                 : "-";
+    
+            const avgFB = (totalFB / filtered.length).toFixed(2);
     
             html += `
                 <tr>
@@ -708,13 +713,14 @@ root.innerHTML = `
                     <td>${avgD}</td>
                     <td>${kd}</td>
                     <td>${avgDmg}</td>
+                    ${mode === "snd" ? `<td>${avgFB}</td>` : ""}
                 </tr>
             `;
         });
     
         html += `</table>`;
     
-        // SUMMARY FOOTER (still stays overall team summary)
+        // SUMMARY FOOTER
         const s = summary;
         html += `
             <div class="mode-summary-footer">
