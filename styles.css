@@ -1403,7 +1403,7 @@ MATCHES
 
     /* Make headers tighter */
     .playerTable th {
-        font-size: 10px;
+        font-size: 8px;
         letter-spacing: 0.5px;
     }
 
@@ -1418,16 +1418,19 @@ MATCHES
         width: 14%;
     }
 
-    .playerTable th:nth-child(3),
-    .playerTable td:nth-child(3),
-    .playerTable th:nth-child(4),
-    .playerTable td:nth-child(4),
-    .playerTable th:nth-child(5),
-    .playerTable td:nth-child(5),
-    .playerTable th:nth-child(6),
-    .playerTable td:nth-child(6) {
-        width: 17%;
-    }
+    /* HANDLE 7 COLUMNS (SND INCLUDED) */
+.playerTable th:nth-child(3),
+.playerTable td:nth-child(3),
+.playerTable th:nth-child(4),
+.playerTable td:nth-child(4),
+.playerTable th:nth-child(5),
+.playerTable td:nth-child(5),
+.playerTable th:nth-child(6),
+.playerTable td:nth-child(6),
+.playerTable th:nth-child(7),
+.playerTable td:nth-child(7) {
+    width: 12%;
+}
 
     /* Summary footer stacks */
     .mode-summary-footer {
