@@ -70,12 +70,16 @@
 
     "upcomingMatches": [
       {
-        "teamA": "faze",
-        "teamB": "koi"
+        "teamA": "m8",
+        "teamB": "ravens"
       },
       {
-        "teamA": "optic",
-        "teamB": "faze"
+        "teamA": "heretics",
+        "teamB": "thieves"
+      },
+      {
+        "teamA": "surge",
+        "teamB": "g2"
       }
     ]
   }
