@@ -7,7 +7,7 @@
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
@@ -52,7 +52,7 @@
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": true,
+        "active": false,
         "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
