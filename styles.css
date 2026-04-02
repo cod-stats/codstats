@@ -3,14 +3,15 @@
 ============================================================ */
 
 body {
-    background:
+    /*background:
         linear-gradient(rgba(5,6,8,0.85), rgba(5,6,8,0.85)),
-        url("logos/cod.webp") no-repeat center center fixed;
+        url("logos/cod.webp") no-repeat center center fixed;*/
     background-size: cover;
     color: white;
     font-family: Arial, sans-serif;
     text-transform: uppercase;
     padding: 20px;
+    background-color: black;
 }
 
 .page-title {
@@ -145,54 +146,6 @@ body {
     text-align: center;
     margin: 10px 0;
     cursor: pointer;
-}
-/* ============================================================
-   AVG TAB STATS CARDS / PLAYER TABLES
-============================================================ */
-
-.teamBox {
-    background: #15161b;
-    border-radius: 14px;
-    padding: 12px;
-    margin: 12px auto;
-    width: 90%;
-    max-width: 950px;
-    text-align: center;
-    border: 2px solid var(--glow);
-    box-shadow: 0 0 30px var(--glow);
-    cursor: pointer;
-}
-
-.teamBox img {
-    width: 70px;
-    margin-bottom: 8px;
-    filter: drop-shadow(0 0 8px var(--glow));
-}
-
-.teamTitle {
-    font-size: 1.4em;
-    margin-bottom: 6px;
-    text-shadow: 0 0 10px var(--glow);
-}
-
-.playerTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-    background: #000000aa;
-}
-
-.playerTable td,
-.playerTable th {
-    border: 1px solid #666;
-    padding: 6px;
-    text-align: center;
-}
-
-.playerName {
-    background: var(--glow);
-    color: white;
-    font-weight: bold;
 }
 
 /* ============================================================
@@ -539,63 +492,7 @@ body {
     display: none !important;
 }
 
-/* ============================================================
-   TEAM GRID — WITH LOGOS + TEAM GLOW (4 PER ROW)
-============================================================ */
 
-.team-toggle-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 14px 0 20px 0;
-}
-
-.team-toggle-btn {
-    padding: 10px;
-    background: #0d0f11;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    border: 2px solid var(--teamGlow, #555);
-    box-shadow: 0 0 6px var(--teamGlow, #555);
-    transition: background .25s, box-shadow .25s, transform .2s;
-}
-
-.team-toggle-btn:hover {
-    transform: scale(0.97);
-    box-shadow: 0 0 10px var(--teamGlow, #999);
-}
-
-.team-toggle-btn.active {
-    background: var(--teamGlow, #fff);
-    color: black;
-    box-shadow: 0 0 14px var(--teamGlow, #fff);
-}
-
-
-/* ==============================
-   MOBILE — 3 PER ROW
-============================== */
-
-@media (max-width: 600px) {
-
-    .team-toggle-wrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .team-toggle-btn {
-        padding: 8px;
-        font-size: 0.75em;
-    }
-
-    .team-toggle-logo {
-        width: 34px;
-        height: 34px;
-    }
-}
 /* ============================================================
    VS MATCHES — TEAM + OPPONENT DROPDOWNS
 ============================================================ */
@@ -708,347 +605,6 @@ body {
     #tab-last5 select {
         width: 100%;
     }
-}
-
-/* ============================================================
-   WINNER CARD — FULL CARD GLOW
-============================================================ */
-
-.winner-card {
-    border: 2px solid var(--winnerGlow) !important;
-    box-shadow:
-        0 0 25px var(--winnerGlow),
-        0 0 45px var(--winnerGlow),
-        0 0 70px var(--winnerGlow) !important;
-
-    background: radial-gradient(
-        circle at center,
-        color-mix(in srgb, var(--winnerGlow) 18%, #0c0d0f),
-        #0c0d0f 60%
-    ) !important;
-
-    transition: box-shadow .3s ease, background .3s ease;
-}
-
-/* ============================================================
-   VS MATCHES — MOBILE EXACT LAYOUT FIX
-============================================================ */
-
-@media (max-width: 600px) {
-
-    /* Hide desktop elements */
-    .vm-header,
-    .vm-table-row {
-        display: none !important;
-    }
-
-    /* NEW MOBILE STACK */
-    .vm-mobile-block {
-        text-align: center;
-        margin-bottom: 22px;
-    }
-
-    .vm-mobile-logo {
-        width: 90px;
-        display: block;
-        margin: 0 auto 10px auto;
-        filter: drop-shadow(0 0 10px var(--glow));
-    }
-
-    .vm-mobile-name {
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px var(--glow);
-    }
-
-    /* Center mobile tables */
-    .vm-mobile-table-wrap {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 25px;
-    }
-
-    .vm-table.mobile-centered {
-        width: auto !important;
-        margin: 0 auto;
-        background: #000a !important;
-    }
-}
-/* ============================================================
-   TEAM GRID — EXTRA MOBILE FIXES (END OF FILE)
-============================================================ */
-
-@media (max-width: 600px) {
-
-    /* Ensure full responsiveness for team grid */
-    .team-toggle-wrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .team-toggle-btn {
-        padding: 8px;
-        font-size: 0.75em;
-    }
-
-    .team-toggle-logo {
-        width: 34px;
-        height: 34px;
-    }
-}
-
-
-
-/* ============================================================
-MATCHES
-============================================================ */
-.bp-label {
-    margin-top: 12px;
-    font-size: 0.9em;
-    opacity: 0.8;
-    display: block;
-}
-
-.vm-dropdown {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #0d0f11;
-    color: white;
-    border: 1px solid #666;
-    border-radius: 6px;
-    text-transform: capitalize;
-}
-
-.vm-run-btn {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(90deg, #ff004c, #ff9900);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 18px;
-    box-shadow: 0 0 15px rgba(255,50,50,0.8);
-    text-transform: uppercase;
-    transition: 0.18s;
-}
-.vm-run-btn:hover {
-    opacity: .9 !important;
-    filter: brightness(1.1);
-    transform: scale(0.98);
-}
-
-.warnBox {
-    padding: 12px;
-    background: #842;
-    border-radius: 6px;
-    text-align: center;
-    margin: 10px 0;
-}
-
-/* Flex container for TEAM + OPPONENT */
-.vm-flex {
-    display: flex;
-    gap: 20px;
-    margin-top: 8px;
-}
-.vm-col {
-    flex: 1;
-}
-
-/* Map buttons now match game mode buttons */
-.bp-mode-toggle .bp-toggle-btn {
-    margin-right: 8px;
-    margin-bottom: 8px;
-}
-
-
-/* FULL MATCH CARD */
-.matchCardFull {
-    background: #0d0f11;
-    border-radius: 18px;
-    padding: 30px;
-    margin: 25px auto;
-    border: 2px solid var(--glow);
-    box-shadow: 0 0 25px var(--glow);
-    width: 95%;
-    max-width: 1200px;
-}
-
-/* SCORE */
-.mc-score {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 0 0 12px var(--glow);
-}
-
-/* HEADER */
-.mc-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    margin-bottom: 30px;
-}
-
-.mc-logo {
-    width: 90px;
-    filter: drop-shadow(0 0 10px var(--glow));
-}
-
-.mc-vs-text {
-    font-size: 1.7rem;
-    font-weight: 700;
-}
-
-/* TABLE DISPLAY */
-.mc-tables {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-    margin-bottom: 25px;
-}
-
-/* TABLES */
-.mc-table {
-    width: 40%;
-    border-collapse: collapse;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
-
-.mc-table th {
-    padding-bottom: 12px;
-    font-weight: 700;
-}
-
-.mc-table td {
-    padding: 6px 0;
-}
-
-/* DATE */
-.mc-date {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-/* PERFECT ALIGNMENT FOR MATCH TABLES */
-.mc-table th,
-.mc-table td {
-    text-align: center;     /* Force every column centered */
-}
-
-.mc-table td:first-child,
-.mc-table th:first-child {
-    text-align: left;       /* PLAYER column left-aligned */
-    padding-right: 15px;
-}
-
-.mc-table {
-    width: 42%;
-    table-layout: fixed;    /* Forces consistent column width */
-}
-
-.mc-table th, .mc-table td {
-    padding: 6px 4px;
-    white-space: nowrap;
-}
-
-/* ============================================================
-   DESKTOP — HIDE MOBILE ELEMENTS
-============================================================ */
-.mc-mobile-logo,
-.mc-table-title {
-    display: none !important;
-}
-
-
-@media (max-width: 700px) {
-
-    /* hide desktop header on mobile */
-    .mc-header {
-        display: none !important;
-    }
-
-    /* show mobile elements */
-    .mc-mobile-logo,
-    .mc-table-title {
-        display: block !important;
-    }
-
-    .mc-mobile-logo {
-        width: 85px;
-        margin: 0 auto 10px auto;
-        filter: drop-shadow(0 0 10px var(--glow));
-    }
-
-    .mc-table-title {
-        text-align: center;
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 6px;
-        margin-top: 12px;
-    }
-
-    /* stack tables */
-    .mc-tables {
-        flex-direction: column;
-        gap: 26px;
-    }
-
-    .mc-table {
-        width: 100% !important;
-    }
-
-    /* Keep PLAYER names on one line */
-    .mc-table td:first-child,
-    .mc-table th:first-child {
-        white-space: nowrap !important;
-        font-size: 0.92rem !important;  /* slightly smaller so MERCULES fits */
-        letter-spacing: 0.5px;
-    }
-}
-
-/* LAN tab run button */
-#lan-run-vs {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(90deg, #ff004c, #ff9900);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 18px;
-    box-shadow: 0 0 15px rgba(255,50,50,0.8);
-    text-transform: uppercase;
-    transition: 0.18s;
-}
-#lan-run-vs:hover {
-    opacity: .9 !important;
-    filter: brightness(1.1);
-    transform: scale(0.98);
-}
-
-/* LAN tab dropdowns */
-#lan-team-select-vs,
-#lan-opponent-select {
-    padding: 10px;
-    background: #0d0f11;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 8px;
-    font-size: 0.9em;
-    text-transform: capitalize;
-    min-width: 140px;
-    cursor: pointer;
 }
 
 /* ============================================================
@@ -1292,6 +848,7 @@ MATCHES
     flex-direction: column;
     align-items: center;  /* center all content */
     gap: 12px;
+    text-align: center;
 }
 
 /* Center team label + dropdown */
@@ -1864,5 +1421,195 @@ MATCHES
 
     .baseline-inline input {
         width: 70px;
+    }
+}
+
+/* TEAM GRID */ 
+.team-toggle-wrapper { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 18px; 
+    margin-bottom: 20px; 
+} 
+
+/* TEAM CARD */ 
+.team-toggle-btn { 
+    background: #0b0f17; 
+    border-radius: 18px; 
+    padding: 20px; 
+    text-align: center; 
+    cursor: pointer; 
+    position: relative; 
+    transition: 0.25s; 
+    border: 2px solid rgba(255,255,255,0.08); 
+} 
+
+/* LOGO */ 
+.team-toggle-btn img { 
+    width: 70px; height: 
+    70px; object-fit: contain; 
+    margin-bottom: 10px; 
+}
+
+/* TEAM NAME */ 
+.team-toggle-btn div { 
+    font-weight: 600; 
+    letter-spacing: 1px; 
+    color: rgb(195, 195, 195); 
+}
+
+/* TEAM CARD HOVER */ 
+.team-toggle-btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 0 12px var(--teamGlow, rgba(255,255,255,0.2)); 
+}
+
+/* ACTIVE SELECTED */ 
+.team-toggle-btn.active { 
+    border: 2px solid var(--teamGlow, rgba(255,255,255,0.2)); 
+    box-shadow: 0 0 8px var(--teamGlow, rgba(255,255,255,0.2)), 0 0 18px var(--teamGlow, rgba(255,255,255,0.15)); 
+} 
+
+/* GLOW BACKGROUND */ 
+.team-toggle-btn.active::before { 
+    content: ""; position: absolute; 
+    inset: 0; border-radius: 18px; 
+    background: radial-gradient(circle at center, var(--teamGlow, rgba(255,255,255,0.1)) 0%, transparent 80%); 
+    opacity: 0.1; 
+    z-index: 0; 
+} 
+
+/* TEAM BOX MATTE GLOW */ 
+.teamBox { 
+    background: linear-gradient(180deg, #0f1420, #0a0d14); 
+    border-radius: 20px; 
+    padding: 25px; 
+    margin-top: 15px; 
+    border: 2px solid var(--glow, rgba(255,255,255,0.2)); 
+    box-shadow: 0 0 10px var(--glow, rgba(255,255,255,0.15)), 0 0 20px rgba(0,0,0,0.4); 
+    text-align: center; 
+}
+
+/* TEAM LOGO */ 
+.teamBox img { 
+    width: 80px; 
+    margin-bottom: 10px; 
+}
+
+/* TEAM NAME */ 
+.teamTitle { 
+    font-size: 20px; 
+    font-weight: 700; 
+    margin-bottom: 15px; 
+    letter-spacing: 1px; 
+}
+
+/* PLAYER TABLE */ 
+.playerTable { 
+    width: 100%;
+     border-collapse: collapse; 
+     overflow: hidden; 
+     border-radius: 12px; 
+}
+
+/* TABLE HEADER */ 
+.playerTable th { 
+    background: #111722;
+     padding: 12px; 
+     font-size: 13px; 
+     letter-spacing: 1px; 
+     color: #cfd6e6; 
+     border-bottom: 2px solid #2a3245; 
+}
+
+/* TABLE ROWS */ 
+.playerTable td { 
+    padding: 12px; 
+    background: #0c111a; 
+    border-bottom: 1px solid #1c2433;
+     font-size: 14px; 
+    }
+    
+/* HOVER ROW */ 
+.playerTable tr:hover td { 
+    background: #131a26; 
+}
+
+/* SUMMARY FOOTER */ 
+.mode-summary-footer { 
+    margin-top: 15px; 
+    padding-top: 10px; 
+    border-top: 1px solid #2a3245; 
+    display: flex; 
+    justify-content: space-around;
+     font-weight: 600;
+      color: #d7deed; 
+} 
+
+.mapHeader { 
+    background: #2a2f3a; 
+    padding: 12px;
+     border-radius: 10px;
+      text-align: center; 
+      font-weight: 700;
+       letter-spacing: 1px; 
+       margin-bottom: 10px; 
+}
+
+.team-footer-stats {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.team-footer-stats {
+    margin-top: 10px;
+    font-size: 0.85rem;       /* slightly smaller for mobile */
+    color: #ccc;
+    text-align: center;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;   /* stack each stat */
+    gap: 4px;                 /* small spacing between lines */
+    word-break: break-word;   /* prevent overflow for long text */
+}
+/* ============================ */
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 700px) {
+    .teamBox {
+        padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--glow, #fff);
+    transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .teamBox img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .teamTitle {
+        font-size: 14px;
+    }
+
+    .team-player-wrapper table {
+        width: 100%;
+        table-layout: fixed;   
+        font-size: 11px;
+    }
+
+    .team-player-wrapper th,
+    .team-player-wrapper td {
+        padding: 6px 4px;
+        white-space: normal;   
+        word-break: break-word;
+    }
+
+    .team-footer-stats {
+        font-size: 0.75rem;
+        gap: 2px;
+        padding: 0 2px;
     }
 }

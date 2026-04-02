@@ -166,10 +166,10 @@ const glowColors = {
     "heretics": "#e67e22",
     "ravens": "#3498db",
     "cloud9": "#5dade2",
-    "g2": "#f1c40f",
+    "g2": "#66356E",
     "m8": "#9b59b6",
     "breach": "#2ecc71",
-    "falcons": "#f39c12",
+    "falcons": "#006400",
     "koi": "#8e44ad",
     "surge": "#00ffff"
 };
