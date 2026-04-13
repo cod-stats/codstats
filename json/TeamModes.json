@@ -63,7 +63,7 @@
     },
   
     "modes": {
-      "hp": ["sake", "Colossus", "den", "clifftown", "scar", "gridlock"],
+      "hp": ["sake", "Colossus", "den", "cliff town", "scar", "gridlock"],
       "snd": ["plaza", "den", "gridlock", "raid", "scar", "exposure"],
       "overload": ["Exposure", "Den", "Scar"]
     },
