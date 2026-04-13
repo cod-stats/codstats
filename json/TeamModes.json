@@ -23,7 +23,7 @@
       "ravens": {
         "name": "Carolina Royale Ravens",
         "active": true,
-        "players": ["nero", "exceed", "lurqxx", "craze"]
+        "players": ["exceed", "lurqxx", "craze"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
@@ -43,7 +43,7 @@
       "breach": {
         "name": "Boston Breach",
         "active": false,
-        "players": ["spart", "nastie", "purj", "snoopy"]
+        "players": ["spart", "nastie", "purj", "afro"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
@@ -58,13 +58,13 @@
       "surge": {
         "name": "Vancouver Surge",
         "active": true,
-        "players": ["capsidal", "gwinn", "tjhaly", "lunarz"]
+        "players": ["gwinn", "tjhaly", "lunarz"]
       }
     },
   
     "modes": {
-      "hp": ["Den", "Colossus", "Exposure", "Scar", "Blackheart"],
-      "snd": ["Den", "Raid", "Colossus", "Scar", "Exposure"],
+      "hp": ["sake", "Colossus", "den", "clifftown", "scar", "gridlock"],
+      "snd": ["plaza", "den", "gridlock", "raid", "scar", "exposure"],
       "overload": ["Exposure", "Den", "Scar"]
     },
 

@@ -911,128 +911,6 @@ body {
     box-shadow: 0 0 25px var(--glow, #fff);
 }
 
-/* ============================================================
-   TRUE MOBILE FIT — NO HORIZONTAL SCROLL
-   ============================================================ */
-
-   @media (max-width: 768px) {
-
-    /* Reduce overall spacing */
-    .modes-container {
-        padding: 8px;
-    }
-
-    .mapHeader,
-    .bp-title {
-        font-size: 15px;
-        text-align: center;
-        margin-bottom: 8px;
-    }
-
-    .teamBox {
-        padding: 10px;
-        border-radius: 12px;
-        box-shadow: 0 0 10px var(--glow); /* softer glow */
-    }
-
-    .teamBox img {
-        width: 55px !important;
-        height: 55px !important;
-    }
-
-    .teamTitle {
-        font-size: 14px;
-    }
-
-    /* TABLE SHRINK STRATEGY */
-    .playerTable {
-        width: 100%;
-        table-layout: fixed;   /* force equal column sizing */
-        font-size: 11px;       /* shrink text */
-    }
-
-    .playerTable th,
-    .playerTable td {
-        padding: 6px 4px;
-        white-space: normal;   /* allow wrapping */
-        word-break: break-word;
-    }
-
-    /* Make headers tighter */
-    .playerTable th {
-        font-size: 8px;
-        letter-spacing: 0.5px;
-    }
-
-    /* Reduce column widths proportionally */
-    .playerTable th:nth-child(1),
-    .playerTable td:nth-child(1) {
-        width: 18%;
-    }
-
-    .playerTable th:nth-child(2),
-    .playerTable td:nth-child(2) {
-        width: 14%;
-    }
-
-    /* HANDLE 7 COLUMNS (SND INCLUDED) */
-.playerTable th:nth-child(3),
-.playerTable td:nth-child(3),
-.playerTable th:nth-child(4),
-.playerTable td:nth-child(4),
-.playerTable th:nth-child(5),
-.playerTable td:nth-child(5),
-.playerTable th:nth-child(6),
-.playerTable td:nth-child(6),
-.playerTable th:nth-child(7),
-.playerTable td:nth-child(7) {
-    width: 12%;
-}
-
-    /* Summary footer stacks */
-    .mode-summary-footer {
-        font-size: 11px;
-        text-align: center;
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    /* Toggle buttons smaller */
-    .gm-view-btn,
-    .bp-toggle-btn {
-        font-size: 11px;
-        padding: 5px 8px;
-    }
-
-    /* Map grid */
-    .gm-map-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
-    }
-
-    .gm-map-thumb {
-        height: 65px;
-    }
-
-    .gm-map-name {
-        font-size: 11px;
-    }
-
-    /* VS layout stack */
-    .vs-flex-row {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .vs-col {
-        width: 100%;
-    }
-
-    .bp-run-btn {
-        width: 100%;
-        font-size: 12px;
-    }
-}
 /* ============================ */
 /* WHO PLAYS NEXT HEADING */
 /* ============================ */
@@ -1575,41 +1453,181 @@ body {
     gap: 4px;                 /* small spacing between lines */
     word-break: break-word;   /* prevent overflow for long text */
 }
-/* ============================ */
-/* MOBILE ADJUSTMENTS */
-@media (max-width: 700px) {
-    .teamBox {
+
+
+/* ============================================================
+   MOBILE OPTIMIZED — CLEAN UI (<= 768px)
+============================================================ */
+@media (max-width: 768px) {
+
+    /* =========================
+       GENERAL LAYOUT
+    ========================= */
+    body {
         padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px var(--glow, #fff);
-    transition: box-shadow 0.3s ease-in-out;
+        font-size: 13px;
+    }
+
+    .modes-container {
+        padding: 6px;
+    }
+
+    .bp-title {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .mapHeader {
+        font-size: 13px;
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    /* =========================
+       TEAM TOGGLES (FIXED)
+    ========================= */
+    .team-toggle-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* cleaner than 3 */
+        gap: 12px;
+    }
+
+    .team-toggle-btn {
+        padding: 14px 8px;
+        border-radius: 14px;
+    }
+
+    .team-toggle-btn img {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 6px;
+    }
+
+    .team-toggle-btn div {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+
+    /* =========================
+       TEAM BOX
+    ========================= */
+    .teamBox {
+        padding: 14px;
+        border-radius: 14px;
     }
 
     .teamBox img {
-        width: 55px !important;
-        height: 55px !important;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 6px;
     }
 
     .teamTitle {
-        font-size: 14px;
+        font-size: 13px;
+        margin-bottom: 10px;
     }
 
-    .team-player-wrapper table {
-        width: 100%;
-        table-layout: fixed;   
+    /* =========================
+       MAP GRID
+    ========================= */
+    .gm-map-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .gm-map-thumb {
+        height: 65px;
+    }
+
+    .gm-map-name {
         font-size: 11px;
     }
 
-    .team-player-wrapper th,
-    .team-player-wrapper td {
-        padding: 6px 4px;
-        white-space: normal;   
-        word-break: break-word;
+    /* =========================
+       TOGGLES
+    ========================= */
+    .gm-view-btn,
+    .bp-toggle-btn {
+        font-size: 11px;
+        padding: 6px 6px;
     }
 
+    /* =========================
+       VS DROPDOWNS
+    ========================= */
+    .vs-flex-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .vs-col {
+        width: 100%;
+    }
+
+    /* =========================
+       PLAYER TABLE (CLEANED)
+    ========================= */
+    .playerTable {
+        width: 100%;
+        table-layout: fixed;
+        font-size: 10px;
+    }
+
+    .playerTable th {
+        font-size: 7px;
+        padding: 6px 2px;
+        line-height: 1.1;
+    }
+
+    .playerTable td {
+        padding: 6px 2px;
+    }
+
+    /* Compact column widths */
+    .playerTable th:nth-child(1),
+    .playerTable td:nth-child(1) { width: 22%; }
+
+    .playerTable th:nth-child(2),
+    .playerTable td:nth-child(2) { width: 14%; }
+
+    .playerTable th:nth-child(3),
+    .playerTable td:nth-child(3),
+    .playerTable th:nth-child(4),
+    .playerTable td:nth-child(4),
+    .playerTable th:nth-child(5),
+    .playerTable td:nth-child(5) { width: 16%; }
+
+    /* Hide DAMAGE on mobile (too wide) */
+    .playerTable th:nth-child(6),
+    .playerTable td:nth-child(6) {
+        display: none;
+    }
+
+    /* Fix ugly header wrapping */
+    .playerTable th {
+        white-space: normal;        /* allow wrapping */
+        word-break: keep-all;       /* don't break inside words */
+        overflow-wrap: break-word;  /* fallback */
+        text-align: center;
+    }
+
+    /* =========================
+       TEAM FOOTER
+    ========================= */
     .team-footer-stats {
         font-size: 0.75rem;
         gap: 2px;
-        padding: 0 2px;
+        padding: 0 4px;
+    }
+
+    /* =========================
+       RUN BUTTON
+    ========================= */
+    .bp-run-btn {
+        width: 100%;
+        font-size: 12px;
+        padding: 10px;
     }
 }

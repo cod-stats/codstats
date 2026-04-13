@@ -508,7 +508,7 @@ function buildModeTabs(teams, modeMaps) {
             const grid = document.createElement("div");
             grid.className = "gm-map-grid";
     
-            modeMaps[key].slice(0, limit).forEach(map => {
+            modeMaps[key].forEach(map => {
                 const cleanMap = map.trim().replace(/\s+/g,"").replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
                 const btn = document.createElement("div");
                 btn.className = "gm-map-card";
