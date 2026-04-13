@@ -597,7 +597,7 @@ function buildModeTabs(teams, modeMaps) {
          style="width:100px; height:auto; margin-bottom:10px;">
     <div style="font-weight:bold; font-size:1.2em;">${teams[team].name}</div>
 </div>
-            <table class="playerTable">
+<table class="playerTable map13Table">
                 <tr>
                     <th>Player</th>
                     <th>1-3 Avg Kills</th>

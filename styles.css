@@ -1599,11 +1599,11 @@ body {
     .playerTable th:nth-child(5),
     .playerTable td:nth-child(5) { width: 16%; }
 
-    /* Hide DAMAGE on mobile (too wide) */
-    .playerTable th:nth-child(6),
-    .playerTable td:nth-child(6) {
-        display: none;
-    }
+    /* Hide DAMAGE ONLY for normal player tables */
+.playerTable:not(.map13Table) th:nth-child(6),
+.playerTable:not(.map13Table) td:nth-child(6) {
+    display: none;
+}
 
     /* Fix ugly header wrapping */
     .playerTable th {
