@@ -418,7 +418,7 @@ function buildModeTabs(teams, modeMaps) {
                 <div class="teamTitle">${teams[team].name}</div>
 
                 <div class="team-player-wrapper">
-                    ${renderPlayerTable(team, mode, map)}
+                ${renderPlayerTable(team, mode, map, GM_VIEW === "vsOpp" ? oppSelect.value : null)}
                 </div>
 
                 <div class="team-footer-stats">
@@ -436,7 +436,7 @@ function buildModeTabs(teams, modeMaps) {
     // PLAYER TABLE
     // ============================================================
 
-    function renderPlayerTable(team, mode, map=null) {
+    function renderPlayerTable(team, mode, map = null, opponent = null) {
         let html = `
             <table class="playerTable">
                 <tr>
@@ -449,36 +449,37 @@ function buildModeTabs(teams, modeMaps) {
                     ${mode === "snd" ? "<th>Avg First Blood</th>" : ""}
                 </tr>
         `;
-
+    
         teams[team].players.forEach(player => {
             let filtered = window.matchData.filter(m =>
                 norm(m.team) === norm(team) &&
                 norm(m.mode) === norm(mode) &&
                 (map ? norm(m.map) === norm(map) : true) &&
-                norm(m.player) === norm(player)
+                norm(m.player) === norm(player) &&
+                (opponent ? norm(m.opponent) === norm(opponent) : true)
             );
-
+    
             if (!filtered.length) return;
-
+    
             const uniqueMatches = new Set(filtered.map(m => m.matchID));
             const totalKills  = filtered.reduce((a,b)=>a+b.kills,0);
             const totalDeaths = filtered.reduce((a,b)=>a+b.deaths,0);
             const totalDamage = filtered.reduce((a,b)=>a+b.damage,0);
             const totalFB     = filtered.reduce((a,b)=>a + (b.firstBloods || 0), 0);
-
+    
             html += `
                 <tr>
                     <td>${cap(player)}</td>
                     <td>${uniqueMatches.size}</td>
                     <td>${(totalKills/filtered.length).toFixed(1)}</td>
                     <td>${(totalDeaths/filtered.length).toFixed(1)}</td>
-                    <td>${(totalKills/totalDeaths).toFixed(2)}</td>
+                    <td>${(totalDeaths ? (totalKills/totalDeaths) : 0).toFixed(2)}</td>
                     <td>${(totalDamage/filtered.length).toFixed(1)}</td>
                     ${mode === "snd" ? `<td>${(totalFB/filtered.length).toFixed(2)}</td>` : ""}
                 </tr>
             `;
         });
-
+    
         html += `</table>`;
         return html;
     }

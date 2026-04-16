@@ -189,7 +189,7 @@ ACTIVE_TEAMS.forEach(([key, team]) => {
                     <div class="wr">WinRate: ${sA.winRate}%</div>
                 </div>
                 <div class="map-column">
-                    <img src="maps/${map.toLowerCase().replace(/ /g,"_")}.webp"
+                    <img src="maps/${map.toLowerCase().replace(/\s+/g,"")}.webp"
                         class="map-image">
                     <span>${map}</span>
                 </div>

@@ -23,7 +23,7 @@
       "ravens": {
         "name": "Carolina Royale Ravens",
         "active": true,
-        "players": ["exceed", "lurqxx", "craze"]
+        "players": ["exceed", "lurqxx", "craze", "fire"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
@@ -58,13 +58,13 @@
       "surge": {
         "name": "Vancouver Surge",
         "active": true,
-        "players": ["gwinn", "tjhaly", "lunarz"]
+        "players": ["gwinn", "tjhaly", "lunarz", "nero"]
       }
     },
   
     "modes": {
-      "hp": ["sake", "Colossus", "den", "cliff town", "scar", "gridlock"],
-      "snd": ["plaza", "den", "gridlock", "raid", "scar", "exposure"],
+      "hp": ["Sake", "Colossus", "Den", "Cliff Town", "Scar", "Gridlock"],
+      "snd": ["Plaza", "Den", "Gridlock", "Raid", "Scar", "Exposure"],
       "overload": ["Exposure", "Den", "Scar"]
     },
 
