@@ -2,12 +2,12 @@
     "teams": {
       "thieves": {
         "name": "Los Angeles Thieves",
-        "active": true,
+        "active": false,
         "players": ["hydra", "scrap", "nium", "abezy"]
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
@@ -17,7 +17,7 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": true,
+        "active": false,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
@@ -42,17 +42,17 @@
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
+        "active": true,
         "players": ["spart", "nastie", "purj", "afro"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": false,
+        "active": true,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": false,
+        "active": true,
         "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
@@ -64,22 +64,26 @@
   
     "modes": {
       "hp": ["Sake", "Colossus", "Den", "Cliff Town", "Scar", "Gridlock"],
-      "snd": ["Plaza", "Den", "Gridlock", "Raid", "Scar", "Exposure"],
+      "snd": ["Plaza", "Den", "Gridlock", "Raid", "Scar", "Fringe"],
       "overload": ["Exposure", "Den", "Scar"]
     },
 
     "upcomingMatches": [
       {
-        "teamA": "m8",
-        "teamB": "ravens"
+        "teamA": "faze",
+        "teamB": "breach"
       },
       {
-        "teamA": "heretics",
-        "teamB": "thieves"
+        "teamA": "koi",
+        "teamB": "falcons"
+      },
+      {
+        "teamA": "m8",
+        "teamB": "g2"
       },
       {
         "teamA": "surge",
-        "teamB": "g2"
+        "teamB": "ravens"
       }
     ]
   }
