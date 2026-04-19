@@ -12,7 +12,7 @@
       },
       "optic": {
         "name": "Optic Texas",
-        "active": false,
+        "active": true,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
@@ -22,22 +22,22 @@
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": true,
+        "active": false,
         "players": ["exceed", "lurqxx", "craze", "fire"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "active": false,
+        "active": true,
         "players": ["encourage", "hide", "nejra", "okis"]
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": true,
+        "active": false,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": true,
+        "active": false,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
@@ -57,33 +57,29 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": true,
+        "active": false,
         "players": ["gwinn", "tjhaly", "lunarz", "nero"]
       }
     },
   
     "modes": {
-      "hp": ["Sake", "Colossus", "Den", "Cliff Town", "Scar", "Gridlock"],
+      "hp": ["Sake", "Colossus", "Den", "Scar", "Gridlock"],
       "snd": ["Plaza", "Den", "Gridlock", "Raid", "Scar", "Fringe"],
       "overload": ["Exposure", "Den", "Scar"]
     },
 
     "upcomingMatches": [
       {
-        "teamA": "faze",
+        "teamA": "koi",
         "teamB": "breach"
       },
       {
-        "teamA": "koi",
-        "teamB": "falcons"
+        "teamA": "falcons",
+        "teamB": "faze"
       },
       {
-        "teamA": "m8",
-        "teamB": "g2"
-      },
-      {
-        "teamA": "surge",
-        "teamB": "ravens"
+        "teamA": "optic",
+        "teamB": "cloud9"
       }
     ]
   }
