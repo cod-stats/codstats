@@ -1,7 +1,9 @@
+
 // ============================================================
 // GAME MODES TAB — MODE → MAP → TEAM ORDER
 // OVERALL AVG + AVG VS OPPONENT
 // ONLINE / LAN / ONLINE+LAN DATA SOURCE
+// + OVERLOAD OVERTIME FILTER
 // ============================================================
 
 function buildModeTabs(teams, modeMaps) {
@@ -17,18 +19,21 @@ function buildModeTabs(teams, modeMaps) {
     <div class="modes-container">
         <h2 class="bp-title">AVG STATS</h2>
 
-        <!-- VIEW TOGGLES -->
         <div class="gm-view-toggle top-view-toggle">
             <button id="gm-view-overall" class="gm-view-btn active">Overall Avg</button>
             <button id="gm-view-vs" class="gm-view-btn">Avg vs Opponent</button>
             <button id="gm-view-map13" class="gm-view-btn">Map 1 - 3 AVG</button>
         </div>
 
-        <!-- DATA SOURCE TOGGLES -->
         <div class="gm-view-toggle data-view-toggle">
             <button id="gm-data-online" class="gm-view-btn active">Online</button>
             <button id="gm-data-lan" class="gm-view-btn">LAN</button>
             <button id="gm-data-both" class="gm-view-btn">Online + LAN</button>
+        </div>
+
+        <div id="gm-ot-toggle" class="gm-view-toggle hidden">
+            <button id="gm-ot-all" class="gm-view-btn active">Overtime Included</button>
+            <button id="gm-ot-no" class="gm-view-btn">No Overtime</button>
         </div>
 
         <div id="mode-map-wrapper">
@@ -74,6 +79,7 @@ function buildModeTabs(teams, modeMaps) {
     let GM_TEAM = null;
     let GM_VIEW = "overall";
     let GM_DATA_VIEW = "online";
+    let GM_OVERTIME_FILTER = "all"; 
 
     let ONLINE_MATCHES = [];
     let LAN_MATCHES    = [];
@@ -93,6 +99,12 @@ function buildModeTabs(teams, modeMaps) {
     const runVSBtn       = document.getElementById("gm-run-vs");
     const map13Container = document.getElementById("map13-container");
 
+    const otToggle = document.getElementById("gm-ot-toggle");
+    const otBtns = {
+        all: document.getElementById("gm-ot-all"),
+        no_ot: document.getElementById("gm-ot-no")
+    };
+
     // ============================================================
     // LOAD MATCH DATA
     // ============================================================
@@ -108,28 +120,39 @@ function buildModeTabs(teams, modeMaps) {
     }
 
     function applyDataFilter() {
-
-        // LAN = only LAN file
         if (GM_DATA_VIEW === "lan") {
             window.matchData = [...LAN_MATCHES];
-            return;
-        }
-    
-        // BOTH = full matches.json
-        if (GM_DATA_VIEW === "both") {
-            window.matchData = [...ONLINE_MATCHES];
-            return;
-        }
-    
-        // ONLINE = matches.json minus LAN matches
-        if (GM_DATA_VIEW === "online") {
+        } 
+        else if (GM_DATA_VIEW === "both") {
+            const lanIDs = new Set(LAN_MATCHES.map(m => m.matchID));
+            window.matchData = [
+                ...LAN_MATCHES,
+                ...ONLINE_MATCHES.filter(m => !lanIDs.has(m.matchID))
+            ];
+        } 
+        else {
             const lanIDs = new Set(LAN_MATCHES.map(m => m.matchID));
             window.matchData = ONLINE_MATCHES.filter(m => !lanIDs.has(m.matchID));
-            return;
         }
     }
 
     loadMatchDataSources();
+
+    // ============================================================
+    // OVERTIME TOGGLE
+    // ============================================================
+
+    function setGMOvertimeFilter(type) {
+        GM_OVERTIME_FILTER = type === "no_ot" ? "no_ot" : "all";
+
+        Object.values(otBtns).forEach(b => b.classList.remove("active"));
+        otBtns[GM_OVERTIME_FILTER].classList.add("active");
+
+        if (GM_TEAM && GM_MAP) renderModeMap();
+    }
+
+    otBtns.all.onclick   = () => setGMOvertimeFilter("all");
+    otBtns.no_ot.onclick = () => setGMOvertimeFilter("no_ot");
 
     // ============================================================
     // DATA SOURCE TOGGLES
@@ -143,9 +166,15 @@ function buildModeTabs(teams, modeMaps) {
 
     function setGMDataView(view) {
         GM_DATA_VIEW = view;
+
         Object.values(dataBtns).forEach(b => b.classList.remove("active"));
         dataBtns[view].classList.add("active");
+
         applyDataFilter();
+
+        GM_TEAM = null;
+        GM_MAP  = null;
+
         results.innerHTML = `<p>Data source switched. Re-select map/team.</p>`;
     }
 
@@ -165,10 +194,24 @@ function buildModeTabs(teams, modeMaps) {
 
     function setGMMode(mode) {
         GM_MODE = mode;
+
         Object.values(modeButtons).forEach(b => b.classList.remove("active"));
         modeButtons[mode].classList.add("active");
+
+        if (mode === "overload" && (GM_VIEW === "overall" || GM_VIEW === "vsOpp")) {
+            otToggle.classList.remove("hidden");
+        } else {
+            otToggle.classList.add("hidden");
+            GM_OVERTIME_FILTER = "all";
+            otBtns.all.classList.add("active");
+            otBtns.no_ot.classList.remove("active");
+        }
+
+        GM_TEAM = null;
+        GM_MAP  = null;
+        results.innerHTML = "";
+
         loadMapGrid();
-        GM_MAP = null;
     }
 
     modeButtons.hp.onclick       = () => setGMMode("hp");
@@ -176,7 +219,7 @@ function buildModeTabs(teams, modeMaps) {
     modeButtons.overload.onclick = () => setGMMode("overload");
 
     // ============================================================
-    // MAP GRID — with VS auto-selection
+    // MAP GRID
     // ============================================================
 
     function loadMapGrid() {
@@ -185,6 +228,7 @@ function buildModeTabs(teams, modeMaps) {
         modeMaps[GM_MODE].forEach(map => {
             const cleanMap = map.replace(/\s+/g,"").toLowerCase();
             const card = document.createElement("div");
+
             card.className = "gm-map-card";
 
             card.innerHTML = `
@@ -196,18 +240,11 @@ function buildModeTabs(teams, modeMaps) {
 
             card.onclick = () => {
                 GM_MAP = map;
+
                 document.querySelectorAll(".gm-map-card").forEach(c => c.classList.remove("active"));
                 card.classList.add("active");
 
-                if (GM_VIEW === "vsOpp") {
-                    GM_TEAM = ACTIVE_TEAMS[0];
-                    teamSelectVS.value = GM_TEAM;
-                    loadOpponentDropdown();
-                    if (oppSelect.options.length > 0) oppSelect.selectedIndex = 0;
-                    renderModeMap();
-                } else {
-                    if (GM_TEAM) renderModeMap();
-                }
+                if (GM_TEAM) renderModeMap();
             };
 
             mapGrid.appendChild(card);
@@ -217,7 +254,7 @@ function buildModeTabs(teams, modeMaps) {
     loadMapGrid();
 
     // ============================================================
-    // TEAM BUTTON GRID
+    // TEAM BUTTON GRID (UNCHANGED)
     // ============================================================
 
     function loadTeamButtons() {
@@ -259,22 +296,27 @@ function buildModeTabs(teams, modeMaps) {
 
     function setGMView(view) {
         GM_VIEW = view;
+
         Object.values(viewBtns).forEach(b => b.classList.remove("active"));
         viewBtns[view].classList.add("active");
-    
+
         GM_TEAM = null;
         GM_MAP  = null;
         runVSBtn.classList.add("hidden");
-    
-        // Clear results on every view switch
+
         results.innerHTML = "";
-    
+
+        if (GM_MODE === "overload" && (view === "overall" || view === "vsOpp")) {
+            otToggle.classList.remove("hidden");
+        } else {
+            otToggle.classList.add("hidden");
+        }
+
         if (view === "overall") {
             document.getElementById("mode-map-wrapper").classList.remove("hidden");
             teamWrapper.classList.remove("hidden");
             vsRow.classList.add("hidden");
             map13Container.classList.add("hidden");
-            results.innerHTML = "<p>Select a team and map to see stats.</p>";
         } 
         else if (view === "vsOpp") {
             document.getElementById("mode-map-wrapper").classList.remove("hidden");
@@ -282,23 +324,20 @@ function buildModeTabs(teams, modeMaps) {
             vsRow.classList.remove("hidden");
             map13Container.classList.add("hidden");
             loadTeamDropdownVS();
-            results.innerHTML = "<p>Select a map to see vs stats.</p>";
         } 
         else if (view === "map13") {
             document.getElementById("mode-map-wrapper").classList.add("hidden");
             teamWrapper.classList.add("hidden");
             vsRow.classList.add("hidden");
-            runVSBtn.classList.add("hidden");
             map13Container.classList.remove("hidden");
             buildMap13UI();
-            // ensure old overall table is cleared
-            results.innerHTML = "";
         }
     }
 
     viewBtns.overall.onclick = () => setGMView("overall");
     viewBtns.vsOpp.onclick   = () => setGMView("vsOpp");
     viewBtns.map13.onclick   = () => setGMView("map13");
+
 
     // ============================================================
     // TEAM DROPDOWN VS
@@ -366,69 +405,101 @@ function buildModeTabs(teams, modeMaps) {
 
     function renderModeMap() {
         if (!GM_TEAM || !GM_MAP) return;
-
+    
         const team = GM_TEAM;
         const map  = GM_MAP;
         const mode = GM_MODE;
         const glow = glowColors[team] ?? "#fff";
-
+    
         let filteredMatches = window.matchData.filter(m =>
             norm(m.team) === norm(team) &&
             norm(m.mode) === norm(mode) &&
-            (norm(m.map) === norm(map))
+            norm(m.map) === norm(map)
         );
-
+    
+        // ✅ OVERTIME FILTER
+        if (mode === "overload" && GM_OVERTIME_FILTER === "no_ot") {
+            filteredMatches = filteredMatches.filter(m => m.overtime === false);
+        }
+    
+        // ✅ VS FILTER
         if (GM_VIEW === "vsOpp" && oppSelect.value) {
             filteredMatches = filteredMatches.filter(m =>
                 norm(m.opponent) === norm(oppSelect.value)
             );
         }
-
+    
+        // ✅ REMOVE DUPLICATE MATCHES
         const matchMap = new Map();
         filteredMatches.forEach(m => {
             if (!matchMap.has(m.matchID)) matchMap.set(m.matchID, m);
         });
+    
         const matches = [...matchMap.values()];
-
+    
+        // ✅ NO DATA
         if (!matches.length) {
-            results.innerHTML = `<p>No matches found for ${teams[team].name} — ${map} (${modeNames[mode]})</p>`;
+            results.innerHTML = `
+                <p>No matches found for ${teams[team].name} — ${map} (${modeNames[mode]})</p>
+            `;
             return;
         }
-
+    
+        // ============================================================
+        // TEAM STATS
+        // ============================================================
+    
         const totalMatches = matches.length;
+    
         const wins = matches.filter(m => m.teamScore > m.oppScore).length;
         const losses = matches.filter(m => m.teamScore < m.oppScore).length;
-
+    
         let avgLength;
+    
         if (mode === "hp" || mode === "overload") {
-            const totalSec = matches.reduce((a,b)=>a+b.durationSec,0);
+            const totalSec = matches.reduce((a, b) => a + (b.durationSec || 0), 0);
             avgLength = Math.round(totalSec / totalMatches) + " sec";
-        } else if (mode === "snd") {
-            const totalRounds = matches.reduce((a,b)=>a+b.duration,0);
+        } 
+        else if (mode === "snd") {
+            const totalRounds = matches.reduce((a, b) => a + (b.duration || 0), 0);
             avgLength = (totalRounds / totalMatches).toFixed(1) + " rounds";
         }
-
+    
+        // ============================================================
+        // RENDER
+        // ============================================================
+    
         const html = `
-            <h3 class="mapHeader">${teams[team].name} — ${map} (${modeNames[mode]})</h3>
-
+            <h3 class="mapHeader">
+                ${teams[team].name} — ${map} (${modeNames[mode]})
+            </h3>
+    
             <div class="teamBox" style="--glow:${glow}">
                 <img src="./logos/${team}.webp"
                      onerror="this.onerror=null;this.src='./logos/${team}.png'">
-
+    
                 <div class="teamTitle">${teams[team].name}</div>
-
+    
                 <div class="team-player-wrapper">
-                ${renderPlayerTable(team, mode, map, GM_VIEW === "vsOpp" ? oppSelect.value : null)}
+                    ${renderPlayerTable(
+                        team,
+                        mode,
+                        map,
+                        GM_VIEW === "vsOpp" ? oppSelect.value : null
+                    )}
                 </div>
-
+    
                 <div class="team-footer-stats">
                     <div>Total Matches: ${totalMatches}</div>
                     <div>W / L: ${wins} - ${losses}</div>
-                    <div>${mode === "snd" ? "Avg Rounds: " : "Avg Length: "}${avgLength}</div>
+                    <div>
+                        ${mode === "snd" ? "Avg Rounds: " : "Avg Length: "}
+                        ${avgLength}
+                    </div>
                 </div>
             </div>
         `;
-
+    
         results.innerHTML = html;
     }
 
@@ -458,7 +529,12 @@ function buildModeTabs(teams, modeMaps) {
                 norm(m.player) === norm(player) &&
                 (opponent ? norm(m.opponent) === norm(opponent) : true)
             );
-    
+            
+          // ✅ OVERTIME FILTER (FIXED)
+          if (mode === "overload" && GM_OVERTIME_FILTER === "no_ot") {
+            filtered = filtered.filter(m => m.overtime === false);
+        }
+
             if (!filtered.length) return;
     
             const uniqueMatches = new Set(filtered.map(m => m.matchID));
@@ -560,26 +636,6 @@ function buildModeTabs(teams, modeMaps) {
     
         teamDD.onchange = () => MAP13.team = teamDD.value;
         document.getElementById("map13-run").onclick = renderMap13;
-    }
-
-    function renderMap13() {
-        if (!MAP13.team) return;
-
-        GM_TEAM = MAP13.team;
-
-        const modes = ["hp","snd","overload"];
-        let mapHTML = "";
-
-        modes.forEach(mode=>{
-            const map = MAP13[mode];
-            if (!map) return;
-            GM_MODE = mode;
-            GM_MAP = map;
-            mapHTML += `<h4>${modeNames[mode]} — ${map}</h4>`;
-            mapHTML += renderPlayerTable(MAP13.team, mode, map);
-        });
-
-        results.innerHTML = mapHTML;
     }
 
     function renderMap13() {
