@@ -2,17 +2,17 @@
     "teams": {
       "thieves": {
         "name": "Los Angeles Thieves",
-        "active": false,
+        "active": true,
         "players": ["hydra", "scrap", "nium", "abezy"]
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
         "name": "Optic Texas",
-        "active": false,
+        "active": true,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
@@ -22,12 +22,12 @@
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": true,
+        "active": false,
         "players": ["exceed", "lurqxx", "craze", "fire"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "active": true,
+        "active": false,
         "players": ["encourage", "hide", "nejra", "okis"]
       },
       "g2": {
@@ -37,12 +37,12 @@
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": false,
+        "active": true,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
         "name": "Boston Breach",
-        "active": true,
+        "active": false,
         "players": ["spart", "nastie", "purj", "afro"]
       },
       "falcons": {
@@ -57,7 +57,7 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": true,
+        "active": false,
         "players": ["gwinn", "tjhaly", "lunarz", "nero"]
       }
     },
@@ -70,20 +70,20 @@
 
     "upcomingMatches": [
       {
-        "teamA": "falcons",
-        "teamB": "surge"
+        "teamA": "m8",
+        "teamB": "heretics"
       },
       {
-        "teamA": "heretics",
-        "teamB": "breach"
+        "teamA": "faze",
+        "teamB": "falcons"
       },
       {
-        "teamA": "g2",
-        "teamB": "cloud9"
+        "teamA": "optic",
+        "teamB": "koi"
       },
       {
-        "teamA": "koi",
-        "teamB": "ravens"
+        "teamA": "thieves",
+        "teamB": "g2"
       }
     ]
   }
