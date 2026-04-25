@@ -32,12 +32,12 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": true,
+        "active": false,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": true,
+        "active": false,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
@@ -47,12 +47,12 @@
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": true,
+        "active": false,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": true,
+        "active": false,
         "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
@@ -70,20 +70,12 @@
 
     "upcomingMatches": [
       {
-        "teamA": "m8",
-        "teamB": "heretics"
+        "teamA": "optic",
+        "teamB": "thieves"
       },
       {
         "teamA": "faze",
-        "teamB": "falcons"
-      },
-      {
-        "teamA": "optic",
-        "teamB": "koi"
-      },
-      {
-        "teamA": "thieves",
-        "teamB": "g2"
+        "teamB": "heretics"
       }
     ]
   }
