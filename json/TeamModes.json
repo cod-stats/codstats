@@ -17,17 +17,17 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": true,
+        "active": false,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": false,
+        "active": true,
         "players": ["exceed", "lurqxx", "craze", "fire"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "active": false,
+        "active": true,
         "players": ["encourage", "hide", "nejra", "okis"]
       },
       "g2": {
@@ -42,7 +42,7 @@
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
+        "active": true,
         "players": ["spart", "nastie", "purj", "afro"]
       },
       "falcons": {
@@ -71,11 +71,15 @@
     "upcomingMatches": [
       {
         "teamA": "optic",
-        "teamB": "thieves"
+        "teamB": "breach"
+      },
+      {
+        "teamA": "thieves",
+        "teamB": "cloud9"
       },
       {
         "teamA": "faze",
-        "teamB": "heretics"
+        "teamB": "ravens"
       }
     ]
   }
