@@ -417,6 +417,76 @@
             ]
         }
     ],
+    "breach:optic": [
+        {
+            "hp": [
+                {
+                    "map": "Scar",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "breach",
+                    "type": "pick"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "optic",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Scar",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "optic",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Fringe",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Raid",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Plaza",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "optic",
+                    "type": "pick"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "breach",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
     "breach:ravens": [
         {
             "hp": [
@@ -1105,6 +1175,76 @@
                 },
                 {
                     "map": "Scar",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "cloud9",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
+    "cloud9:thieves": [
+        {
+            "hp": [
+                {
+                    "map": "Sake",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "cloud9",
+                    "type": "pick"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Scar",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Scar",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                },
+                {
+                    "map": "Raid",
                     "matchMapNumber": 5,
                     "order": 2,
                     "team": "cloud9",
@@ -7683,6 +7823,74 @@
                 },
                 {
                     "map": "Raid",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "ravens",
+                    "type": "pick"
+                }
+            ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Sake",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "ravens",
+                    "type": "pick"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "faze",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Scar",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "faze",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Scar",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Plaza",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "faze",
+                    "type": "pick"
+                },
+                {
+                    "map": "Fringe",
                     "matchMapNumber": 5,
                     "order": 2,
                     "team": "ravens",

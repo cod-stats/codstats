@@ -136,7 +136,16 @@ function buildModeTabs(teams, modeMaps) {
         }
     }
 
-    loadMatchDataSources();
+    loadMatchDataSources().then(() => {
+
+        // Ensure initial dataset exists
+        applyDataFilter();
+    
+        // Initialize VS dropdowns if needed
+        if (GM_VIEW === "vsOpp") {
+            loadTeamDropdownVS();
+        }
+    });
 
     // ============================================================
     // OVERTIME TOGGLE
@@ -165,17 +174,52 @@ function buildModeTabs(teams, modeMaps) {
     };
 
     function setGMDataView(view) {
-        GM_DATA_VIEW = view;
 
+        GM_DATA_VIEW = view;
+    
+        // Toggle active buttons
         Object.values(dataBtns).forEach(b => b.classList.remove("active"));
         dataBtns[view].classList.add("active");
-
+    
+        // Apply dataset
         applyDataFilter();
-
+    
+        // RESET STATE
         GM_TEAM = null;
-        GM_MAP  = null;
-
-        results.innerHTML = `<p>Data source switched. Re-select map/team.</p>`;
+        GM_MAP = null;
+    
+        // Reset VS dropdowns
+        teamSelectVS.innerHTML = "";
+        oppSelect.innerHTML = "";
+    
+        // Reset map selections
+        document.querySelectorAll(".gm-map-card").forEach(card => {
+            card.classList.remove("active");
+        });
+    
+        // Reset team buttons
+        document.querySelectorAll(".team-toggle-btn").forEach(btn => {
+            btn.classList.remove("active");
+            btn.style.setProperty("--teamGlow", "transparent");
+        });
+    
+        // Rebuild VS dropdown if needed
+        if (GM_VIEW === "vsOpp") {
+            loadTeamDropdownVS();
+        }
+    
+        // Reset Map13 selections
+        MAP13 = {
+            hp: null,
+            snd: null,
+            overload: null,
+            team: null
+        };
+    
+        // Clear results
+        results.innerHTML = `
+            <p>Select a team and map.</p>
+        `;
     }
 
     dataBtns.online.onclick = () => setGMDataView("online");
@@ -244,7 +288,15 @@ function buildModeTabs(teams, modeMaps) {
                 document.querySelectorAll(".gm-map-card").forEach(c => c.classList.remove("active"));
                 card.classList.add("active");
 
-                if (GM_TEAM) renderModeMap();
+                if (GM_TEAM) {
+
+                    // VS MODE → refresh opponent list first
+                    if (GM_VIEW === "vsOpp") {
+                        loadOpponentDropdown();
+                    }
+                
+                    renderModeMap();
+                }
             };
 
             mapGrid.appendChild(card);
@@ -324,6 +376,10 @@ function buildModeTabs(teams, modeMaps) {
             vsRow.classList.remove("hidden");
             map13Container.classList.add("hidden");
             loadTeamDropdownVS();
+
+            if (GM_TEAM && GM_MAP) {
+                loadOpponentDropdown();
+            }
         } 
         else if (view === "map13") {
             document.getElementById("mode-map-wrapper").classList.add("hidden");
@@ -350,6 +406,10 @@ function buildModeTabs(teams, modeMaps) {
         });
 
         if (!GM_TEAM) GM_TEAM = teamSelectVS.value;
+
+        if (GM_MAP) {
+            loadOpponentDropdown();
+        }
 
         teamSelectVS.onchange = () => {
             GM_TEAM = teamSelectVS.value;
