@@ -7,12 +7,12 @@
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
         "name": "Optic Texas",
-        "active": false,
+        "active": true,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
@@ -22,7 +22,7 @@
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": false,
+        "active": true,
         "players": ["exceed", "lurqxx", "craze", "fire"]
       },
       "cloud9": {
@@ -42,12 +42,12 @@
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
+        "active": true,
         "players": ["spart", "nastie", "purj", "afro"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": false,
+        "active": true,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
@@ -57,7 +57,7 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": false,
+        "active": true,
         "players": ["gwinn", "tjhaly", "lunarz", "nero"]
       }
     },
@@ -70,16 +70,8 @@
 
     "upcomingMatches": [
       {
-        "teamA": "m8",
-        "teamB": "heretics"
-      },
-      {
-        "teamA": "thieves",
-        "teamB": "g2"
-      },
-      {
-        "teamA": "koi",
-        "teamB": "cloud9"
+        "teamA": "TBD",
+        "teamB": "TBD"
       }
     ]
   }
