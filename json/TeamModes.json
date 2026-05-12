@@ -70,8 +70,36 @@
 
     "upcomingMatches": [
       {
-        "teamA": "TBD",
-        "teamB": "TBD"
+        "teamA": "optic",
+        "teamB": "omit"
+      },
+      {
+        "teamA": "g2",
+        "teamB": "surge"
+      },
+      {
+        "teamA": "ravens",
+        "teamB": "heretics"
+      },
+      {
+        "teamA": "koi",
+        "teamB": "huntsmen"
+      },
+      {
+        "teamA": "thieves",
+        "teamB": "p7"
+      },
+      {
+        "teamA": "m8",
+        "teamB": "breach"
+      },
+      {
+        "teamA": "faze",
+        "teamB": "roc"
+      },
+      {
+        "teamA": "falcons",
+        "teamB": "cloud9"
       }
     ]
   }
