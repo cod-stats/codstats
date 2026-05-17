@@ -17,7 +17,7 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": true,
+        "active": false,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
@@ -32,12 +32,12 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": true,
+        "active": false,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": true,
+        "active": false,
         "players": ["envoy", "ghosty", "neptune", "sib"]
       },
       "breach": {
@@ -47,7 +47,7 @@
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": true,
+        "active": false,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
@@ -90,20 +90,12 @@
 
     "upcomingMatches": [
       {
-        "teamA": "koi",
-        "teamB": "g2"
+        "teamA": "faze",
+        "teamB": "thieves"
       },
       {
-        "teamA": "thieves",
-        "teamB": "faze"
-      },
-      {
-        "teamA": "optic",
-        "teamB": "heretics"
-      },
-      {
-        "teamA": "falcons",
-        "teamB": "m8"
+        "teamA": "opticc",
+        "teamB": "koi"
       }
     ]
   }
