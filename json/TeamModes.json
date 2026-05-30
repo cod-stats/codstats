@@ -2,63 +2,63 @@
     "teams": {
       "thieves": {
         "name": "Los Angeles Thieves",
-        "active": false,
+        "active": true,
         "players": ["hydra", "scrap", "nium", "abezy"]
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
         "name": "Optic Texas",
-        "active": true,
+        "active": false,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": false,
+        "active": true,
         "players": ["mettalz", "traixx", "renkor", "super"]
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
         "active": true,
-        "players": ["exceed", "lurqxx", "craze", "fire"]
+        "players": ["exceed", "lurqxx", "standy", "fire"]
       },
       "cloud9": {
         "name": "Cloud9 New York",
-        "active": true,
-        "players": ["encourage", "hide", "nejra", "okis"]
+        "active": false,
+        "players": ["encourage", "hide", "nejra", "wevy"]
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": true,
+        "active": false,
         "players": ["estreal", "kremp", "mamba", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": false,
-        "players": ["envoy", "ghosty", "neptune", "sib"]
+        "active": true,
+        "players": ["estreal", "ghosty", "neptune", "sib"]
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
-        "players": ["spart", "nastie", "purj", "afro"]
+        "active": true,
+        "players": ["spart", "tjhaly", "purj", "afro"]
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": false,
+        "active": true,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": true,
+        "active": false,
         "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
         "name": "Vancouver Surge",
         "active": true,
-        "players": ["gwinn", "tjhaly", "lunarz", "nero"]
+        "players": ["craze", "mamba", "lunarz", "nero"]
       },
       "omit": {
         "name": "Omit",
@@ -90,16 +90,20 @@
 
     "upcomingMatches": [
       {
-        "teamA": "koi",
+        "teamA": "thieves",
+        "teamB": "faze"
+      },
+      {
+        "teamA": "m8",
         "teamB": "ravens"
       },
       {
-        "teamA": "g2",
-        "teamB": "cloud9"
+        "teamA": "surge",
+        "teamB": "breach"
       },
       {
-        "teamA": "surge",
-        "teamB": "optic"
+        "teamA": "falcons",
+        "teamB": "heretics"
       }
     ]
   }
