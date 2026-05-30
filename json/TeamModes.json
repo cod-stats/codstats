@@ -33,7 +33,7 @@
       "g2": {
         "name": "G2 Minnesota",
         "active": false,
-        "players": ["estreal", "kremp", "mamba", "skyz"]
+        "players": ["envoy", "kremp", "nastie", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
@@ -83,9 +83,9 @@
     },
   
     "modes": {
-      "hp": ["Sake", "Colossus", "Den", "Scar", "Gridlock"],
-      "snd": ["Plaza", "Den", "Gridlock", "Raid", "Scar", "Fringe"],
-      "overload": ["Exposure", "Den", "Scar"]
+      "hp": ["Sake", "Colossus", "Den", "Scar", "Gridlock", "Hacienda"],
+      "snd": ["Hacienda", "Den", "Gridlock", "Raid", "Sake", "Fringe"],
+      "overload": ["Exposure", "Den", "Scar","Gridlock"]
     },
 
     "upcomingMatches": [
