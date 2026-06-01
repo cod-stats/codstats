@@ -12,7 +12,7 @@
       },
       "optic": {
         "name": "Optic Texas",
-        "active": true,
+        "active": false,
         "players": ["dashy", "huke", "mercules", "shotzzy"]
       },
       "heretics": {
@@ -22,7 +22,7 @@
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": false,
+        "active": true,
         "players": ["exceed", "lurqxx", "standy", "fire"]
       },
       "cloud9": {
@@ -32,12 +32,12 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": false,
+        "active": true,
         "players": ["envoy", "kremp", "nastie", "skyz"]
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": true,
+        "active": false,
         "players": ["estreal", "ghosty", "neptune", "sib"]
       },
       "breach": {
@@ -52,12 +52,12 @@
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": false,
+        "active": true,
         "players": ["cleanx", "insight", "joedeceives", "kips"]
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": false,
+        "active": true,
         "players": ["craze", "mamba", "lunarz", "nero"]
       },
       "omit": {
@@ -91,14 +91,18 @@
     "upcomingMatches": [
       {
         "teamA": "falcons",
-        "teamB": "m8"
+        "teamB": "ravens"
       },
       {
-        "teamA": "optic",
-        "teamB": "heretics"
+        "teamA": "koi",
+        "teamB": "cloud9"
       },
       {
-        "teamA": "cloud9",
+        "teamA": "heretics",
+        "teamB": "surge"
+      },
+      {
+        "teamA": "g2",
         "teamB": "breach"
       }
     ]

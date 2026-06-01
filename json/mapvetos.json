@@ -1105,6 +1105,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Hacienda",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "cloud9",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "breach",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Gridlock",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "breach",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Gridlock",
+                    "team": "breach",
+                    "type": "ban"
+                },
+                {
+                    "map": "Hacienda",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "breach",
+                    "type": "pick"
+                },
+                {
+                    "map": "Raid",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "cloud9",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "cloud9:faze": [
@@ -9111,6 +9179,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Colossus",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Hacienda",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "m8",
+                    "type": "pick"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "falcons",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Exposure",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "falcons",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Hacienda",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Raid",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "falcons",
+                    "type": "pick"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "m8",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "m8:faze": [
@@ -10145,6 +10281,76 @@
                 },
                 {
                     "map": "Plaza",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "optic",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
+    "optic:heretics": [
+        {
+            "hp": [
+                {
+                    "map": "Colossus",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "team": "heretics",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "optic",
+                    "type": "pick"
+                },
+                {
+                    "map": "Hacienda",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "heretics",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Gridlock",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "heretics",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Gridlock",
+                    "team": "heretics",
+                    "type": "ban"
+                },
+                {
+                    "map": "Fringe",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Raid",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "heretics",
+                    "type": "pick"
+                },
+                {
+                    "map": "Hacienda",
                     "matchMapNumber": 5,
                     "order": 2,
                     "team": "optic",
