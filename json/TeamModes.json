@@ -32,7 +32,7 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": true,
+        "active": false,
         "players": ["envoy", "kremp", "nastie", "skyz"]
       },
       "m8": {
@@ -47,12 +47,12 @@
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": true,
+        "active": false,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": true,
+        "active": false,
         "players": ["cleanx", "insight", "abe", "kips"]
       },
       "surge": {
