@@ -32,7 +32,7 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": false,
+        "active": true,
         "players": ["envoy", "kremp", "nastie", "skyz"]
       },
       "m8": {
@@ -42,7 +42,7 @@
       },
       "breach": {
         "name": "Boston Breach",
-        "active": false,
+        "active": true,
         "players": ["spart", "tjhaly", "purj", "afro"]
       },
       "falcons": {
@@ -57,7 +57,7 @@
       },
       "surge": {
         "name": "Vancouver Surge",
-        "active": true,
+        "active": false,
         "players": ["craze", "mamba", "lunarz", "nero"]
       },
       "omit": {
@@ -90,20 +90,16 @@
 
     "upcomingMatches": [
       {
-        "teamA": "m8",
-        "teamB": "koi"
-      },
-      {
-        "teamA": "thieves",
+        "teamA": "optic",
         "teamB": "g2"
       },
       {
-        "teamA": "optic",
-        "teamB": "falcons"
+        "teamA": "m8",
+        "teamB": "faze"
       },
       {
-        "teamA": "faze",
-        "teamB": "surge"
+        "teamA": "thieves",
+        "teamB": "breach"
       }
     ]
   }

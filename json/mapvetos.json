@@ -4283,6 +4283,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Den",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Hacienda",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "faze",
+                    "type": "pick"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Gridlock",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Raid",
+                    "team": "thieves",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "team": "faze",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "thieves",
+                    "type": "pick"
+                },
+                {
+                    "map": "Hacienda",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "faze",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "g2:breach": [
@@ -10905,6 +10973,74 @@
                 },
                 {
                     "map": "Exposure",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "optic",
+                    "type": "pick"
+                }
+            ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Gridlock",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Hacienda",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "optic",
+                    "type": "pick"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "m8",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Gridlock",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "m8",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Raid",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Fringe",
+                    "team": "optic",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "m8",
+                    "type": "pick"
+                },
+                {
+                    "map": "Hacienda",
                     "matchMapNumber": 5,
                     "order": 2,
                     "team": "optic",
