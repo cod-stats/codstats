@@ -17,12 +17,12 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": false,
+        "active": true,
         "players": ["mettalz", "reeal", "renkor", "super"]
       },
       "ravens": {
         "name": "Carolina Royale Ravens",
-        "active": false,
+        "active": true,
         "players": ["exceed", "lurqxx", "standy", "fire"]
       },
       "cloud9": {
@@ -37,7 +37,7 @@
       },
       "m8": {
         "name": "Paris Gentle Mates",
-        "active": true,
+        "active": false,
         "players": ["estreal", "ghosty", "joedeceives", "sib"]
       },
       "breach": {
@@ -52,7 +52,7 @@
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": false,
+        "active": true,
         "players": ["cleanx", "insight", "abe", "kips"]
       },
       "surge": {
@@ -90,16 +90,20 @@
 
     "upcomingMatches": [
       {
-        "teamA": "optic",
-        "teamB": "g2"
+        "teamA": "koi",
+        "teamB": "breach"
       },
       {
-        "teamA": "m8",
+        "teamA": "optic",
+        "teamB": "ravens"
+      },
+      {
+        "teamA": "heretics",
         "teamB": "faze"
       },
       {
         "teamA": "thieves",
-        "teamB": "breach"
+        "teamB": "g2"
       }
     ]
   }
