@@ -7935,6 +7935,74 @@
                     "type": "pick"
                 }
             ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Scar",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "koi",
+                    "type": "pick"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "cloud9",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Gridlock",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "cloud9",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Fringe",
+                    "team": "cloud9",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "team": "koi",
+                    "type": "ban"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "cloud9",
+                    "type": "pick"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "koi",
+                    "type": "pick"
+                }
+            ]
         }
     ],
     "koi:falcons": [
@@ -10491,6 +10559,76 @@
             ]
         }
     ],
+    "m8:surge": [
+        {
+            "hp": [
+                {
+                    "map": "Hacienda",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Colossus",
+                    "team": "surge",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "m8",
+                    "type": "pick"
+                },
+                {
+                    "map": "Scar",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "surge",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Den",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Exposure",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "surge",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Fringe",
+                    "team": "surge",
+                    "type": "ban"
+                },
+                {
+                    "map": "Raid",
+                    "team": "m8",
+                    "type": "ban"
+                },
+                {
+                    "map": "Hacienda",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "surge",
+                    "type": "pick"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "m8",
+                    "type": "pick"
+                }
+            ]
+        }
+    ],
     "m8:thieves": [
         {
             "hp": [
@@ -11798,6 +11936,74 @@
                 },
                 {
                     "map": "Scar",
+                    "matchMapNumber": 2,
+                    "order": 1,
+                    "team": "falcons",
+                    "type": "pick"
+                },
+                {
+                    "map": "Den",
+                    "matchMapNumber": 5,
+                    "order": 2,
+                    "team": "ravens",
+                    "type": "pick"
+                }
+            ]
+        },
+        {
+            "hp": [
+                {
+                    "map": "Hacienda",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Scar",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "matchMapNumber": 1,
+                    "order": 1,
+                    "team": "ravens",
+                    "type": "pick"
+                },
+                {
+                    "map": "Colossus",
+                    "matchMapNumber": 4,
+                    "order": 2,
+                    "team": "falcons",
+                    "type": "pick"
+                }
+            ],
+            "overload": [
+                {
+                    "map": "Exposure",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Gridlock",
+                    "matchMapNumber": 3,
+                    "order": 1,
+                    "team": "falcons",
+                    "type": "pick"
+                }
+            ],
+            "snd": [
+                {
+                    "map": "Raid",
+                    "team": "falcons",
+                    "type": "ban"
+                },
+                {
+                    "map": "Sake",
+                    "team": "ravens",
+                    "type": "ban"
+                },
+                {
+                    "map": "Hacienda",
                     "matchMapNumber": 2,
                     "order": 1,
                     "team": "falcons",
