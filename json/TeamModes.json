@@ -7,7 +7,7 @@
       },
       "faze": {
         "name": "Faze Vegas",
-        "active": false,
+        "active": true,
         "players": ["o4", "abuzah", "drazah", "simp"]
       },
       "optic": {
@@ -17,7 +17,7 @@
       },
       "heretics": {
         "name": "Miami Heretics",
-        "active": false,
+        "active": true,
         "players": ["mettalz", "reeal", "renkor", "super"]
       },
       "ravens": {
@@ -32,7 +32,7 @@
       },
       "g2": {
         "name": "G2 Minnesota",
-        "active": false,
+        "active": true,
         "players": ["envoy", "kremp", "nastie", "skyz"]
       },
       "m8": {
@@ -47,12 +47,12 @@
       },
       "falcons": {
         "name": "Riyadh Falcons",
-        "active": false,
+        "active": true,
         "players": ["pred", "exnid", "cellium", "kismet"]
       },
       "koi": {
         "name": "Toronto KOI",
-        "active": false,
+        "active": true,
         "players": ["cleanx", "insight", "abe", "kips"]
       },
       "surge": {
