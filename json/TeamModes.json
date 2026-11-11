@@ -1,0 +1,101 @@
+{
+    "teams": {
+      "thieves": {
+        "name": "Los Angeles Thieves",
+        "active": true,
+        "players": ["ghosty", "envoy", "dk", "abezy"]
+      },
+      "faze": {
+        "name": "Faze Vegas",
+        "active": true,
+        "players": ["scrap", "hydra", "alluka", "simp"]
+      },
+      "optic": {
+        "name": "Optic Texas",
+        "active": true,
+        "players": ["dashy", "huke", "mercules", "shotzzy"]
+      },
+      "miami": {
+        "name": "Miami Heretics",
+        "active": true,
+        "players": ["mettalz", "reeal", "snoopy", "super"]
+      },
+      "ravens": {
+        "name": "Carolina Royale Ravens",
+        "active": true,
+        "players": ["nejra", "owakening", "renegade", "skyz"]
+      },
+      "c9": {
+        "name": "Cloud9 New York",
+        "active": true,
+        "players": ["insight", "pred", "lurqxx", "cammy"]
+      },
+      "g2": {
+        "name": "G2 Minnesota",
+        "active": true,
+        "players": ["prolute", "tjhaly", "spart", "abe"]
+      },
+      "m8": {
+        "name": "Paris Gentle Mates",
+        "active": true,
+        "players": ["drazah", "o4", "joedeceives", "abuzah"]
+      },
+      "m80": {
+        "name": "m80 boston",
+        "active": true,
+        "players": ["nium", "estreal", "nastie", "neptune"]
+      },
+      "falcons": {
+        "name": "Riyadh Falcons",
+        "active": true,
+        "players": ["kremp", "sib", "cellium", "kismet"]
+      },
+      "koi": {
+        "name": "Toronto KOI",
+        "active": true,
+        "players": ["cleanx", "renkor", "ethan", "kips"]
+      },
+      "surge": {
+        "name": "Vancouver Surge",
+        "active": true,
+        "players": ["vik", "nemensions", "wevy", "mamba"]
+      },
+      "omit": {
+        "name": "Omit",
+        "active": false,
+        "players": ["lunarz", "iconz", "gio", "nate"]
+      },
+      "roc": {
+        "name": "Roc Esports",
+        "active": false,
+        "players": ["d7om", "d7oomx", "khhx", "rxld"]
+      },
+      "huntsmen": {
+        "name": "Huntsmen",
+        "active": false,
+        "players": ["swooty", "mince", "purj", "tkay"]
+      },
+      "p7": {
+        "name": "Project Notorious",
+        "active": false,
+        "players": ["beans", "diamondcon", "erikboom", "snoopy"]
+      },
+      "stallions": {
+        "name": "Stallions",
+        "active": false,
+        "players": ["andi", "felo", "jua", "leib"]
+      },
+      "bush": {
+        "name": "Telluride Bush Gaming",
+        "active": false,
+        "players": ["aspekt", "exceed", "skil", "ojohnny"]
+      }
+    },
+  
+    "modes": {
+      "hp": ["Lithium", "Lotus", "Munition", "Reactor U92", "Rooftops", "Sentry"],
+      "snd": ["Coal", "Lotus", "Munition", "Reactor U92", "Rooftops", "Sentry", "Silkworm"],
+      "hijack": ["Lithium", "Lotus", "Munition"]
+    }
+  }
+  
